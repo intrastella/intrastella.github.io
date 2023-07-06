@@ -241,8 +241,11 @@ nav {
 // .main
 //
 
-.posts > .post {
+.content_part {
   background-color: #ffffff;
+}
+
+.posts > .post {
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
 }
