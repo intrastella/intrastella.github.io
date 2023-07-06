@@ -210,6 +210,8 @@ img {
 }
 
 nav {
+  margin-right: 20px;
+  margin-top: 20px;
   float: right;
   font-family: $helveticaNeue;
   font-size: 18px;
@@ -222,10 +224,12 @@ nav {
   }
 
   a {
-    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
     color: $darkGray;
     text-align: right;
     font-weight: 300;
+    font-size: 30px;
     letter-spacing: 1px;
 
     @include mobile {
