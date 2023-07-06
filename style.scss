@@ -153,7 +153,7 @@ img {
 .masthead {
   width: 100vw;
   margin: 0px;
-  padding: 10px 10px, 10px, 100px;
+  padding: 20px 20px, 20px, 100px;
   border-bottom: 1px solid $lightGray;
 
   @include mobile {
@@ -210,8 +210,6 @@ img {
 }
 
 nav {
-  margin-right: 20px;
-  margin-top: 20px;
   float: right;
   font-family: $helveticaNeue;
   font-size: 18px;
@@ -224,11 +222,11 @@ nav {
   }
 
   a {
-    margin-right: 20px;
-    margin-top: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
     color: $darkGray;
     text-align: right;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 30px;
     letter-spacing: 1px;
 
