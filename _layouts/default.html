@@ -19,23 +19,27 @@
             background-image: url("https://github.com/intrastella/intrastella.github.io/blob/master/images/bg-blog.png?raw=true");
             background-color: #cccccc;
             }
+
       .container {
         line-height: 2;
-        background-color: rgba(255, 255, 255,  1);
+        position: relative;
+        top: 100px;
         width: 1000px;
-        margin: 50px;
+        margin: 100px;
         padding: 50px;
-        display: flex;
         justify-content: center;
         margin: auto;
+        z-index: 1;
       }
 
       .navbar {
+        position: fixed;
         background-color: rgba(255, 255, 255,  1);
         width: 100vw;
         margin: 0px;
         padding: 30px 20px, 20px, 30px;
         height: 100px;
+        z-index: 10;
       }
       
     </style>
@@ -45,26 +49,24 @@
     <div class="wrapper-masthead">
       <div class="navbar">
         <header class="masthead clearfix">
-            <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" style="max-width: 70%;  
-               height: auto;" /></a>
+            <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
 
             <div class="site-info">
-              <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+              <h1 class="site-name" style="color:#092b44">{{ site.name }}</h1>
               <p class="site-description">{{ site.description }}</p>
             </div>
 
             <nav>
-              <a href="{{ site.baseurl }}/blog" style="top: 50px;">Blog</a>
-              <a href="{{ site.baseurl }}/about">About</a>
+              <a href="{{ site.baseurl }}/">BLOG</a>
+              <a href="{{ site.baseurl }}/topics">TOPICS</a>
+              <a href="{{ site.baseurl }}/about">ABOUT</a>
             </nav> 
         </header>
       </div>
     </div>
 
     <div id="main" role="main" class="container">
-      <div class="content_part">
         {{ content }}
-      </div>
     </div>
 
     <div class="wrapper-footer">
