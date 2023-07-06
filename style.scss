@@ -29,7 +29,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $lmodern;
   color: $darkerGray;
-  font-weight: bold;
 
   line-height: 1.7;
   margin: 1em 0 15px;
@@ -40,11 +39,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// 8f716f
+
 h1 {
-  font-size: 32px;
+  font-size: 38px;
   text-align: center;
   letter-spacing: 3px;
   color: #57201d;
+  font-weight: thin;
   a {
     color: inherit;
   }
@@ -52,15 +54,20 @@ h1 {
 
 h2 {
   font-size: 24px;
+  font-weight: bold;
+  color: #8f716f;
 }
 
 h3 {
   font-size: 20px;
+  font-weight: bold;
+  color: #8f716f;
 }
 
 h4 {
   font-size: 18px;
   color: $gray;
+  font-weight: bold;
 }
 
 p {
