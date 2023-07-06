@@ -241,12 +241,8 @@ nav {
 // .main
 //
 
-.content_part {
-  background-color: #ffffff;
-}
-
 .posts > .post {
-  padding-bottom: 2em;
+  margin: 15px;
   border-bottom: 1px solid $lightGray;
 }
 
@@ -257,7 +253,7 @@ nav {
 
 .post {
   blockquote {
-    margin: 5px;
+    margin: 20px;
     border-left: 2px solid $gray;
     padding: 0.1em 1em;
     color: $gray;
