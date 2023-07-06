@@ -191,6 +191,7 @@ img {
 
 .site-name {
   margin: 0;
+  top: 30px;
   color: $darkGray;
   cursor: pointer;
   font-family: $helveticaNeue;
@@ -200,6 +201,7 @@ img {
 }
 
 .site-description {
+  top: 70px;
   margin: -5px 0 0 0;
   color: $gray;
   font-size: 16px;
