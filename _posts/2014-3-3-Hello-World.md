@@ -1,6 +1,6 @@
 ---
 layout: post
-title: You're up and running!
+title: hi
 ---
 
 This article was created for those who would like to understand more about the mathematical reasoning behind a model such as VAE. For this purpose I am introducing a range of different concepts in statistics
