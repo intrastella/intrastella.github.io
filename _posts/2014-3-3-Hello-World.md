@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mathematical Explanation: Variational Auto-Encoder
+title: Mathematical Explanation – Variational Auto-Encoder
 ---
 
 This article was created for those who would like to understand more about the mathematical reasoning behind a model such as VAE. For this purpose I am introducing a range of different concepts in statistics
