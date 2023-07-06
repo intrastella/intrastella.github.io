@@ -152,8 +152,8 @@ img {
 
 .masthead {
   width: 100vw;
-  margin: 0px 10px 10px 0px;
-  padding: 10px 10px, 10px, 0px;
+  margin: 0px;
+  padding: 10px 10px, 10px, 100px;
   border-bottom: 1px solid $lightGray;
 
   @include mobile {
@@ -166,6 +166,7 @@ img {
   width: 70px;
   height: 70px;
   margin-right: 15px;
+  margin-top: 15px;
 
   @include mobile {
     float: none;
@@ -210,8 +211,6 @@ img {
 
 nav {
   float: right;
-  margin: 0px 10px 10px 0px;
-  padding: 10px 10px, 10px, 0px;
   font-family: $helveticaNeue;
   font-size: 18px;
 
