@@ -20,10 +20,19 @@
             background-color: #cccccc;
             }
 
+      .section {
+        left: -50px;
+        position: relative;
+        top: 100px;
+        width: 1000px;
+        justify-content: center;
+        margin: auto;
+      }
+
       .container {
         line-height: 2;
         position: relative;
-        top: 100px;
+        top: 0px;
         width: 1000px;
         margin: 100px;
         padding: 50px;
@@ -65,8 +74,10 @@
       </div>
     </div>
 
-    <div id="main" role="main" class="container">
-        {{ content }}
+    <div class="section">
+      <div id="main" role="main" class="container">
+          {{ content }}
+      </div>
     </div>
 
     <div class="wrapper-footer">
