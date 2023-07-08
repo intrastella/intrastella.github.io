@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'gilded_handregular';
+    src: url('gildedhand-webfont.eot');
+    src: url('gildedhand-webfont.eot?#iefix') format('embedded-opentype'),
+         url('gildedhand-webfont.woff2') format('woff2'),
+         url('gildedhand-webfont.woff') format('woff'),
+         url('gildedhand-webfont.ttf') format('truetype'),
+         url('gildedhand-webfont.svg#gilded_handregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

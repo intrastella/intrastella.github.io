@@ -2,15 +2,20 @@
 layout: default
 ---
 
-<div class="grid-container">
   <div class="posts">
-    {% for post in site.posts %}
-      <article class="post">
 
-        <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    <div class="grid-container">
+      {% for post in site.posts %}
+        <article class="post" id="sum_post">
 
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-      </article>
-    {% endfor %}
+          <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+
+          <div class="summary">
+            <p>{{ post.intro }}</p>
+          </div>
+
+          <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+        </article>
+      {% endfor %}
+    </div>
   </div>
-</div>

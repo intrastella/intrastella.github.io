@@ -2,10 +2,23 @@
 layout: post
 title: Mathematical Visualization 
        GAN Inversion
+intro: GAN inversion plays a pivotal part in parameter manipulations such as in image manipulation. Some of these methods have a geometrical approach. In this article I visualize them and compare them with other algorithms...
+
+start: GAN inversion plays a pivotal part in parameter manipulations such as in image manipulation. Some of these methods have a geometrical approach. In this article I visualize them and compare them with other algorithms...
+
 ---
-This article was created for those who would like to understand more about the mathematical reasoning behind a model such as VAE. For this purpose I am introducing a range of different concepts in statistics
-that help understand the decision-making of this paper's  authors. I marked them with (in short) to indicate that they are only a short summery of relevant mathematical statements for this post.
-If you have any questions or suggestions  regarding this article feel free to contact me.
+
+         alert('this works')
+         button.onclick = function(){
+            txt.style.color = "rgba(255, 255, 255,  0)";
+         };
+         txt.style.color = "rgba(0, 0, 0,  1)";
+
+window.history.back();
+
+And you can of course go forward too:
+
+window.history.forward();
 
 <br/>
 
@@ -21,6 +34,17 @@ If you have any questions or suggestions  regarding this article feel free to co
 6. [Monte Carlo Estimate](#Monte Carlo Estimate)
 7. [Reparametrization Trick](#Reparametrization Trick)
 8. [SGVB estimator and AEVB algorithm](#SGVB estimator and AEVB algorithm)
+9. [Sources](#Sources)
+
+
+1. [Introduction](#introduction)
+2. [MLE, MAP estimation and EM](#mle-map-estimation-and-em) *(recap)*
+3. [Bayesian inference](#bayesian-inference) *(recap)*
+4. [Variational inference](#variational-inference) *(recap)*
+5. [The Evidence Lower Bound](#the-evidence-lower-bound)
+6. [Monte Carlo Estimate](#monte-carlo-estimate) *(recap)*
+7. [Reparametrization Trick](#reparametrization-trick)
+8. [SGVB estimator and AEVB algorithm](#sgvb-estimator-and-aevb-algorithm)
 9. [Sources](#Sources)
 
 <br/>

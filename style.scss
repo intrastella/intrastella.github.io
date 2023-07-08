@@ -13,8 +13,22 @@
 /* BASE RULES */
 /**************/
 
+@font-face {
+    font-family: 'note_font';
+    src: url('/images/font/Gilded Hand/webfont/gildedhand-webfont.eot');
+    src: url('/images/font/Gilded Hand/webfont/gildedhand-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/images/font/Gilded Hand/webfont/gildedhand-webfont.woff2') format('woff2'),
+         url('/images/font/Gilded Hand/webfont/gildedhand-webfont.woff') format('woff'),
+         url('/images/font/Gilded Hand/webfont/gildedhand-webfont.ttf') format('truetype'),
+         url('/images/font/Gilded Hand/webfont/gildedhand-webfont.svg#gilded_handregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html {
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,19 +43,18 @@ figcaption {
 }
 
 
-	
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h6 {
   font-family: $lmodern;
-  color: $darkerGray;
-
   line-height: 1.7;
-  margin: 1em 0 15px;
-  padding: 0;
 
   @include mobile {
     line-height: 1.4;
   }
+}
+
+h5 {
+    color: #57201d;
 }
 
 // 8f716f
@@ -72,9 +85,15 @@ h3 {
 }
 
 h4 {
-  font-size: 18px;
-  color: $gray;
-  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 3px;
+  color: #092b44;
+  font-weight: 100;
+
+  a {
+    color: inherit;
+  }
 }
 
 p {
@@ -83,7 +102,7 @@ p {
 }
 
 a {
-  color: $blue;
+  color: #092b44;
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
@@ -92,12 +111,19 @@ a {
 }
 
 ul, ol {
-  margin: 5px 0;
+  position: relative;
+  margin: 5px;
   padding-left: 10px;
+  left: 15px;
+}
+
+ol li a {
+    position: relative;
+    left: 15px;
 }
 
 ul {
-  list-style-type: disc;
+  list-style-type: circle;
 }
 
 ol {
@@ -105,7 +131,7 @@ ol {
 }
 
 ol ul, ul ol, ul ul, ol ol {
-  margin: 0;
+  margin: 10px;
   line-height: 3;
 }
 
@@ -133,8 +159,9 @@ img {
 }
 
 .date {
+  text-align: right;
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
   color: $gray;
 }
 
@@ -168,6 +195,98 @@ img {
 // .masthead
 //
 
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(80, 8, 8, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(80, 8, 8, 1);
+}
+
+.box_comment {
+    width: 370px;
+    position: absolute;
+    top: 200px;
+    align: right;
+    right: 50px;
+    z-order: 99;
+}
+
+.comment_col {
+    position: absolute;
+    top: 180px;
+    align: left;
+    left: 25px;
+    width: 400px;
+}
+
+.comment_txt {
+    line-height: 30px;
+}
+
+.comment_sec {
+    width: 350px;
+    position: fixed;
+    top: 200px;
+    align: right;
+    right: 40px;
+}
+
+#fname , #quest {
+    background-color: rgba(255, 255, 255,  0.6);
+    width: 320px;
+    border-style: none;
+    font-size: 18px;
+    align: right;
+    transition: all 0.2s ease-out;
+    color: rgba(82, 15, 15, 0.5);
+    font-family: $lmodern;
+    }
+
+#l_quest {
+    position: fixed;
+    top: 270px;
+}
+
+#quest {
+    height: 300px;
+    position: fixed;
+    top: 310px;
+    }
+
+#sub {
+      position: fixed;
+      top: 640px;
+      z-index: 99; /* Make sure it does not overlap */
+      border: none; /* Remove borders */
+      outline: none; /* Remove outline */
+      background-color: #092b44; /* Set a background color */
+      color: white; /* Text color */
+      padding: 10px; /* Some padding */
+      border-radius: 0px; /* Rounded corners */
+      font-size: 14px;
+      letter-spacing: 3px;
+}
+
+#sub:hover {
+  background-color: $blue; /* Add a dark-grey background on hover */
+}
+
+input {
+    display: block;
+    margin: 0;
+    }
+
 .wrapper-masthead {
   margin-bottom: 0px;
 }
@@ -185,8 +304,9 @@ img {
 .site-avatar {
   float: left;
   left: 0px;
-  top: 15px;
+  top: 10px;
   height: 60px;
+  width: 60px;
   margin-left: 30px;
   margin-top: 25px;
 
@@ -272,51 +392,88 @@ nav {
   }
 }
 
+.separator {
+    margin: 40px 0px;
+}
+
 //
 // .main
 //
 
 .grid-container {
-  background-color: #ffffff;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  /* define the number of grid columns */
+  grid-template-columns: repeat(2, minmax(650px, 1fr) );
+  margin: auto;
   position: relative;
   padding: 10px;
-  top: 150px;
+  top: 50px;
+  width: 1650px;
+  left: 20px;
 }
 
-.posts {
-  background-color: rgba(255, 255, 255,  1);
+.section {
+  background-color: #ffffff;
+  width: 1000px;
+  margin: auto;
+  padding: 50px;
+  justify-content: center;
+  top: 50px;
+  position: relative;
+
 }
 
-.posts > .post {
-  background-color: rgba(255, 255, 255,  1);
+.table-name {
+    text-align: center;
+    padding-bottom: 20px;
 }
 
-// border-bottom: 1px solid $lightGray;
-
-.posts > .post:last-child {
-  padding-bottom: 1em;
-  border-bottom: none;
+.box {
+    height: 260px;
 }
 
-.post {
+.chapter-table {
+    position: relative;
+    left: 0px;
+
+    ol {
+        line-height: 60px;
+    }
+}
+
+.chapter-table .box {
+    width: 800px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    justify-content: center;
+}
+
+#sum_post {
+  background-color: #ffffff;
+  width: 750px;
+  padding: 20px;
   blockquote {
     margin: 20px;
     border-left: 2px solid $gray;
-    padding: 0.1em 1em;
+    padding: 10px;
     color: $gray;
     font-size: 22px;
     font-style: italic;
   }
 
-  .comments {
-    margin-top: 10px;
+  .summary {
+    font-size: 16px;
+    text-align: center;
+    margin: 20px;
   }
 
   .read-more {
     text-transform: uppercase;
-    font-size: 15px;
+    position: inherit;
+    left: 15px;
+    bottom: 15px;
+    font-size: 14px;
     margin: 20px;
   }
 }
@@ -326,6 +483,61 @@ nav {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;
+}
+
+.comment_btn {
+    background-color: rgba(255, 255, 255,  0);
+    position: relative;
+    text-align: left;
+    left: 320px;
+    margin: 15px;
+    border: none;
+}
+
+.comment_txt {
+    text-transform: lowercase;
+}
+
+#addBtn {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  align: right;
+
+
+  right: 380px;
+  top: 120px;
+
+  width: 60px;
+  height: 60px;
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgba(255, 255, 255,  0); /* Set a background color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 0px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+
+}
+
+#myBtn {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  align: left;
+  left: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #092b44; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 0px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: $blue; /* Add a dark-grey background on hover */
 }
 
 footer {

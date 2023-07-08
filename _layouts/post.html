@@ -3,12 +3,38 @@ layout: default
 ---
 
 <article class="post">
-  <div class="sec" style="background-color: #ffffff; width: 1000px; margin: auto; padding: 50px; justify-content: center;">
+  <div class="section">
     <h1>{{ page.title }}</h1>
+
+    <div class="box">
+      <p>{{ page.start }}</p>
+    </div>
+
+    <img src="/images/separator.png" class="separator">
+
+        <div class="chapter-table">
+          <div class="table-name"><h2>Table of Content</h2></div>
+          <ol>
+            {% for chapter in page.chapters %}
+              <li><a href="#{{ chapter }}">{{ chapter }}</a></li>
+            {% endfor %}
+          </ol>
+        </div>
+
 
     <div class="entry">
       {{ content }}
     </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <button onclick="addFunction()" id="addBtn" title="Add a comment" class="plus">
+
+      <img src="/images/plus_dark.png"
+         onmouseover="this.src='/images/plus_light.png';"
+         onmouseout="this.src='/images/plus_dark.png';"
+         style="width:60px;height:60px;" >
+    </button>
 
     <div class="date">
       Written on {{ page.date | date: "%B %e, %Y" }}
@@ -16,4 +42,23 @@ layout: default
 
     {% include disqus.html %}
   </div>
+
+  <div class="comment_col" id="comment_section" style="font-family: 'note_font'; font-size: '58px'; "></div>
+
+  <div class="box_comment" id="comment_box">
+
+    <div class="comment_sec" id="notepad">
+      <form>
+        <label for="fname" id="l_fname">Name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+
+        <label for="quest" id="l_quest">Comment:</label>
+        <textarea id="quest" name="quest"></textarea>
+
+        <button type="button" onclick="CreateTextFile();" id="sub">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
 </article>
+
