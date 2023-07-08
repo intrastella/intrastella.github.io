@@ -412,6 +412,9 @@ nav {
   left: 20px;
 }
 
+#sum_post { transition: all .2s ease-in-out; }
+#sum_post:hover { transform: scale(1.1); }
+
 .section {
   background-color: #ffffff;
   width: 1000px;
@@ -475,7 +478,14 @@ nav {
     bottom: 15px;
     font-size: 14px;
     margin: 20px;
+    font-weight: bold;
   }
+}
+
+.footer {
+    position: relative;
+    alin: left;
+    top: 10px;
 }
 
 .wrapper-footer {

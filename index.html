@@ -9,12 +9,12 @@ layout: default
         <article class="post" id="sum_post">
 
           <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
-
+          <p>_________________________________________________________________</p>
           <div class="summary">
             <p>{{ post.intro }}</p>
           </div>
 
-          <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+          <div class="footer"><a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a></div>
         </article>
       {% endfor %}
     </div>

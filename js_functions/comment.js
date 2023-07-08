@@ -50,7 +50,7 @@ function CreateTextFile() {
          comment.appendChild(txt);
 
          makeVisible();
-
+         sendJ();
       }
 
 
@@ -72,3 +72,81 @@ function makeVisible() {
     }
 
 }
+
+function sendJ() {
+    var new_dict = {"one" : [15, 4.5],
+            "two" : [34, 3.3],
+            "three" : [67, 5.0],
+            "four" : [32, 4.1]};
+
+    fetch('http://127.0.0.1:4000/comments/2023-7-6-VAE.json', {
+      method: 'POST',
+      headers: {
+          'Content-Type':'application/json'
+      }
+      body: JSON.stringify(new_dict)
+      })
+      .then(res => res.json())
+      .then(json => alert(json))
+}
+
+function postData(input) {
+    $.ajax({
+        type: "POST",
+        url: "/pca.py",
+        data: { param: input },
+        success: callbackFunc
+    });
+}
+
+function callbackFunc(response) {
+    // do something with the response
+    alert(response);
+}
+
+postData('data to process');
+
+
+function writeJson() {
+
+    var response = [{ color: "#8B0000",  data: [{ "y":  12000,  "x":  0}],  pointRange: 8,  type: "column",  name: "Segment1"}, { color: "#FFA500",  data: [{ "y":  11000,  "x":  10}],  pointRange: 12,  type: "column",  name: "Segment2"}, { color: "#11ddbb",  data: [{ "y":  10000,  "x":  19}],  pointRange: 6,  type: "column",  name: "Segment3"}, { color: "#8B0000",  data: [{ "y":  8000,  "x":  24}],  pointRange: 5,  type: "column",  name: "Segment4"}];
+    var jsonString = JSON.stringify(response);
+    var jsonObject = JSON.parse(response);
+
+    var new_dict = {"one" : [15, 4.5],
+            "two" : [34, 3.3],
+            "three" : [67, 5.0],
+            "four" : [32, 4.1]};
+
+    var fs = require('fs')
+
+    fs.readFile('/home/stella/json_data.json', function (err, data) {
+        var json = JSON.parse(data)
+        json.push(new_dict)
+        fs.writeFile('/home/stella/json_data.json', JSON.stringify(json))
+    })
+}
+
+function openJson() {
+
+    filepath = ''
+    const fs = require('fs');
+    fs.readFile(filepath)
+}
+
+$(function() {
+
+
+   var people = [];
+
+   $.getJSON('people.json', function(data) {
+       $.each(data.person, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.firstName + "</td>" +
+           "<td>" + f.lastName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+

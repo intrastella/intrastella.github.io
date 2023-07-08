@@ -155,6 +155,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-article", "--article_name", required=True)
     parser.add_argument("-t", "--task", default='create', const='create', choices=['add', 'create', 'del_c', 'del_a', 'build'], required=True)
-    parser.add_argument("-dir", "--chapter_dir")
+    parser.add_argument("-c_dir", "--chapter_dir")
     args = parser.parse_args()
     main(**vars(args))
