@@ -401,6 +401,18 @@ nav {
 // .main
 //
 
+.page {
+    position: relative;
+    background-color: white;
+    align: center;
+    padding: 50px;
+    top: 100px;
+    width: 1500px;
+    justify-content: center;
+    margin: auto;
+
+}
+
 .grid-container {
   display: grid;
   /* define the number of grid columns */

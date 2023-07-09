@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+_____________________________________________________________________________________________________________________________________
 
-### More Information
+As a mathematics student and programmer I enjoy learning new concepts in mathematics, visualize them and see how they can be applied in computer science. 
+The purpose of this blog is to summarize some of these concepts and make them more understandable or show a different perspective on them. 
 
-A place to include any other types of information that you'd like to include about yourself.
+<br/>My main interests are topology, complex analysis, differential geometry, non-linear optimization, statistics and machine learning.
+If you have any suggestion about a topic you want me to explain in an article then just send me a mail. 
 
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+<br/> To help my blog grow I would appreciate if you share my posts. 
