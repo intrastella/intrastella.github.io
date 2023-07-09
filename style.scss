@@ -215,19 +215,20 @@ input[type=text]:focus, textarea:focus {
 
 .box_comment {
     width: 370px;
-    position: absolute;
-    top: 200px;
+    position: relative;
+    top: 100px;
     align: right;
     right: 50px;
     z-order: 99;
 }
 
 .comment_col {
+    z-order: 1;
     position: absolute;
-    top: 180px;
-    align: left;
-    left: 25px;
-    width: 400px;
+    top: 0px;
+    left: -460px;
+    width: 500px;
+    height: 100%;
 }
 
 .comment_txt {
@@ -473,8 +474,8 @@ nav {
 
   .read-more {
     text-transform: uppercase;
-    position: inherit;
-    left: 15px;
+    position: relative;
+    left: 550px;
     bottom: 15px;
     font-size: 14px;
     margin: 20px;
