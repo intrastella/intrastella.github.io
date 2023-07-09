@@ -84,6 +84,11 @@ h3 {
   color: #8f716f;
 }
 
+h6 {
+    font-size: 24px;
+    color: rgba(1, 54, 81, 0.7);
+}
+
 h4 {
   font-size: 28px;
   text-align: center;
@@ -493,6 +498,12 @@ nav {
     margin: 20px;
     font-weight: bold;
   }
+}
+
+.center_content {
+    position: relative;
+    text-align: center;
+    margin: auto;
 }
 
 .wrapper-footer {
