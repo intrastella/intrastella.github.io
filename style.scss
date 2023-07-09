@@ -406,7 +406,7 @@ nav {
     background-color: white;
     align: center;
     padding: 50px;
-    top: 100px;
+    top: 50px;
     width: 1500px;
     justify-content: center;
     margin: auto;
@@ -495,17 +495,15 @@ nav {
   }
 }
 
-.footer {
-    position: relative;
-    alin: left;
-    top: 10px;
-}
-
 .wrapper-footer {
-  margin-top: 50px;
+  margin: auto;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;
+  position: relative;
+  top: 0px;
+  text-align: center;
+  background-color: white;
 }
 
 .comment_btn {
@@ -561,13 +559,6 @@ nav {
 
 #myBtn:hover {
   background-color: $blue; /* Add a dark-grey background on hover */
-}
-
-footer {
-  padding: 20px 20px;
-  float: right;
-  position: fixed;
-  bottom: 10px;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
