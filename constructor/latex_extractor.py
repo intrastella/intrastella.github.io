@@ -117,6 +117,17 @@ def crop_img(img):
     return img[top + 5: bottom, left + 5: right, :]
 
 
+def paste_layer(article, file):
+    p = Path(__file__).parent
+    img_path = f'{p.parent}/images/{article}/{file}' + '.png'
+
+    pil_image = Image.open(img_path).convert('RGB')
+    pil_image = get_background(pil_image, 255, 255, 255)
+    pil_image.save(img_path, quality=100)
+
+    # pil_image.save(f'{p.parent}/images/2023-7-6-VAE/test' + '.png', quality=100)
+
+
 def get_background(img, r: int, g: int, b: int):
     R_C = np.full((img.size[1], img.size[0]), r, dtype=np.uint8)
     G_C = np.full((img.size[1], img.size[0]), g, dtype=np.uint8)
@@ -128,7 +139,7 @@ def get_background(img, r: int, g: int, b: int):
 
     cover_img = np.concatenate((R_C, G_C, B_C), axis=2)
     cover_img = Image.fromarray(cover_img)
-    cover_img.putalpha(5)
+    cover_img.putalpha(60)
 
     img.paste(cover_img, (0, 0), cover_img)
     return img
@@ -137,6 +148,8 @@ def get_background(img, r: int, g: int, b: int):
 if __name__ == "__main__":
     for i in range(1, 14):
         if i != 3:
-            main('2023-7-6-VAE', f'eq{i}')
+            paste_layer('2023-7-6-VAE', f'eq{i}')
+
+    # paste_layer('2023-7-6-VAE', f'eq1')
 
 

@@ -12,6 +12,7 @@
 
     <script type="text/javascript" src="/js_functions/comment.js"></script>
     <script type="text/javascript" src="/js_functions/notepad.js"></script>
+    <script type="text/javascript" src="/js_functions/set_highs.js"></script>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
@@ -61,7 +62,7 @@
     </style>
   </head>
 
-  <body>
+  <body onload="set_high();">
 
     <div class="wrapper-masthead">
       <div class="navbar">
@@ -87,5 +88,7 @@
     </div>
 
     {% include analytics.html %}
+
   </body>
+
 </html>
