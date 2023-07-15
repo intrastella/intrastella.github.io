@@ -85,7 +85,7 @@ function find_bold(parent, txt) {
             // create bold_text
             var bold_span = document.createElement('span');
             bold_span.textContent = bold_text;
-            bold_span.style.color = '#0b3e63'; //  choice : e97977 , orange: fea11d , gray 6f6261, light red : b48d8c , light orange: f1c17d
+            bold_span.style.color = '#b48d8c'; //  choice : e97977 , orange: fea11d , gray 6f6261, light red : b48d8c , light orange: f1c17d
             bold_span.style.fontWeight = "900";
             parent.appendChild(bold_span);
 
@@ -107,7 +107,7 @@ function find_color(parent, txt) {
             // create color_text
             var color_span = document.createElement('span');
             color_span.textContent = color_text;
-            color_span.style.color = '#b48d8c'; // dark blue : 0b3e63
+            color_span.style.color = '#5dbde4'; // dark blue : 0b3e63
             parent.appendChild(color_span);
 
             return txt.substring(indexOfColorEnd + 3, txt.length);

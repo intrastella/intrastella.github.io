@@ -2,7 +2,7 @@ import pypdfium2 as pdfium
 from PIL import Image
 from pathlib import Path
 import numpy as np
-import copy as c
+import fitz
 
 
 def main(article, file):
@@ -10,7 +10,7 @@ def main(article, file):
     in_path = f'{p}/_latex_pdf/{article}/{file}.pdf'
     out_path = f'{p.parent}/images/{article}/{file}' + '.png'
 
-    import fitz
+    # out_path = f'{p.parent}/images/{article}/test9' + '.png'
 
     doc = fitz.open(in_path)
     page = doc.load_page(0)
@@ -47,9 +47,6 @@ def get_final_img(img_path):
     img = crop_img(pil_image)
     pil_image = Image.fromarray(img)
 
-    # pil_image = get_background(pil_image, 74, 5, 7)
-    # 51, 19, 19
-
     width, height = pil_image.size
 
     if width != 900:
@@ -60,6 +57,92 @@ def get_final_img(img_path):
     pil_image.save(img_path, quality=100)
     pil_image = Image.open(img_path).convert('RGB')
 
+    # Last_image = get_thick_boundary(pil_image)
+    Last_image = get_nice_boundary(pil_image)
+
+    Last_image.save(img_path, quality=100)
+
+
+def get_nice_boundary(pil_image):
+    width, height = pil_image.size
+
+    # image = Image.new('RGBA', size=(width + 30, height + 30), color=(255, 255, 255))
+
+    back_img = create_nice_boundary(width + 30, height + 30)
+    back_img.paste(pil_image, (15, 15))
+
+    return back_img
+
+
+def create_nice_boundary(width, height):
+    R_C = np.full((height, width), 255, dtype=np.uint8)
+    G_C = np.full((height, width), 255, dtype=np.uint8)
+    B_C = np.full((height, width), 255, dtype=np.uint8)
+
+    for channel in [R_C, G_C, B_C]:
+        for i in range(5, 150):
+            for j in range(5, 7):
+                channel[i][j] = 98
+                channel[height - i][width - j] = 98
+
+                """channel[height - i][j] = 98
+                channel[i][width - j] = 98"""
+
+        for i in range(5, 7):
+            for j in range(5, 40):
+                channel[i][j] = 98
+                channel[height - i][width - j] = 98
+
+                """channel[i][width - j] = 98
+                channel[height - i][j] = 98"""
+
+    R_C = np.expand_dims(R_C, axis=2)
+    G_C = np.expand_dims(G_C, axis=2)
+    B_C = np.expand_dims(B_C, axis=2)
+
+    back_img = np.concatenate((R_C, G_C, B_C), axis=2)
+    return Image.fromarray(back_img)
+
+
+def create_doubled_nice_boundary(width, height):
+    R_C = np.full((height, width), 255, dtype=np.uint8)
+    G_C = np.full((height, width), 255, dtype=np.uint8)
+    B_C = np.full((height, width), 255, dtype=np.uint8)
+
+    for channel in [R_C, G_C, B_C]:
+        for i in range(5, height - 5):
+            for j in range(5, 7):
+                channel[i][j] = 98
+                channel[height - i][width - j] = 98
+
+                if j == 5:
+                    channel[i][4 + j] = 98
+                    channel[height - i][width - (4 + j)] = 98
+
+        for i in range(5, 7):
+            for j in range(5, 40):
+                channel[i][j] = 98
+                channel[height - i][width - j] = 98
+
+                channel[i][width - j] = 98
+                channel[height - i][j] = 98
+
+                if i == 5:
+                    channel[4 + i][j] = 98
+                    channel[height - (4 + i)][width - j] = 98
+
+                    channel[4 + i][width - j] = 98
+                    channel[height - (4 + i)][j] = 98
+
+    R_C = np.expand_dims(R_C, axis=2)
+    G_C = np.expand_dims(G_C, axis=2)
+    B_C = np.expand_dims(B_C, axis=2)
+
+    back_img = np.concatenate((R_C, G_C, B_C), axis=2)
+    return Image.fromarray(back_img)
+
+
+def get_thick_boundary(pil_image):
     width, height = pil_image.size
 
     Last_image = Image.new('RGBA', size=(width + 2, height + 2), color=(137, 145, 156))
@@ -75,12 +158,7 @@ def get_final_img(img_path):
     Last_image = Image.new('RGBA', size=(width + 4, height + 4), color=(137, 145, 156))
     Last_image.paste(image, (2, 2))
 
-    Last_image.show()
-
-    """p = Path(__file__).parent
-    out_path = f'{p.parent}/images/2023-7-6-VAE/test' + '.png'"""
-
-    Last_image.save(img_path, quality=100)
+    return Last_image
 
 
 def get_lower_bound(img):
@@ -111,10 +189,10 @@ def crop_img(img):
     crop_height, crop_width = get_lower_bound(img)
     top, left = get_upper_bound(img)
 
-    bottom = crop_height - 5
-    right = crop_width - 5
+    bottom = crop_height - 10
+    right = crop_width - 10
 
-    return img[top + 5: bottom, left + 5: right, :]
+    return img[top + 10: bottom, left + 10: right, :]
 
 
 def paste_layer(article, file):
@@ -147,9 +225,9 @@ def get_background(img, r: int, g: int, b: int):
 
 if __name__ == "__main__":
     for i in range(1, 14):
-        if i != 3:
-            paste_layer('2023-7-6-VAE', f'eq{i}')
+            if i != 3:
+                main('2023-7-6-VAE', f'eq{i}')
+                paste_layer('2023-7-6-VAE', f'eq{i}')
 
-    # paste_layer('2023-7-6-VAE', f'eq1')
-
-
+    # main('2023-7-6-VAE', f'eq9')
+    # paste_layer('2023-7-6-VAE', f'test9')
