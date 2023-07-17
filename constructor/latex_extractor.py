@@ -15,9 +15,9 @@ def main(article, file):
     doc = fitz.open(in_path)
     page = doc.load_page(0)
 
-    zoom = 2
+    zoom = 1
     mat = fitz.Matrix(zoom, zoom)
-    pix = page.get_pixmap(matrix=mat, dpi=600)
+    pix = page.get_pixmap(matrix=mat, dpi=300)
 
     pix.save(out_path)
 
@@ -47,29 +47,37 @@ def get_final_img(img_path):
     img = crop_img(pil_image)
     pil_image = Image.fromarray(img)
 
+    pil_image.save(img_path, quality=100)
+    pil_image = Image.open(img_path).convert('RGB')
+
     width, height = pil_image.size
 
+    print(width, height)
+
+    if width != 1100:
+        scale = width / 1100
+        new_size = (1100, int(height / scale))
+        pil_image = pil_image.resize(new_size)
+
+    pil_image = get_nice_boundary(pil_image)
+
     if width != 900:
-        scale = width/900
+        scale = width / 900
         new_size = (900, int(height / scale))
         pil_image = pil_image.resize(new_size)
 
     pil_image.save(img_path, quality=100)
-    pil_image = Image.open(img_path).convert('RGB')
-
-    # Last_image = get_thick_boundary(pil_image)
-    Last_image = get_nice_boundary(pil_image)
-
-    Last_image.save(img_path, quality=100)
 
 
 def get_nice_boundary(pil_image):
     width, height = pil_image.size
 
+    print(width, height)
+
     # image = Image.new('RGBA', size=(width + 30, height + 30), color=(255, 255, 255))
 
-    back_img = create_nice_boundary(width + 30, height + 30)
-    back_img.paste(pil_image, (15, 15))
+    back_img = create_nice_boundary(width + 150, height + 150)
+    back_img.paste(pil_image, (75, 75))
 
     return back_img
 
@@ -79,22 +87,27 @@ def create_nice_boundary(width, height):
     G_C = np.full((height, width), 255, dtype=np.uint8)
     B_C = np.full((height, width), 255, dtype=np.uint8)
 
-    for channel in [R_C, G_C, B_C]:
+    bound = 22
+
+    for channel, c in zip([R_C, G_C, B_C], [192, 180, 180]):
+
+        for i in range(bound, height - bound - 1):
+            channel[i][bound] = c
+            channel[i][width - bound] = c
+
+        for j in range(bound, width - bound - 1):
+            channel[bound][j] = c
+            channel[height - bound][j] = c
+
         for i in range(5, 150):
             for j in range(5, 7):
                 channel[i][j] = 98
                 channel[height - i][width - j] = 98
 
-                """channel[height - i][j] = 98
-                channel[i][width - j] = 98"""
-
         for i in range(5, 7):
             for j in range(5, 40):
                 channel[i][j] = 98
                 channel[height - i][width - j] = 98
-
-                """channel[i][width - j] = 98
-                channel[height - i][j] = 98"""
 
     R_C = np.expand_dims(R_C, axis=2)
     G_C = np.expand_dims(G_C, axis=2)
@@ -189,10 +202,10 @@ def crop_img(img):
     crop_height, crop_width = get_lower_bound(img)
     top, left = get_upper_bound(img)
 
-    bottom = crop_height - 10
-    right = crop_width - 10
+    bottom = crop_height - 15
+    right = crop_width - 15
 
-    return img[top + 10: bottom, left + 10: right, :]
+    return img[top + 15: bottom, left + 15: right, :]
 
 
 def paste_layer(article, file):
@@ -224,10 +237,10 @@ def get_background(img, r: int, g: int, b: int):
 
 
 if __name__ == "__main__":
-    for i in range(1, 14):
+    """for i in range(1, 14):
             if i != 3:
                 main('2023-7-6-VAE', f'eq{i}')
-                paste_layer('2023-7-6-VAE', f'eq{i}')
+                paste_layer('2023-7-6-VAE', f'eq{i}')"""
 
-    # main('2023-7-6-VAE', f'eq9')
-    # paste_layer('2023-7-6-VAE', f'test9')
+    main('2023-7-6-VAE', f'eq15')
+    paste_layer('2023-7-6-VAE', f'eq15')
