@@ -42,6 +42,11 @@ figcaption {
     font-size: 16px;
 }
 
+@media print {
+  img {
+    image-resolution: 300dpi;
+  }
+}
 
 
 h1, h2, h3, h4, h6 {
