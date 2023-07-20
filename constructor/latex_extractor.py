@@ -52,9 +52,9 @@ def get_final_img(img_path):
 
     width, height = pil_image.size
 
-    if width != 1100:
-        scale = width / 1100
-        new_size = (1100, int(height / scale))
+    if width != 1600:
+        scale = width / 1600
+        new_size = (1600, int(height / scale))
         pil_image = pil_image.resize(new_size)
 
     pil_image = get_nice_boundary(pil_image)
@@ -64,9 +64,9 @@ def get_final_img(img_path):
     print(width)
     # 900
 
-    if width != 900:
-        scale = width / 900
-        new_size = (900, int(height / (scale * 1.05)))
+    if width != 1600:
+        scale = width / 1600
+        new_size = (1600, int(height / (scale * 1.05)))
         pil_image = pil_image.resize(new_size)
 
     pil_image.save(img_path, quality=300)
@@ -88,7 +88,7 @@ def resize(img_path):
 def get_nice_boundary(pil_image):
     width, height = pil_image.size
 
-    back_img = create_nice_boundary(width + 150, height + 150) # 150
+    back_img = create_nice_boundary(width + 150, height + 150) # 150 , 50 for small
     back_img.paste(pil_image, (75, 75))
 
     return back_img
@@ -253,10 +253,10 @@ if __name__ == "__main__":
     img_path = f'{p.parent}/images/2023-7-6-VAE/feat_ex.png'
     resize(img_path)'''
 
-    """for i in range(10, 14):
+    for i in range(16, 27):
             if i != 3:
                 main('2023-7-6-VAE', f'eq{i}')
-                paste_layer('2023-7-6-VAE', f'eq{i}')"""
+                paste_layer('2023-7-6-VAE', f'eq{i}')
 
-    main('2023-7-6-VAE', f'eq26')
-    paste_layer('2023-7-6-VAE', f'eq26')
+    # main('2023-7-6-VAE', f'eq15')
+    # paste_layer('2023-7-6-VAE', f'eq15')
