@@ -253,10 +253,10 @@ if __name__ == "__main__":
     img_path = f'{p.parent}/images/2023-7-6-VAE/feat_ex.png'
     resize(img_path)'''
 
-    for i in range(16, 27):
+    '''for i in range(16, 27):
             if i != 3:
                 main('2023-7-6-VAE', f'eq{i}')
-                paste_layer('2023-7-6-VAE', f'eq{i}')
+                paste_layer('2023-7-6-VAE', f'eq{i}')'''
 
-    # main('2023-7-6-VAE', f'eq15')
-    # paste_layer('2023-7-6-VAE', f'eq15')
+    main('2023-7-6-VAE', f'eq0')
+    paste_layer('2023-7-6-VAE', f'eq0')
