@@ -49,6 +49,13 @@ figcaption {
 }
 
 
+@media only screen and (max-width: 980px) {
+html, body {
+  display: none;
+ }
+}
+
+
 h1, h2, h3, h4, h6 {
   font-family: $lmodern;
   line-height: 1.7;
