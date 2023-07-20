@@ -258,5 +258,5 @@ if __name__ == "__main__":
                 main('2023-7-6-VAE', f'eq{i}')
                 paste_layer('2023-7-6-VAE', f'eq{i}')"""
 
-    main('2023-7-6-VAE', f'eq20')
-    paste_layer('2023-7-6-VAE', f'eq20')
+    main('2023-7-6-VAE', f'eq25')
+    paste_layer('2023-7-6-VAE', f'eq25')
