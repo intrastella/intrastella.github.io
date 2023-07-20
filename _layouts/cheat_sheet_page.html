@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<article class="page">
+
+    <h1>{{ page.title }}</h1>
+
+    <div>
+        <p>
+            "HELLO!"
+        </p>
+    </div>
+
+    <div class="entry">
+      {{ content }}
+    </div>
+
+    <div class="Comment_section">
+        <script src="https://utteranc.es/client.js"
+        repo="intrastella/intrastella.github.io"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+        </script>
+    </div>
+
+    <div class="wrapper-footer">
+        <footer class="footer">
+          {% include svg-icons.html %}
+        </footer>
+    </div>
+
+</article>
