@@ -49,6 +49,10 @@ figcaption {
 }
 
 
+.mobileView {
+    display: none;
+}
+
 @media only screen and (max-width: 980px) {
 html, body {
   display: none;
@@ -440,6 +444,110 @@ nav {
   top: 50px;
   width: 1650px;
   left: 20px;
+}
+
+.Comment_section {
+    padding-top: 50px;
+    position: relative;
+    top: 200px;
+    border-top: 1px solid #ddd;
+}
+
+.subject_page {
+    vertical-align: middle;
+    margin: auto;
+}
+
+.subject-container {
+  display: grid;
+  grid-template-rows: 400px 300px 1fr;
+  grid-template-columns: auto auto auto auto;
+  margin: auto;
+  position: relative;
+  padding: 10px;
+  top: 20px;
+  width: 1600px;
+  padding-bottom: 100px;
+}
+
+.subject{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 5s ease-in-out;
+
+    background: rgba(9, 43, 68, 0.7);
+    transition-property: background;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+
+    :hover {
+        font-weight: 400;
+        font-size: 35px;
+    }
+
+    p, a {
+        color: #ffffff;
+        text-align: center;
+        vertical-align: middle;
+        text-transform: uppercase;
+
+        font-weight: 400;
+        font-size: 25px;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-delay: 0s, 1s;
+        transition-timing-function: linear, ease-out;
+
+        -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+           -moz-animation: fadein 1s; /* Firefox < 16 */
+            -ms-animation: fadein 1s; /* Internet Explorer */
+             -o-animation: fadein 1s; /* Opera < 12.1 */
+                animation: fadein 1s;
+    }
+}
+
+.border_sec {
+    border: 1px solid #ddd;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@keyframes fadein {
+    from { font-size: 5px; }
+    to   { font-size: 25px; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { font-size: 5px; }
+    to   { font-size: 25px; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { font-size: 5px; }
+    to   { font-size: 25px; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { font-size: 5px; }
+    to   { font-size: 25px; }
+}
+
+.subject:hover {
+  background: rgba(87, 32, 29, 0.8);
+  transform: scale(1.1);
 }
 
 #sum_post { transition: all .2s ease-in-out; }

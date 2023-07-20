@@ -1,33 +1,11 @@
-The usual method to find the best parameters for these densities is finding the minimizer of the Maximum Likelihood function.
-
-1. likelihood function of the random sample L(theta) = prod(f(x;theta)) without condition
-2. maximum likelihood estimator (mle) = maximizer
-
-As taking a product of some numbers less than 1 would approaching 0 as the number of those numbers goes to infinity,
-it would be not practical to compute, because of computation underflow. Hence, we will instead work in the log space,
-as logarithm is monotonically increasing
-
-3. equivalent to minimizing negative log likelihood
-4. or minimizing KL divergence and then the cross entropy (more about that later)
-
-$$ {\displaystyle {\widehat {\ell \,}}(\theta \,;x)={\frac {1}{n}}\sum _{i=1}^{n}\ln f(x_{i}\mid \theta ),} $$
-
-<br/>
-
-![_config.yml]({{ site.baseurl }}/images/2023-7-6-VAE/eq7.png)
-
-<br/>
 
 
-
-<br/>
-
-![_config.yml]({{ site.baseurl }}/images/2023-7-6-VAE/eq8.png)
-
-<br/>
-
-Both models learn the parameters via an update algorithm that searches a minimizer of a chosen objective, i.e. loss function.
-A typical objective would be Maximum A Posterior or Maximum Likelihood function to infer the best parameter for our model.
-A VAE uses a uniquely defined objective. In the next chapters I will introduce their proposed loss function.
-
-<br/>
+<div class="Comment_section">
+        <script src="https://utteranc.es/client.js"
+        repo="intrastella/intrastella.github.io"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+        </script>
+    </div>
