@@ -8,5 +8,6 @@ start: GAN inversion plays a pivotal part in parameter manipulations such as in 
 
 ---
 
-### UP NEXT : 01.07.2023
+
+### <center>PUBLISHING DAY : 01.08.2023</center>
 
