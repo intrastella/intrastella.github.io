@@ -26,3 +26,20 @@ transition-property: font-size;
 
                 <p class="txt_back1">Linear</p>
                 <p class="txt_back2"><br/>Algebra</p>
+
+
+.site-name {
+  font-color: #092b44;
+  margin: 0;
+  position: relative;
+  top: 20px;
+  left: 40px;
+  color: $darkGray;
+  cursor: pointer;
+  font-family: $helveticaNeue;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 0.1px;
+}
+
+<p class="site-description">{{ site.description }}</p>

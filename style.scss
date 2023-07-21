@@ -326,11 +326,11 @@ input {
 .site-avatar {
   float: left;
   left: 0px;
-  top: 10px;
-  height: 60px;
-  width: 60px;
-  margin-left: 30px;
-  margin-top: 25px;
+  top: 0px;
+  height: 90px;
+  width: 90px;
+  margin-left: 5px;
+  margin-top: 5px;
 
   @include mobile {
     float: none;
@@ -356,9 +356,7 @@ input {
 .site-name {
   font-color: #092b44;
   margin: 0;
-  position: relative;
-  top: 20px;
-  left: 40px;
+  position: absolute;
   color: $darkGray;
   cursor: pointer;
   font-family: $helveticaNeue;
@@ -383,7 +381,6 @@ input {
 nav {
   float: right;
   font-family: $helveticaNeue;
-  font-size: 18px;
 
   @include mobile {
     float: none;
@@ -402,10 +399,10 @@ nav {
     right: 40px;
     color: $darkGray;
     text-align: right;
-    font-size: 20px;
-    font-weight: bold;
-    color: #8f716f;
-    letter-spacing: 1px;
+    font-size: 25px;
+    font-weight: 900;
+    color: rgba(87, 32, 29, 0.8);
+    letter-spacing: 0.7px;
 
     @include mobile {
       margin: 0 10px;
