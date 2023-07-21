@@ -472,51 +472,91 @@ nav {
 
 .subject{
     position: relative;
+    border: 1px solid rgba(9, 43, 68, 0.7);
     width: 350px;
     height: 350px;
     margin: 20px;
     display: flex;
+    vertical-align: middle;
     justify-content: center;
     align-items: center;
 
-    transition: all 5s ease-in-out;
-
-    background: rgba(9, 43, 68, 0.7);
+    background: rgba(9, 43, 68, 0.6);
     transition-property: background;
     transition-duration: 1s;
     transition-timing-function: linear;
 
-    :hover {
-        font-weight: 400;
-        font-size: 35px;
-    }
 
-    p, a {
-        color: #ffffff;
-        text-align: center;
-        vertical-align: middle;
+    p { color: rgba(0, 0, 0, 0.5);
         text-transform: uppercase;
-
-        font-weight: 400;
-        font-size: 25px;
-        transition-property: font-size;
-        transition-duration: 0.5s;
-        transition-delay: 0s, 1s;
-        transition-timing-function: linear, ease-out;
-
-        -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-           -moz-animation: fadein 1s; /* Firefox < 16 */
-            -ms-animation: fadein 1s; /* Internet Explorer */
-             -o-animation: fadein 1s; /* Opera < 12.1 */
-                animation: fadein 1s;
     }
 }
 
+#lina {
+    background-image: url("./images/lina1.png");
+    background-size: 350px;
+}
+
+#ana {
+    background-image: url("./images/ana.png");
+    background-size: 350px;
+}
+
+#alge {
+    background-image: url("./images/alge.png");
+    background-size: 350px;
+}
+
+#algeo {
+    background-image: url("./images/algeo.png");
+    background-size: 350px;
+}
+
+.txt_back1, .txt_back2 {
+     position: absolute;
+     line-height: 0.5;
+     font-weight: 900;
+     font-size: 85px;
+     text-overflow: hidden;
+}
+
+.txt_back1 {
+     left: 25px;
+}
+
+.txt_back2 {
+     right: 25px;
+}
+
+.txt_subject0, .txt_subject1, .txt_subject2 {
+     position: relative;
+     font-weight: 400;
+     line-height: 1.7;
+     font-size: 25px;
+     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 1s; /* Firefox < 16 */
+         -ms-animation: fadein 1s; /* Internet Explorer */
+          -o-animation: fadein 1s; /* Opera < 12.1 */
+             animation: fadein 1s;
+}
+
+.txt_subject1 {
+     position: relative;
+     left: 25px;
+}
+
+.txt_subject2 {
+     position: relative;
+     right: 25px;
+}
+
 .border_sec {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.5);
     width: 280px;
     height: 280px;
+    position: relative;
     display: flex;
+    vertical-align: middle;
     justify-content: center;
     align-items: center;
 }
@@ -546,7 +586,7 @@ nav {
 }
 
 .subject:hover {
-  background: rgba(87, 32, 29, 0.8);
+  background: rgba(87, 32, 29, 0.7);
   transform: scale(1.1);
 }
 
