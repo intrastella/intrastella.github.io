@@ -6,8 +6,7 @@ function set_slider() {
     // var screen_width = window.innerWidth;
     // var h = window.innerHeight;
     
-    // let screen_width = $(window).width();
-    var screen_width = 1900;
+    var screen_width = $(window).width();
     const center = screen_width * 0.5;
 
     const width_slide = 850;
