@@ -1,9 +1,7 @@
 
 function set_slider() {
 
-    alert("Function is being called");
-
-    // var screen_width = window.innerWidth;
+    var innerwidth = window.innerWidth;
     // var h = window.innerHeight;
     
     var screen_width = $(window).width();
@@ -13,7 +11,8 @@ function set_slider() {
     const start = center - (1.5 * width_slide);
     const post2 = start + width_slide;
 
-    alert("post params");
+    alert("innerwidth");
+    alert("screen_width");
 
 
         
