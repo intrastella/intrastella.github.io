@@ -18,11 +18,6 @@ function set_slider() {
      // Select all slides
     const slides = document.querySelectorAll(".slide");
     alert("slides");
-    const post_cards = document.querySelectorAll(".post_card");
-    alert("post card");
-    const post_title = document.querySelectorAll(".post_title");
-
-    alert("start with setup carousel");
 
 
 };
