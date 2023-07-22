@@ -16,9 +16,4 @@ function set_slider() {
     alert("screen_width");
 
 
-     // Select all slides
-    const slides = document.querySelectorAll(".slide");
-    alert("slides");
-
-
 };
