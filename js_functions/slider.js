@@ -16,6 +16,8 @@ function set_slider() {
     const post_cards = document.querySelectorAll(".post_card");
     const post_title = document.querySelectorAll(".post_title");
 
+    alert(slides.length)
+
 
     // loop through slides and set each slides translateX property to index * 100%
     slides.forEach((slide, idx) => {
