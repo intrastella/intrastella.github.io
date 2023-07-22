@@ -1,7 +1,7 @@
 
 function set_slider() {
 
-    alert("Function is being called")
+    alert("Function is being called");
 
     // $(window).height();
     // post = margin + post_width + margin
@@ -9,8 +9,8 @@ function set_slider() {
     const center = screen_width * 0.5;
 
     const width_slide = 850;
-    const start = center - (1.5 * width_slide)
-    const post2 = start + width_slide
+    const start = center - (1.5 * width_slide);
+    const post2 = start + width_slide;
 
 
         // Select all slides
@@ -18,7 +18,7 @@ function set_slider() {
     const post_cards = document.querySelectorAll(".post_card");
     const post_title = document.querySelectorAll(".post_title");
 
-    alert(slides.length)
+    alert(slides.length);
 
 
     // loop through slides and set each slides translateX property to index * 100%
