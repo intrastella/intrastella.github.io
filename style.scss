@@ -450,11 +450,11 @@ nav {
     border-top: 1px solid #ddd;
 }
 
-.intro_space {
+#intro_space {
 
     position: relative;
     top: 190px;
-    left: 4%;
+    left: 50px;
     font-size: 30px;
     font-family: 'note_font';
     color: #57201d;
@@ -470,14 +470,14 @@ nav {
 
 .left {
         position: absolute;
-        left: 0%;
-        top: 0%;
+        left: 0px;
+        top: 0px;
     }
 
 .intro_txt {
 
     position: absolute;
-    left: 5%;
+    left: 95px;
     top: 40px;
 
 }

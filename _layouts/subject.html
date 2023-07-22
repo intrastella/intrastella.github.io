@@ -13,6 +13,17 @@
     <script type="text/javascript" src="/js_functions/comment.js"></script>
     <script type="text/javascript" src="/js_functions/notepad.js"></script>
     <script type="text/javascript" src="/js_functions/set_highs.js"></script>
+    <script type="text/javascript" src="/js_functions/resize_subject.js"></script>
+
+    <script type="text/javascript">
+
+        function start(){
+          set_high();
+          new_pos();
+      }
+
+
+    </script>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
@@ -51,7 +62,7 @@
     </style>
   </head>
 
-  <body onload="set_high();">
+  <body onload="start();">
 
     <div class="wrapper-masthead">
       <div class="navbar">
@@ -72,19 +83,19 @@
       </div>
     </div>
 
-    <article class="subject_page">
+    <article class="subject_page" id="subject_page">
 
-        <div class="intro_space">
+        <div id="intro_space">
             <img src="/images/left-quote.png" style="width: 80px; opacity: 0.7" class="left">
             <span class="intro_txt">This is a one line proof <br/>  ... if we start sufficiently far to the left. <br/><br/>
-                Markov does it in chains. <br><br/>
+                Markov does it in chains ... <br><br/>
                 Q: Why did the mathematician name his dog Cauchy? <br>
                     A: Because he left a residue at every pole. <br><br/>
             </span>
             <img src="/images/left-quote.png" style="width: 80px; opacity: 0.7" class="right">
         </div>
 
-        <div class="top_grid">
+        <div class="top_grid" id="top_grid">
 
             <div class="subject1" id="lina">
                     <a href="{{ site.baseurl }}/linear_algebra">
@@ -138,7 +149,7 @@
             </div>
         </div>
 
-        <div class="bottom_grid">
+        <div class="bottom_grid" id="bottom_grid">
 
             <div class="subject" id="topo">
                 <a href="{{ site.baseurl }}/topo">
