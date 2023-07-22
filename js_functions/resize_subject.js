@@ -83,6 +83,7 @@ function set_pos() {
 
         subject_page.style.height = "100vh";
         intro_space.style.left = "50px";
+        intro_space.style.top = "230px";
 
         top_grid.style.top = "110px";
         top_grid.style.left = "45%";
