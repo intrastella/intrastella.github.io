@@ -18,7 +18,7 @@ function set_slider() {
     const post_cards = document.querySelectorAll(".post_card");
     const post_title = document.querySelectorAll(".post_title");
 
-    alert(slides.length);
+    alert("start with setup carousel");
 
 
     // loop through slides and set each slides translateX property to index * 100%
