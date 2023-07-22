@@ -5,6 +5,9 @@ function set_slider() {
 
     // $(window).height();
     // post = margin + post_width + margin
+    var viewportWidth = $(window).width();
+    alert("TEST")
+    
     let screen_width = $(window).width();
     alert("window");
     
