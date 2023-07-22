@@ -1,6 +1,8 @@
 
 function set_slider() {
 
+    alert("HI")
+
     // var innerwidth = window.innerWidth;
     // var h = window.innerHeight;
     
@@ -11,9 +13,6 @@ function set_slider() {
     const width_slide = 850;
     const start = center - (1.5 * width_slide);
     const post2 = start + width_slide;
-
-    alert("innerwidth");
-    alert("screen_width");
 
 
 };
