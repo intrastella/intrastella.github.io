@@ -1,21 +1,3 @@
-
-
-
-    // var innerwidth = window.innerWidth;
-    // var h = window.innerHeight;
-
-    // var screen_width = $(window).width();
-    // const screen_width = 1900;
-
-    // var w = document.documentElement.clientWidth;
-    // var h = document.documentElement.clientHeight;
-
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-
 function new_pos() {
     set_pos();
 
@@ -27,11 +9,8 @@ function new_pos() {
 };
 
 
-async function set_pos() {
+function set_pos() {
 
-    $('#subject_page').hide();
-
-    await sleep(300);
     var isAtMaxWidth = screen.availWidth - window.innerWidth === 0;
 
     const intro_space = document.getElementById("intro_space");
@@ -148,8 +127,6 @@ async function set_pos() {
         document.getElementById("topo").style.backgroundSize = "280px";
 
     }
-
-    $('#subject_page').show();
 
 
 };
