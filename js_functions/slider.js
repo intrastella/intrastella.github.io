@@ -6,7 +6,11 @@ function set_slider() {
     // $(window).height();
     // post = margin + post_width + margin
     var viewportWidth = $(window).width();
-    alert("TEST")
+    
+
+    window.addEventListener("error", (event) => {
+      alert`${event.type}: ${event.message}\n`);
+    });
     
     let screen_width = $(window).width();
     alert("window");
