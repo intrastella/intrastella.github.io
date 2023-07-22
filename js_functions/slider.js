@@ -6,6 +6,8 @@ function set_slider() {
     // $(window).height();
     // post = margin + post_width + margin
     let screen_width = $(window).width();
+    alert("window");
+    
     const center = screen_width * 0.5;
 
     alert("window");
