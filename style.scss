@@ -453,33 +453,50 @@ nav {
 #intro_space {
 
     position: relative;
-    top: 190px;
-    left: 50px;
+    height: 1000px;
+    top: 230px;
+    left: 0px;
     font-size: 30px;
     font-family: 'note_font';
-    color: #57201d;
+    color: rgba(87, 32, 29, 0.7);
 
 }
 
 .right {
         position: absolute;
-        left: 610px;
-        top: 290px;
+        left: 650px;
+        top: 320px;
         transform: rotate(180deg);
     }
 
 .left {
         position: absolute;
-        left: 0px;
-        top: 0px;
+        left: 20px;
+        top: 25px;
     }
 
 .intro_txt {
 
     position: absolute;
-    left: 95px;
-    top: 40px;
+    left: 120px;
+    top: 70px;
 
+}
+
+.funny_section {
+
+    position: absolute;
+    width: 780px;
+    height: 450px;
+    top: 0px;
+    left: 0px;
+
+}
+
+#authors {
+    position: absolute;
+    top: 500px;
+    left: 300px;
 }
 
 .subject_page {
@@ -521,11 +538,11 @@ nav {
 .bottom_grid {
 
       display: grid;
-      grid-template-columns: 320px 320px 320px 320px;
+      grid-template-columns: 260px 260px 260px 260px;
       grid-template-rows: auto auto auto auto;
-      column-gap: 25px;
-      top: 650px;
-      left: 29%;
+      column-gap: 3px;
+      top: 680px;
+      left: 45.5%;
       position: absolute;
       padding: 0px;
       width: 90%;
@@ -545,18 +562,18 @@ nav {
     justify-content: center;
     align-items: center;
 
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(87, 32, 29, 0.7);
     transition-property: background;
     transition-duration: 1s;
     transition-timing-function: linear;
 
 
-    p { color: rgba(0, 0, 0, 0.5);
+    p { color: #ffffff;
         text-transform: uppercase;
     }
 
     .border_sec {
-        border: 2px solid rgba(0, 0, 0, 0.5);
+        border: 2px solid #ffffff;
         width: 340px;
         height: 340px;
         position: relative;
@@ -580,12 +597,14 @@ nav {
 
     .txt_subject1 {
          position: relative;
-         left: 45px;
+         left: 40px;
+         top: -65px;
     }
 
     .txt_subject2 {
          position: relative;
-         right: 45px;
+         right: 40px;
+         top: 50px;
     }
 }
 
@@ -673,8 +692,8 @@ nav {
 .subject{
     position: relative;
     border: 1px solid rgba(9, 43, 68, 0.7);
-    width: 280px;
-    height: 280px;
+    width: 200px;
+    height: 200px;
     margin: 0px;
     display: flex;
     vertical-align: middle;
@@ -712,55 +731,55 @@ nav {
 
 
 #lina {
-    background-image: url("./images/lina1.png");
+    background-image: url("./images/subjects/lina1.png");
     background-size: 470px;
 }
 
 #ana {
-    background-image: url("./images/ana.png");
+    background-image: url("./images/subjects/ana.png");
     background-size: 200px;
 }
 
 #alge {
-    background-image: url("./images/alge.png");
+    background-image: url("./images/subjects/alge.png");
     background-size: 200px;
 }
 
 #algeo {
-    background-image: url("./images/algeo.png");
+    background-image: url("./images/subjects/algeo.png");
     background-size: 200px;
 }
 
 #comp {
-    background-image: url("./images/comp.png");
+    background-image: url("./images/subjects/comp.png");
     background-size: 200px;
 }
 
 #topo {
-    background-image: url("./images/topo.png");
-    background-size: 280px;
+    background-image: url("./images/subjects/topo.png");
+    background-size: 200px;
 }
 
 #stat {
-    background-image: url("./images/stat.png");
-    background-size: 280px;
+    background-image: url("./images/subjects/stat.png");
+    background-size: 200px;
 }
 
 #funk {
-    background-image: url("./images/funk.png");
-    background-size: 280px;
+    background-image: url("./images/subjects/funk.png");
+    background-size: 200px;
 }
 
 #diffgeo {
-    background-image: url("./images/diffge0.png");
-    background-size: 280px;
+    background-image: url("./images/subjects/diffge0.png");
+    background-size: 200px;
 }
 
 .txt_subject0, .txt_subject1, .txt_subject2 {
      position: relative;
-     font-weight: 400;
+     font-weight: 600;
      line-height: 1.7;
-     font-size: 20px;
+     font-size: 15px;
      -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
         -moz-animation: fadein 1s; /* Firefox < 16 */
          -ms-animation: fadein 1s; /* Internet Explorer */
@@ -770,18 +789,18 @@ nav {
 
 .txt_subject1 {
      position: relative;
-     left: 25px;
+     left: 40px;
 }
 
 .txt_subject2 {
      position: relative;
-     right: 25px;
+     right: 40px;
 }
 
 .border_sec {
     border: 2px solid rgba(0, 0, 0, 0.5);
-    width: 220px;
-    height: 220px;
+    width: 160px;
+    height: 160px;
     position: relative;
     display: flex;
     vertical-align: middle;
@@ -792,25 +811,25 @@ nav {
 
 @keyframes fadein {
     from { font-size: 5px; }
-    to   { font-size: 20px; }
+    to   { font-size: 15px; }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
     from { font-size: 5px; }
-    to   { font-size: 20px; }
+    to   { font-size: 15px; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
     from { font-size: 5px; }
-    to   { font-size: 20px; }
+    to   { font-size: 15px; }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
     from { font-size: 5px; }
-    to   { font-size: 20px; }
+    to   { font-size: 15px; }
 }
 
 @keyframes fadein1 {
