@@ -43,7 +43,7 @@ async function set_pos() {
 
     if (! isAtMaxWidth) {
 
-        subject_page.style.height = "2500px";
+        subject_page.style.height = "2400px";
 
 
         var intro_pos = window.innerWidth * 0.5 - 350;
