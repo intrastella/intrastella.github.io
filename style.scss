@@ -450,6 +450,38 @@ nav {
     border-top: 1px solid #ddd;
 }
 
+.intro_space {
+
+    position: relative;
+    top: 190px;
+    left: 4%;
+    font-size: 30px;
+    font-family: 'note_font';
+    color: #57201d;
+
+}
+
+.right {
+        position: absolute;
+        left: 610px;
+        top: 290px;
+        transform: rotate(180deg);
+    }
+
+.left {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+    }
+
+.intro_txt {
+
+    position: absolute;
+    left: 5%;
+    top: 40px;
+
+}
+
 .subject_page {
     vertical-align: middle;
     margin: 0px;
@@ -467,9 +499,9 @@ nav {
       grid-template-rows: auto auto auto auto;
       top: 110px;
       position: absolute;
-      margin-left: 500px;
+      left: 45%;
       padding: 0px;
-      width: 1700px;
+      width: 90%;
 }
 
 .inner_left_top_grid {
@@ -477,27 +509,26 @@ nav {
       display: grid;
       grid-template-columns: 260px 260px;
       grid-template-rows: 260px 260px;
-      column-gap: 10px;
-      row-gap: 10px;
+      column-gap: 9px;
+      row-gap: 9px;
       top: 0px;
-      width: 700px;
+      width: 60%;
       position: relative;
-      left: -100px;
+      left: -5%;
 
 }
 
 .bottom_grid {
 
       display: grid;
-      grid-template-columns: 320px 320px 320px;
+      grid-template-columns: 320px 320px 320px 320px;
       grid-template-rows: auto auto auto auto;
       column-gap: 25px;
       top: 650px;
-      left: 95px;
+      left: 29%;
       position: absolute;
-      margin-left: 405px;
       padding: 0px;
-      width: 1700px;
+      width: 90%;
 }
 
 
@@ -667,14 +698,14 @@ nav {
   transform: scale(1.1);
 }
 
-#algeo, #topo, #alge {
+#algeo, #topo, #alge, #diffgeo {
         background-color: rgba(65, 131, 196, 0.1);
         transition-property: background-color;
         transition-duration: 1s;
         transition-timing-function: linear;
     }
 
-#algeo:hover, #topo:hover, #alge:hover {
+#algeo:hover, #topo:hover, #alge:hover, #diffgeo:hover {
   background-color: rgba(87, 32, 29, 0.7);
   transform: scale(1.1);
 }
@@ -717,6 +748,11 @@ nav {
 
 #funk {
     background-image: url("./images/funk.png");
+    background-size: 280px;
+}
+
+#diffgeo {
+    background-image: url("./images/diffge0.png");
     background-size: 280px;
 }
 
@@ -995,7 +1031,7 @@ nav {
 
 
 .btn {
-  position: absolute;
+  position: fixed;
   width: 100px;
   height: 100px;
   padding: 10px;
