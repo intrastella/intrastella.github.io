@@ -2,15 +2,14 @@
 function set_slider() {
 
     alert("Function is being called");
-
-    // $(window).height();
-    // post = margin + post_width + margin
-    var viewportWidth = $(window).width();
     
 
-    window.addEventListener("error", (event) => {
-      alert`${event.type}: ${event.message}\n`);
-    });
+    try {
+      let screen_width = $(window).width();
+    }
+    catch(err) {
+      alert(err.message);
+    }
     
     let screen_width = $(window).width();
     alert("window");
