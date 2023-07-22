@@ -200,5 +200,3 @@ function set_slider() {
 
 
 };
-
-set_slider();
