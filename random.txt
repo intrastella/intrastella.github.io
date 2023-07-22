@@ -1,45 +1,48 @@
 
 
-<div class="Comment_section">
-        <script src="https://utteranc.es/client.js"
-        repo="intrastella/intrastella.github.io"
-        issue-term="url"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-        </script>
-    </div>
+.subject{
+    position: relative;
+    border: 1px solid rgba(9, 43, 68, 0.7);
+    width: 350px;
+    height: 350px;
+    margin: 20px 60px 20px 20px;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(9, 43, 68, 0.6);
+    transition-property: background;
+    transition-duration: 1s;
+    transition-timing-function: linear;
 
 
-
-transition-property: font-size;
-        transition-duration: 0.5s;
-        transition-delay: 0s, 1s;
-        transition-timing-function: linear, ease-out;
-
-
-    subject :hover {
-        font-weight: 400;
-        font-size: 35px;
+    p { color: rgba(0, 0, 0, 0.5);
+        text-transform: uppercase;
     }
-
-
-                <p class="txt_back1">Linear</p>
-                <p class="txt_back2"><br/>Algebra</p>
-
-
-.site-name {
-  font-color: #092b44;
-  margin: 0;
-  position: relative;
-  top: 20px;
-  left: 40px;
-  color: $darkGray;
-  cursor: pointer;
-  font-family: $helveticaNeue;
-  font-weight: 300;
-  font-size: 28px;
-  letter-spacing: 0.1px;
 }
 
-<p class="site-description">{{ site.description }}</p>
+
+
+  <div class="posts">
+
+    <div class="grid-container">
+      {% for post in site.posts %}
+        <article class="post" id="sum_post">
+
+          <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+          <p>_____________________________________________________________</p>
+          <div class="summary">
+            <p>{{ post.intro }}</p>
+          </div>
+
+          <div class="footer"><a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a></div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+
+
+  border-radius: 50%;
+
+9, 43, 68, 0.6

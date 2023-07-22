@@ -13,8 +13,19 @@
     <script type="text/javascript" src="/js_functions/comment.js"></script>
     <script type="text/javascript" src="/js_functions/notepad.js"></script>
     <script type="text/javascript" src="/js_functions/set_highs.js"></script>
+    <script type="text/javascript" src="/js_functions/slider.js"></script>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+    <script type="text/javascript">
+
+        function start(){
+          set_high();
+          set_slider();
+      }
+
+
+    </script>
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
@@ -62,7 +73,7 @@
     </style>
   </head>
 
-  <body onload="set_high();">
+  <body onload="start()">
 
     <div class="wrapper-masthead">
       <div class="navbar">
@@ -75,16 +86,18 @@
             </div>
 
             <nav>
-              <a href="{{ site.baseurl }}/">BLOG</a>
-              <a href="{{ site.baseurl }}/cheat_sheet">TOPICS</a>
+              <a href="{{ site.baseurl }}/">ARTICLES</a>
+              <a href="{{ site.baseurl }}/subject">TOPICS</a>
               <a href="{{ site.baseurl }}/about">ABOUT</a>
             </nav> 
         </header>
       </div>
     </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+    <div class="input_content">
+
+        {{ content }}
+
     </div>
 
     {% include analytics.html %}

@@ -1,7 +1,7 @@
 ---
-layout: cheat_sheet_page
+layout: subject
 title: Cheat Sheet
-permalink: /cheat_sheet/
+permalink: /subject/
 ---
 
 _____________________________________________________________________________________________________________________________________
