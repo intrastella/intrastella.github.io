@@ -3,20 +3,8 @@ function set_slider() {
 
     alert("Function is being called");
     
-
-    try {
-      let screen_width = $(window).width();
-    }
-    catch(err) {
-      alert(err.message);
-    }
-    
     let screen_width = $(window).width();
-    alert("window");
-    
     const center = screen_width * 0.5;
-
-    alert("window");
 
     const width_slide = 850;
     const start = center - (1.5 * width_slide);
