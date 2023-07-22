@@ -10,7 +10,7 @@
 
 function set_slider() {
 
-    let screen_width = window.innerWidth;
+    let screen_width = $(window).width();
 
     const center = screen_width * 0.5;
 
@@ -199,4 +199,6 @@ function set_slider() {
     });
 
 
-}
+};
+
+set_slider();
