@@ -1,6 +1,8 @@
 
 function set_slider() {
 
+    alert("Function is being called)
+
     // $(window).height();
     // post = margin + post_width + margin
     let screen_width = $(window).width();
