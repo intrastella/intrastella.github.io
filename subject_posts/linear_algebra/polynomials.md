@@ -1,30 +1,27 @@
 ---
 layout: cheat_sheet
-title: Tensor Algebra
-permalink: /linear_algebra/tensors
+title: Matrix Relations
+permalink: /linear_algebra/polynomials
 ---
 
 _____________________________________________________________________________________________________________________________________
 
 
-## Transformation Matrix
+## Characteristic Polynomial
 
-### Change of Basis
+### Definition
 
-<br/>
+### Eigenvalues and Eigenvectors
 
-<br/>
 
-### Coordinate change
 
 <br/>
 
 <br/>
 
-### Covariant Vectors
-
 <br/>
 
-<br/>
 
-### Contravariant Vectors
+## Roots of Characteristic Polynomial
+
+
