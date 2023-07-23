@@ -234,6 +234,17 @@ input[type=text]:focus, textarea:focus {
   border: 1px solid rgba(80, 8, 8, 1);
 }
 
+.fat_title {
+
+    p {
+        color: #94a5b4;
+        font-weight: 300;
+        font-size: 60px;
+        height: 200px;
+
+    }
+}
+
 .box_comment {
     width: 370px;
     position: relative;
@@ -429,6 +440,17 @@ nav {
     justify-content: center;
     margin: auto;
 
+}
+
+.about_page {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
+    align: center;
+    padding: 50px;
+    top: 50px;
+    width: 1500px;
+    justify-content: center;
+    margin: auto;
 }
 
 .grid-container {
@@ -951,11 +973,9 @@ nav {
   margin: auto;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
   position: relative;
   top: 0px;
   text-align: center;
-  background-color: white;
 }
 
 .comment_btn {
