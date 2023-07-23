@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     {% include meta.html %}
@@ -21,7 +22,6 @@
           set_high();
           new_pos();
       }
-
 
     </script>
 
@@ -105,7 +105,7 @@
         <div class="top_grid" id="top_grid">
 
             <div class="subject1" id="lina">
-                    <a href="{{ site.baseurl }}/linear_algebra">
+                    <a href="{{ site.baseurl }}/linear_algebra/tensors">
                         <div class="border_sec">
                             <p class="txt_subject1">Linear</p>
                             <p class="txt_subject2"><br/>Algebra</p>

@@ -4,6 +4,30 @@ let txt_docs = document.getElementsByClassName("highlighted");
 
 function set_high() {
 
+        const url = window.location.pathname;
+        var filename = url.substring(url.lastIndexOf('/')+1);
+
+        let button_id = document.getElementById(filename);
+        const pages = document.querySelectorAll(".page");
+        const markers = document.querySelectorAll(".marker");
+
+        pages.forEach((page, idx) => {
+            page.style.zIndex = "-1";
+        });
+
+        markers.forEach((marker, idx) => {
+            marker.style.zIndex = "-10000";
+
+            var top_pos = 300 + 80 * (1 + idx)
+
+            marker_attr = "width: 200px;height: 70px;background-color: rgba(87, 32, 29, 0.7);border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;font-size: 18px;z-index: -100;margin: 15px;position: absolute;left: 1630px;top:" + `${top_pos}px;`;
+
+            // marker_attr = "width: 200px;height: 70px;background-color: rgba(87, 32, 29, 0.7);border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;font-size: 18px;z-index: -100;margin: 15px;position: absolute;left: 1630px;top: 300px;";
+            marker.style.cssText = marker_attr;
+        });
+
+        button_id.style.zIndex = "10000";
+
         var icons = document.querySelectorAll('.border_sec');
         var x=0, y0=0, y1=0, y2=0;
 
