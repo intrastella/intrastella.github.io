@@ -391,7 +391,7 @@ input {
 
 nav {
   float: right;
-  font-family: $helveticaNeue;
+  font-family: sans-serif;
 
   @include mobile {
     float: none;
@@ -411,8 +411,8 @@ nav {
     color: $darkGray;
     text-align: right;
     font-size: 25px;
-    font-weight: 900;
-    color: rgba(87, 32, 29, 1);
+    font-weight: 200;
+    color: rgba(87, 32, 29, 0.8);
     letter-spacing: 0.7px;
 
     @include mobile {
@@ -1156,4 +1156,10 @@ svg {
   opacity: 1;
 }
 
+#icon_border a{
 
+    border-style: solid;
+    border-color: #092b44;
+    border-width: 2px;
+
+}
