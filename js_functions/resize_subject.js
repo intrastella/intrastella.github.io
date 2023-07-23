@@ -82,6 +82,7 @@ function set_pos() {
     } else {
 
         subject_page.style.height = "100vh";
+
         intro_space.style.left = "50px";
         intro_space.style.top = "230px";
 
