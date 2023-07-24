@@ -42,9 +42,7 @@ function set_high() {
         // for comments
         insertComments(parent);
 
-        var obj_type = parent.substring(0, parent.indexOf('_'));
-
-        if (obj_type === "article" || subjects.includes(parent)) {
+        if (parent === "subject") {
 
             // for folder w/ subjects
             var icons = document.querySelectorAll('.border_sec');
@@ -123,6 +121,10 @@ function set_high() {
 
                     });
                 }
+        }
+
+        var obj_type = parent.substring(0, parent.indexOf('_'));
+        if (obj_type === "article" || subjects.includes(parent)) {
 
             for (let i = 0; i < txt_docs.length; i++) {
 
