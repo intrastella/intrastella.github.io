@@ -18,7 +18,7 @@ class sliderObserver {
 
 function responsive_sider() {
 
-    const curSlide = new sliderObserver(4);
+    const curSlide = new sliderObserver(1);
     set_slider(window.innerWidth, curSlide);
 
     window.addEventListener("resize", function () {
