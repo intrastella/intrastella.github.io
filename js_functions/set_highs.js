@@ -7,6 +7,7 @@ function set_high() {
         // for subjects
         const url = window.location.pathname;
         var parent = url.substring(url.indexOf('/')+1, url.lastIndexOf('/'));
+
         const subjects = ['linear_algebra', 'analysis', 'algebra', 'algebraic_geometry', 'comp_ana', 'topo', 'stat', 'funk_ana', 'diff_geo']
 
         if (subjects.includes(parent)) {
@@ -39,7 +40,7 @@ function set_high() {
         }
 
         // for comments
-        insertComments();
+        insertComments(parent);
 
 
         // for folder w/ subjects
@@ -267,60 +268,68 @@ function set_default(parent, txt) {
 };
 
 
-function insertComments() {
+function insertComments(parent) {
 
-    const appScriptURL = "https://script.googleusercontent.com/macros/echo?user_content_key=TCqwFRG-p-zXSD0S5i71z3Od8-QUDCv-WLN43UNOM0V0XiJ9nlGeFadYfMhIMvH4IzAxX4voszvNE5e8OvMOq6c2scgEtQJGm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHu-C0g3UfQE8nhdzWPAe3Cp0IaqVayj9ETWkCg-lzYCvFBaxJ8HVNfWgZTXlNNrAWLgOfW-wjelxIgc4KlV7y7vdykeJILubw&lib=MGPZxz-P7tcjz-41s6vfEi2fqToxuHLv9"
+    var obj_type = parent.substring(0, parent.indexOf('_'));
 
-    fetch(appScriptURL)
-      .then(res => res.json())
-      .then(res => {
+    if (obj_type === "article") {
 
-        const values = res.values;
+        var article = parent.substring(parent.indexOf('_')+1);
+        const appScriptURL = "https://script.googleusercontent.com/macros/echo?user_content_key=TCqwFRG-p-zXSD0S5i71z3Od8-QUDCv-WLN43UNOM0V0XiJ9nlGeFadYfMhIMvH4IzAxX4voszvNE5e8OvMOq6c2scgEtQJGm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHu-C0g3UfQE8nhdzWPAe3Cp0IaqVayj9ETWkCg-lzYCvFBaxJ8HVNfWgZTXlNNrAWLgOfW-wjelxIgc4KlV7y7vdykeJILubw&lib=MGPZxz-P7tcjz-41s6vfEi2fqToxuHLv9"
 
-        // X: 0 = Columns, 1 = 1st user, 2 = 2nd user, ..., n = nth user
-        // Y: 0 = timestamp, 1 = name, 2 = comment, 3 = article, 4 = top, 5 = left
+        fetch(appScriptURL)
+          .then(res => res.json())
+          .then(res => {
 
-        // values[i][j] returns the i-th user j-th column, where i \in [1, n] and j \in [0, 5]
+            const values = res.values;
 
-        alert(values[1][1]);
+            // X: 0 = Columns, 1 = 1st user, 2 = 2nd user, ..., n = nth user
+            // Y: 0 = timestamp, 1 = name, 2 = comment, 3 = article, 4 = top, 5 = left
 
-        for (let i = 1; i < values.length; i++) {
+            // values[i][j] returns the i-th user j-th column, where i \in [1, n] and j \in [0, 5]
 
-            // create a user comment area
-            let box = document.createElement("div");
-            box.style.top = values[i][4];
-            box.style.position = "absolute";
-            box.style.left = values[i][5];
-            box.style.width = "400px";
+            for (let i = 1; i < values.length; i++) {
 
-            // insert the users name
-            let fname = document.createElement("p");
-            fname.innerHTML = values[i][1];
-            fname.className = "comment_txt";
-            fname.style.fontSize = "30px";
-            fname.style.color = "rgba(93, 182, 226, 0.6)";
-            fname.style.textDecoration = "underline";
-            fname.style.fontWeight = "900";
+                if (values[i][3] == article) {
 
-            // insert the users comment
-            let txt = document.createElement("p");
-            txt.innerHTML = values[i][2];
-            txt.className = "comment_txt";
-            txt.style.fontSize = "30px";
-            txt.style.color = "rgba(93, 182, 226, 0.6)";
+                    // create a user comment area
+                    let box = document.createElement("div");
+                    box.style.top = values[i][4];
+                    box.style.position = "absolute";
+                    box.style.left = values[i][5];
+                    box.style.width = "400px";
 
-            var comment = document.getElementById("comment_section");
+                    // insert the users name
+                    let fname = document.createElement("p");
+                    fname.innerHTML = values[i][1];
+                    fname.className = "comment_txt";
+                    fname.style.fontSize = "30px";
+                    fname.style.color = "rgba(93, 182, 226, 0.6)";
+                    fname.style.textDecoration = "underline";
+                    fname.style.fontWeight = "900";
 
-             comment.appendChild(box);
-             box.appendChild(fname);
-             box.appendChild(txt);
+                    // insert the users comment
+                    let txt = document.createElement("p");
+                    txt.innerHTML = values[i][2];
+                    txt.className = "comment_txt";
+                    txt.style.fontSize = "30px";
+                    txt.style.color = "rgba(93, 182, 226, 0.6)";
 
-             makeVisible();
+                    var comment = document.getElementById("comment_section");
 
-        }
+                     comment.appendChild(box);
+                     box.appendChild(fname);
+                     box.appendChild(txt);
+
+                     makeVisible();
+
+                 }
+
+            }
 
 
-      });
+          });
+    }
 
 };
 
