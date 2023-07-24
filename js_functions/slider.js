@@ -1,200 +1,145 @@
 
+class sliderObserver {
+  constructor(number) {
+    this.no = number;
+    this.init = number;
+  }
 
-    // var innerwidth = window.innerWidth;
-    // var h = window.innerHeight;
-    
-    // var screen_width = $(window).width();
-    // const screen_width = 1900;
+  translation() {
+    return this.init - this.no;
+  }
 
+  set current(number) {
+    this.no = number;
+  }
 
-
-function set_slider() {
-
-    let screen_width = $(window).width();
-
-    const center = screen_width * 0.5;
-
-    const width_slide = 850;
-    const start = center - (1.5 * width_slide)
-    const post2 = start + width_slide
+};
 
 
-        // Select all slides
-    const slides = document.querySelectorAll(".slide");
-    const post_cards = document.querySelectorAll(".post_card");
-    const post_title = document.querySelectorAll(".post_title");
+function responsive_sider() {
+
+    const curSlide = new sliderObserver(4);
+    set_slider(window.innerWidth, curSlide);
+
+    window.addEventListener("resize", function () {
+
+            set_slider(window.innerWidth, curSlide);
+
+        });
+};
 
 
-    // loop through slides and set each slides translateX property to index * 100%
+function highlighted (i, slide_elem, post_cards, post_title) {
+
+        post_cards[i].style.transform = "scale(1.2)";
+        slide_elem.style.zIndex = "1000";
+        post_cards[i].style.boxShadow = "0px 0px 200px #444444";
+        post_title[i].style.color = "#4183C4";
+        post_cards[i].style.backgroundColor = "#ffffff";
+
+};
+
+
+function backgroundArticle (i, slide_elem, post_cards, post_title) {
+
+        slide_elem.style.zIndex = "1";
+        post_cards[i].style.transform = "scale(1)";
+        post_cards[i].style.boxShadow = "0px 0px 0px";
+        post_cards[i].style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        post_title[i].style.color = "#092b44";
+
+};
+
+
+function init_slider (center, width_slide, slides, curSlide, post_cards, post_title) {
+
     slides.forEach((slide, idx) => {
 
-          if (idx === 0) {
+          slide.style.left = center - 0.5 * width_slide - curSlide.no * width_slide + idx * width_slide + "px";
 
-                slide.style.left = start + "px";
+          if (idx < curSlide.no) {
+
                 post_cards[idx].style.backgroundColor = "rgba(0, 0, 0, 0.5)";
 
-          } else if (idx === 1) {
+          } else if (idx === curSlide.no) {
 
-                post_cards[idx].style.transform = "scale(1.2)";
-                slide.style.left = post2 + "px";
-                slide.style.zIndex = "1000";
-                post_cards[idx].style.boxShadow = "0px 0px 200px #444444";
-                post_title[idx].style.color = "#4183C4";
+                highlighted (idx, slide, post_cards, post_title);
 
           } else {
 
-                slide.style.left = post2 + width_slide * (idx - 1) + "px";
-                slide.style.zIndex = "1";
-                post_cards[idx].style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+                backgroundArticle (idx, slide, post_cards, post_title);
 
           }
 
 
     });
 
-        // current slide counter
-    let curSlide = 1;
-
-    // select next slide button
-    const nextSlide = document.querySelector(".btn-next");
+};
 
 
-        // maximum number of slides
+function set_slider(screen_width, curSlide) {
+
+    const center = screen_width * 0.5;
+    const width_slide = 850;
+
+    const slides = document.querySelectorAll(".slide");
+    const post_cards = document.querySelectorAll(".post_card");
+    const post_title = document.querySelectorAll(".post_title");
+
+
+    // insert articles in order with features
+    init_slider(center, width_slide, slides, curSlide, post_cards, post_title);
+
     let maxSlide = slides.length - 1;
 
-    // add event listener and navigation functionality
+    // create next movement
+
+    const nextSlide = document.querySelector(".btn-next");
+
     nextSlide.addEventListener("click", function () {
 
-      if (curSlide === maxSlide) {
         slides.forEach((slide, idx) => {
-            slide.style.transform = `translateX(${width_slide}px)`;
-        });
-        curSlide = 0;
-
-        slides.forEach((slide, idx) => {
-            if (idx === curSlide) {
-                    post_cards[idx].style.transform = "scale(1.2)";
-                    slide.style.zIndex = "1000";
-                    post_cards[idx].style.boxShadow = "0px 0px 200px #444444";
-                    post_title[idx].style.color = "#4183C4";
-                    post_cards[idx].style.backgroundColor = "#ffffff";
-
-            } else {
-                    slide.style.zIndex = "1";
-                    post_cards[idx].style.transform = "scale(1)";
-                    post_cards[idx].style.boxShadow = "0px 0px 0px";
-                    post_cards[idx].style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-                    post_title[idx].style.color = "#092b44";
-            }
-        });
-
-      } else {
-
-        slides.forEach((slide, idx) => {
-            slide.style.transform = `translateX(${-width_slide * curSlide}px)`;
+            slide.style.transform = `translateX(${width_slide * (curSlide.init - ((curSlide.no + 1) % slides.length))}px)`;
           });
-        curSlide++;
+        curSlide.current = (curSlide.no + 1) % slides.length;
 
+        // change highlights
         slides.forEach((slide, idx) => {
-            if (idx === curSlide) {
-                    post_cards[idx].style.transform = "scale(1.2)";
-                    slide.style.zIndex = "1000";
-                    post_cards[idx].style.boxShadow = "0px 0px 200px #444444";
-                    post_title[idx].style.color = "#4183C4";
-                    post_cards[idx].style.backgroundColor = "#ffffff";
+            if (idx === curSlide.no) {
+                    highlighted (idx, slide, post_cards, post_title);
 
             } else {
-                    slide.style.zIndex = "1";
-                    post_cards[idx].style.transform = "scale(1)";
-                    post_cards[idx].style.boxShadow = "0px 0px 0px";
-                    post_cards[idx].style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-                    post_title[idx].style.color = "#092b44";
+                    backgroundArticle (idx, slide, post_cards, post_title);
             }
         });
-
-      }
 
     });
 
-        // select prev slide button
+    // create prev movement
+
     const prevSlide = document.querySelector(".btn-prev");
 
-    // add event listener and navigation functionality
     prevSlide.addEventListener("click", function () {
 
-      if (curSlide === 0) {
-
-        slides.forEach((slide, idx) => {
-            slide.style.transform = `translateX(${- (maxSlide - 1) * width_slide}px)`;
-        });
-        curSlide = maxSlide;
-
-        slides.forEach((slide, idx) => {
-            if (idx === curSlide) {
-                    post_cards[idx].style.transform = "scale(1.2)";
-                    slide.style.zIndex = "1000";
-                    post_cards[idx].style.boxShadow = "0px 0px 200px #444444";
-                    post_title[idx].style.color = "#4183C4";
-                    post_cards[idx].style.backgroundColor = "#ffffff";
-
+            if (curSlide.no - 1 < 0) {
+                curSlide.current = 4;
             } else {
-                    slide.style.zIndex = "1";
-                    post_cards[idx].style.transform = "scale(1)";
-                    post_cards[idx].style.boxShadow = "0px 0px 0px";
-                    post_cards[idx].style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-                    post_title[idx].style.color = "#092b44";
+                curSlide.current = curSlide.no - 1;
             }
-        });
-
-      } else if (curSlide - 1 === 0) {
 
             slides.forEach((slide, idx) => {
-                slide.style.transform = `translateX(${width_slide}px)`;
-              });
-            curSlide--;
+                slide.style.transform = `translateX(${width_slide * (curSlide.init - curSlide.no)}px)`;
+            });
+            // change highlights
 
             slides.forEach((slide, idx) => {
-                if (idx === curSlide) {
-                        post_cards[idx].style.transform = "scale(1.2)";
-                        slide.style.zIndex = "1000";
-                        post_cards[idx].style.boxShadow = "0px 0px 200px #444444";
-                        post_title[idx].style.color = "#4183C4";
-                        post_cards[idx].style.backgroundColor = "#ffffff";
+                if (idx === curSlide.no) {
+                        highlighted (idx, slide, post_cards, post_title);
 
                 } else {
-                        slide.style.zIndex = "1";
-                        post_cards[idx].style.transform = "scale(1)";
-                        post_cards[idx].style.boxShadow = "0px 0px 0px";
-                        post_cards[idx].style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-                        post_title[idx].style.color = "#092b44";
+                        backgroundArticle (idx, slide, post_cards, post_title);
                 }
             });
-
-      } else {
-
-            slides.forEach((slide, idx) => {
-                slide.style.transform = `translateX(${ width_slide * (curSlide - 1 - 1) }px)`;
-              });
-            curSlide--;
-
-            slides.forEach((slide, idx) => {
-                if (idx === curSlide) {
-                        post_cards[idx].style.transform = "scale(1.2)";
-                        slide.style.zIndex = "1000";
-                        post_cards[idx].style.boxShadow = "0px 0px 200px #444444";
-                        post_title[idx].style.color = "#4183C4";
-                        post_cards[idx].style.backgroundColor = "#ffffff";
-
-                } else {
-                        slide.style.zIndex = "1";
-                        post_cards[idx].style.transform = "scale(1)";
-                        post_cards[idx].style.boxShadow = "0px 0px 0px";
-                        post_cards[idx].style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-                        post_title[idx].style.color = "#092b44";
-                }
-            });
-
-      }
 
     });
 
