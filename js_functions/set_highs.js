@@ -4,6 +4,7 @@ let txt_docs = document.getElementsByClassName("highlighted");
 
 function set_high() {
 
+        // for subjects
         const url = window.location.pathname;
         var parent = url.substring(url.indexOf('/')+1, url.lastIndexOf('/'));
         const subjects = ['linear_algebra', 'analysis', 'algebra', 'algebraic_geometry', 'comp_ana', 'topo', 'stat', 'funk_ana', 'diff_geo']
@@ -37,7 +38,11 @@ function set_high() {
 
         }
 
+        // for comments
+        insertComments();
 
+
+        // for folder w/ subjects
         var icons = document.querySelectorAll('.border_sec');
         var x=0, y0=0, y1=0, y2=0;
 
@@ -260,3 +265,82 @@ function set_default(parent, txt) {
 
 
 };
+
+
+function insertComments() {
+
+    const appScriptURL = "https://script.googleusercontent.com/macros/echo?user_content_key=TCqwFRG-p-zXSD0S5i71z3Od8-QUDCv-WLN43UNOM0V0XiJ9nlGeFadYfMhIMvH4IzAxX4voszvNE5e8OvMOq6c2scgEtQJGm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHu-C0g3UfQE8nhdzWPAe3Cp0IaqVayj9ETWkCg-lzYCvFBaxJ8HVNfWgZTXlNNrAWLgOfW-wjelxIgc4KlV7y7vdykeJILubw&lib=MGPZxz-P7tcjz-41s6vfEi2fqToxuHLv9"
+
+    fetch(appScriptURL)
+      .then(res => res.json())
+      .then(res => {
+
+        const values = res.values;
+
+        // X: 0 = Columns, 1 = 1st user, 2 = 2nd user, ..., n = nth user
+        // Y: 0 = timestamp, 1 = name, 2 = comment, 3 = article, 4 = top, 5 = left
+
+        // values[i][j] returns the i-th user j-th column, where i \in [1, n] and j \in [0, 5]
+
+        alert(values[1][1]);
+
+        for (let i = 1; i < values.length; i++) {
+
+            // create a user comment area
+            let box = document.createElement("div");
+            box.style.top = values[i][4];
+            box.style.position = "absolute";
+            box.style.left = values[i][5];
+            box.style.width = "400px";
+
+            // insert the users name
+            let fname = document.createElement("p");
+            fname.innerHTML = values[i][1];
+            fname.className = "comment_txt";
+            fname.style.fontSize = "30px";
+            fname.style.color = "rgba(93, 182, 226, 0.6)";
+            fname.style.textDecoration = "underline";
+            fname.style.fontWeight = "900";
+
+            // insert the users comment
+            let txt = document.createElement("p");
+            txt.innerHTML = values[i][2];
+            txt.className = "comment_txt";
+            txt.style.fontSize = "30px";
+            txt.style.color = "rgba(93, 182, 226, 0.6)";
+
+            var comment = document.getElementById("comment_section");
+
+             comment.appendChild(box);
+             box.appendChild(fname);
+             box.appendChild(txt);
+
+             makeVisible();
+
+        }
+
+
+      });
+
+};
+
+
+function makeVisible() {
+    const box = document.getElementsByClassName('comment_txt');
+
+    for (let i = 0; i < box.length / 2; i++) {
+        // ️ Change text color on mouseover
+        box[2*i+1].addEventListener('mouseover', function handleMouseOver() {
+        box[2*i+1].style.color = 'rgba(82, 15, 15, 0.5)';
+        box[2*i].style.color = 'rgba(82, 15, 15, 0.5)';
+        });
+
+        //  Change text color back on mouseout
+        box[2*i+1].addEventListener('mouseout', function handleMouseOut() {
+        box[2*i+1].style.color = 'rgba(93, 182, 226, 0.6)';
+        box[2*i].style.color = 'rgba(93, 182, 226, 0.6)';
+        });
+    }
+
+}
+

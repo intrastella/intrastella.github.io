@@ -3,6 +3,10 @@ function CreateTextFile() {
          var quest_text = document.getElementById("quest").value;
          var name_text = document.getElementById("fname").value;
 
+         if (quest_text === "" || name_text === "") {
+                return;
+         }
+
          element = document.getElementById("sub");
 
          var bodyRect = document.body.getBoundingClientRect();
@@ -21,6 +25,9 @@ function CreateTextFile() {
          box.style.position = "absolute";
          box.style.left = random_left + "px";
          box.style.width = "400px";
+
+         document.getElementById('top_value').value = `${top_level}px`;
+         document.getElementById('left_value').value = `${random_left}px`;
 
          // name
 
@@ -70,4 +77,3 @@ function makeVisible() {
     }
 
 }
-

@@ -51,12 +51,18 @@ layout: default
       <div class="box_comment" id="comment_box">
         <div class="comment_sec" id="notepad">
 
-          <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSdHqOhl9im3TghX7BVAFjp6Ba_sK3qRqPRRGO97sUV7-tFuEw/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+          <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSemBZ6uj_oCrAQ3J4OasbWn6iOFyudplzL0Mj1Fb7Dc41C_rQ/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+
             <label for="fname" id="l_fname">Name:</label>
-            <input type="text" name="entry.1078529988" id="fname"><br><br>
+            <input type="text" name="entry.1382275470" id="fname" required><br><br>
 
             <label for="quest" id="l_quest">Comment:</label>
-            <textarea name="entry.1440645859" id="quest"></textarea>
+            <textarea name="entry.460579987" id="quest" required></textarea>
+
+            <input type="hidden" name="entry.50349658" value="{{ page.article }}">
+
+            <input type="hidden" name="entry.232104705" value="top" id="top_value">
+            <input type="hidden" name="entry.1690827949" value="left" id="left_value">
 
             <input type="Submit" value="SUBMIT" id="sub" onclick="CreateTextFile();">
 
