@@ -23,7 +23,16 @@ function responsive_sider() {
 
     window.addEventListener("resize", function () {
 
-            set_slider(window.innerWidth, curSlide);
+            const center = window.innerWidth * 0.5;
+            const width_slide = 850;
+
+            const slides = document.querySelectorAll(".slide");
+            const post_cards = document.querySelectorAll(".post_card");
+            const post_title = document.querySelectorAll(".post_title");
+
+            init_slider(center, width_slide, slides, curSlide, post_cards, post_title);
+
+            // set_slider(window.innerWidth, curSlide);
 
         });
 };
@@ -55,7 +64,11 @@ function init_slider (center, width_slide, slides, curSlide, post_cards, post_ti
 
     slides.forEach((slide, idx) => {
 
-          slide.style.left = center - 0.5 * width_slide - curSlide.no * width_slide + idx * width_slide + "px";
+          // alert(curSlide.no);
+
+          slide.style.setProperty("WebkitTransform", "none");
+
+          slide.style.left = center - 0.5 * width_slide - curSlide.init * width_slide + idx * width_slide + "px";
 
           if (idx < curSlide.no) {
 
@@ -89,8 +102,6 @@ function set_slider(screen_width, curSlide) {
 
     // insert articles in order with features
     init_slider(center, width_slide, slides, curSlide, post_cards, post_title);
-
-    let maxSlide = slides.length - 1;
 
     // create next movement
 
