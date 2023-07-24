@@ -42,92 +42,96 @@ function set_high() {
         // for comments
         insertComments(parent);
 
+        var obj_type = parent.substring(0, parent.indexOf('_'));
 
-        // for folder w/ subjects
-        var icons = document.querySelectorAll('.border_sec');
-        var x=0, y0=0, y1=0, y2=0;
+        if (obj_type === "article" || subjects.includes(parent)) {
 
-        const move_top = [
-            { transform: `translate(${x}px, ${y1}px)` },
-            { transform: `translate(${x}px, ${y1 -40}px)` },
-            { transform: `translate(${x}px, ${y1 -40}px) scale(1.2, 1.2)` },
-        ];
+            // for folder w/ subjects
+            var icons = document.querySelectorAll('.border_sec');
+            var x=0, y0=0, y1=0, y2=0;
 
-        const move_down = [
-            { transform: `translate(${x}px, ${y2}px)` },
-            { transform: `translate(${x}px, ${y2 +40}px)` },
-            { transform: `translate(${x}px, ${y2 +40}px) scale(1.2, 1.2)` },
-        ];
+            const move_top = [
+                { transform: `translate(${x}px, ${y1}px)` },
+                { transform: `translate(${x}px, ${y1 -40}px)` },
+                { transform: `translate(${x}px, ${y1 -40}px) scale(1.2, 1.2)` },
+            ];
 
-        const move_in = [
-            { transform: `translate(${x}px, ${y0}px)` },
-            { transform: `scale(1.2, 1.2)` },
-        ];
+            const move_down = [
+                { transform: `translate(${x}px, ${y2}px)` },
+                { transform: `translate(${x}px, ${y2 +40}px)` },
+                { transform: `translate(${x}px, ${y2 +40}px) scale(1.2, 1.2)` },
+            ];
 
-        const idle = [
-          { transform: "translate3d(0px, 0px, 0px)" },
-        ];
+            const move_in = [
+                { transform: `translate(${x}px, ${y0}px)` },
+                { transform: `scale(1.2, 1.2)` },
+            ];
 
-        const a = "transition: all 2s ease; transform: scale3d(1.5, 1.5, 1) ;";
+            const idle = [
+              { transform: "translate3d(0px, 0px, 0px)" },
+            ];
+
+            const a = "transition: all 2s ease; transform: scale3d(1.5, 1.5, 1) ;";
 
 
-        const Timing = {
-          duration: 600,
-          iterations: 1,
-          fill: 'forwards'
-        };
+            const Timing = {
+              duration: 600,
+              iterations: 1,
+              fill: 'forwards'
+            };
 
-        const Timing2 = {
-          delay: 600,
-          duration: 600,
-          iterations: 1,
-        };
+            const Timing2 = {
+              delay: 600,
+              duration: 600,
+              iterations: 1,
+            };
 
-            for (var i = 0; i < icons.length; i++) {
+                for (var i = 0; i < icons.length; i++) {
 
-                icons[i].addEventListener("mouseenter", function() {
-                    (this).style.borderColor = "#ffffff";
-                    (this.querySelectorAll(".txt_subject1")[0]).animate(move_top, Timing, y1 -= 40);
-                    (this.querySelectorAll(".txt_subject2")[0]).animate(move_down, Timing, y2 += 40);
-                    (this.querySelectorAll(".txt_subject1")[0]).style.color = "#ffffff";
-                    (this.querySelectorAll(".txt_subject2")[0]).style.color = "#ffffff";
+                    icons[i].addEventListener("mouseenter", function() {
+                        (this).style.borderColor = "#ffffff";
+                        (this.querySelectorAll(".txt_subject1")[0]).animate(move_top, Timing, y1 -= 40);
+                        (this.querySelectorAll(".txt_subject2")[0]).animate(move_down, Timing, y2 += 40);
+                        (this.querySelectorAll(".txt_subject1")[0]).style.color = "#ffffff";
+                        (this.querySelectorAll(".txt_subject2")[0]).style.color = "#ffffff";
 
-                });
+                    });
 
-                icons[i].addEventListener("mouseleave", function() {
-                    //(this.querySelectorAll(".txt_subject")[0]).style.cssText = scale_down;
-                    (this).style.borderColor = "rgba(0, 0, 0, 0.5)";
-                    (this.querySelectorAll(".txt_subject1")[0]).animate(idle, Timing);
-                    (this.querySelectorAll(".txt_subject2")[0]).animate(idle, Timing);
-                    (this.querySelectorAll(".txt_subject1")[0]).style.color = " rgba(0, 0, 0, 0.5)";
-                    (this.querySelectorAll(".txt_subject2")[0]).style.color = " rgba(0, 0, 0, 0.5)";
+                    icons[i].addEventListener("mouseleave", function() {
+                        //(this.querySelectorAll(".txt_subject")[0]).style.cssText = scale_down;
+                        (this).style.borderColor = "rgba(0, 0, 0, 0.5)";
+                        (this.querySelectorAll(".txt_subject1")[0]).animate(idle, Timing);
+                        (this.querySelectorAll(".txt_subject2")[0]).animate(idle, Timing);
+                        (this.querySelectorAll(".txt_subject1")[0]).style.color = " rgba(0, 0, 0, 0.5)";
+                        (this.querySelectorAll(".txt_subject2")[0]).style.color = " rgba(0, 0, 0, 0.5)";
 
-                });
-            }
+                    });
+                }
 
-            for (var i = 0; i < icons.length; i++) {
+                for (var i = 0; i < icons.length; i++) {
 
-                icons[i].addEventListener("mouseenter", function() {
-                    (this.querySelectorAll(".txt_subject0")[0]).animate(move_in, Timing, y0 -= 40);
-                    (this.querySelectorAll(".txt_subject0")[0]).style.color = "#ffffff";
+                    icons[i].addEventListener("mouseenter", function() {
+                        (this.querySelectorAll(".txt_subject0")[0]).animate(move_in, Timing, y0 -= 40);
+                        (this.querySelectorAll(".txt_subject0")[0]).style.color = "#ffffff";
 
-                });
+                    });
 
-                icons[i].addEventListener("mouseleave", function() {
-                    //(this.querySelectorAll(".txt_subject")[0]).style.cssText = scale_down;
-                    (this.querySelectorAll(".txt_subject0")[0]).animate(idle, Timing);
-                    (this.querySelectorAll(".txt_subject0")[0]).style.color = " rgba(0, 0, 0, 0.5)";
+                    icons[i].addEventListener("mouseleave", function() {
+                        //(this.querySelectorAll(".txt_subject")[0]).style.cssText = scale_down;
+                        (this.querySelectorAll(".txt_subject0")[0]).animate(idle, Timing);
+                        (this.querySelectorAll(".txt_subject0")[0]).style.color = " rgba(0, 0, 0, 0.5)";
 
-                });
-            }
+                    });
+                }
 
-        for (let i = 0; i < txt_docs.length; i++) {
+            for (let i = 0; i < txt_docs.length; i++) {
 
-            let txt = txt_docs[i].textContent;
-            document.getElementById("pre_txt_high").outerHTML = "";
-            find_highs(txt_docs[i], txt);
+                let txt = txt_docs[i].textContent;
+                document.getElementById("pre_txt_high").outerHTML = "";
+                find_highs(txt_docs[i], txt);
 
-        };
+            };
+        }
 };
 
 

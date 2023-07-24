@@ -2,89 +2,140 @@
 layout: default
 ---
 <div id="main" role="main" class="container">
-    <article class="post">
-      <div class="section">
-        <h1>{{ page.title }}</h1>
 
-        <div class="box">
-          <p>{{ page.start }}</p>
-        </div>
+    <div class="loading" id="loading">
+        <svg viewBox="0 0 100 100">
+            <g fill="none" stroke="rgba(87, 32, 29, 1)" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1">
 
-        <img src="/images/separator.png" class="separator">
+                <!-- top line -->
+                <path d="M 50 21 V 40">
+                    <animate
+              attributeName="d"
+              values="M 50 21 V 40; M 50 59 V 40"
+              dur="2s"
+              repeatCount="indefinite" />
+                </path>
+                <!-- btm line -->
+                <path d="M 50 60 V 79">
+                    <animate
+              attributeName="d"
+              values="M 50 60 V 79; M 50 98 V 79"
+              dur="2s"
+              repeatCount="indefinite" />
+                </path>
+                <!-- top box -->
+                <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
+                <animate
+              attributeName="stroke"
+              values="rgba(90, 119, 141, 1); rgba(100,100,100,0)"
+              dur="2s"
+              repeatCount="indefinite" />
+                </path>
+                <!-- mid box -->
+                <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z"/>
+                <!-- btm box -->
+                <path d="M 50 59 L 79 78 L 50 98 L 21 78 Z">
+                <animate
+              attributeName="stroke"
+              values="rgba(100,100,100,0); rgba(90, 119, 141, 1)"
+              dur="2s"
+              repeatCount="indefinite" />
+                </path>
+                <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              values="0 0; 0 -19"
+              dur="2s"
+              repeatCount="indefinite" />
+            </g>
+        </svg>
+    </div>
 
-            <div class="chapter-table">
-              <div class="table-name"><h2>Table of Content</h2></div>
-              <ol>
-                {% for chapter in page.chapters %}
-                  <li><a href="#{{ chapter }}">{{ chapter }}</a></li>
-                {% endfor %}
-              </ol>
+    <div class="overlay">
+
+        <article class="post">
+          <div class="section">
+            <h1>{{ page.title }}</h1>
+
+            <div class="box">
+              <p>{{ page.start }}</p>
             </div>
 
-        <div class="comment_col" id="comment_section" style="font-family: 'note_font'; font-size: '58px'; ">
-        </div>
+            <img src="/images/separator.png" class="separator">
+
+                <div class="chapter-table">
+                  <div class="table-name"><h2>Table of Content</h2></div>
+                  <ol>
+                    {% for chapter in page.chapters %}
+                      <li><a href="#{{ chapter }}">{{ chapter }}</a></li>
+                    {% endfor %}
+                  </ol>
+                </div>
+
+            <div class="comment_col" id="comment_section" style="font-family: 'note_font'; font-size: '58px'; ">
+            </div>
 
 
-        <div class="entry">
-          {{ content }}
-        </div>
+            <div class="entry">
+              {{ content }}
+            </div>
 
-        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-        <button onclick="addFunction()" id="addBtn" title="Add a comment" class="plus">
+            <button onclick="addFunction()" id="addBtn" title="Add a comment" class="plus">
 
-          <img src="/images/icons/plus_dark.png"
-             onmouseover="this.src='/images/icons/plus_light.png';"
-             onmouseout="this.src='/images/icons/plus_dark.png';"
-             onclick="this.src='/images/icons/plus_dark.png';"
-             style="width:60px;height:60px;" >
+              <img src="/images/icons/plus_dark.png"
+                 onmouseover="this.src='/images/icons/plus_light.png';"
+                 onmouseout="this.src='/images/icons/plus_dark.png';"
+                 onclick="this.src='/images/icons/plus_dark.png';"
+                 style="width:60px;height:60px;" >
 
-        </button>
+            </button>
 
-        <div class="date">
-          Written on {{ page.date | date: "%B %e, %Y" }}
-        </div>
+            <div class="date">
+              Written on {{ page.date | date: "%B %e, %Y" }}
+            </div>
 
-        {% include disqus.html %}
-      </div>
+            {% include disqus.html %}
+          </div>
 
-      <div class="box_comment" id="comment_box">
-        <div class="comment_sec" id="notepad">
+          <div class="box_comment" id="comment_box">
+            <div class="comment_sec" id="notepad">
 
-          <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSemBZ6uj_oCrAQ3J4OasbWn6iOFyudplzL0Mj1Fb7Dc41C_rQ/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+              <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSemBZ6uj_oCrAQ3J4OasbWn6iOFyudplzL0Mj1Fb7Dc41C_rQ/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
 
-            <label for="fname" id="l_fname">Name:</label>
-            <input type="text" name="entry.1382275470" id="fname" required><br><br>
+                <label for="fname" id="l_fname">Name:</label>
+                <input type="text" name="entry.1382275470" id="fname" required><br><br>
 
-            <label for="quest" id="l_quest">Comment:</label>
-            <textarea name="entry.460579987" id="quest" required></textarea>
+                <label for="quest" id="l_quest">Comment:</label>
+                <textarea name="entry.460579987" id="quest" required></textarea>
 
-            <input type="hidden" name="entry.50349658" value="{{ page.article }}">
+                <input type="hidden" name="entry.50349658" value="{{ page.article }}">
 
-            <input type="hidden" name="entry.232104705" value="top" id="top_value">
-            <input type="hidden" name="entry.1690827949" value="left" id="left_value">
+                <input type="hidden" name="entry.232104705" value="top" id="top_value">
+                <input type="hidden" name="entry.1690827949" value="left" id="left_value">
 
-            <input type="Submit" value="SUBMIT" id="sub" onclick="CreateTextFile();">
+                <input type="Submit" value="SUBMIT" id="sub" onclick="CreateTextFile();">
 
-          </form>
-
-
-          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
-
-          <script type="text/javascript">var submitted=false;</script>
-          <script type="text/javascript">
-            $('#gform').on('submit', function(e) {
-              $('#gform *').fadeOut(2000);
-              $('#gform').prepend('Your submission has been processed...');
-              });
-          </script>
+              </form>
 
 
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 
+              <script type="text/javascript">var submitted=false;</script>
+              <script type="text/javascript">
+                $('#gform').on('submit', function(e) {
+                  $('#gform *').fadeOut(2000);
+                  $('#gform').prepend('Your submission has been processed...');
+                  });
+              </script>
 
-        </div>
-      </div>
+            </div>
+          </div>
 
-    </article>
+        </article>
+
+    </div>
 
 </div>
