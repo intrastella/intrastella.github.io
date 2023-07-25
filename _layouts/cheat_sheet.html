@@ -57,6 +57,12 @@ layout: default
 
         <div class="marker_buttons" id="marker_buttons">
 
+            {% assign subjects = site.pages | where_exp: 'page', 'page.field' %}
+            {% for subject in subjects %}
+                      <button onclick=window.location.href="/{{subject.field}}/{{subject.topic}}" id="{{ subject.topic }}" class="marker" title="{{ subject.title }}">{{ subject.title }}</button>
+            {% endfor %}
+
+
         </div>
 
         <article class="page">

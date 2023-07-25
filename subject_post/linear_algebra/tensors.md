@@ -1,5 +1,7 @@
 ---
 layout: cheat_sheet
+field: linear_algebra
+topic: tensors
 title: Tensor Algebra
 permalink: /linear_algebra/tensors
 ---

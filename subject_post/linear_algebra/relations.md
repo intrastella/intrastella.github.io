@@ -1,5 +1,7 @@
 ---
 layout: cheat_sheet
+field: linear_algebra
+topic: relations
 title: Matrix Relations
 permalink: /linear_algebra/relations
 ---

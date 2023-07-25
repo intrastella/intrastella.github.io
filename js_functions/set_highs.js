@@ -8,7 +8,7 @@ function set_high() {
         const url = window.location.pathname;
         var parent = url.substring(url.indexOf('/')+1, url.lastIndexOf('/'));
 
-        const subjects = ['linear_algebra', 'analysis', 'algebra', 'algebraic_geometry', 'comp_ana', 'topo', 'stat', 'funk_ana', 'diff_geo']
+        const subjects = ['linear_algebra', 'analysis', 'algebra', 'algebraic_geometry', 'comp_ana', 'topo', 'stat', 'funk_ana', 'diff_geo'];
 
         if (subjects.includes(parent)) {
 
@@ -17,7 +17,6 @@ function set_high() {
             var filename = url.substring(url.lastIndexOf('/')+1);
 
             let button_id = document.getElementById(filename);
-            let marker_buttons = document.getElementById(marker_buttons);
 
             const pages = document.querySelectorAll(".page");
             const markers = document.querySelectorAll(".marker");
