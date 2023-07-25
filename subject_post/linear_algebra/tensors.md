@@ -1,7 +1,7 @@
 ---
 layout: cheat_sheet
 category: linear_algebra
-field: linear_algebra
+out: 1
 topic: tensors
 title: Tensor Algebra
 permalink: /linear_algebra/tensors
@@ -14,10 +14,6 @@ ________________________________________________________________________________
 <br/>
 
 #### Introduction
-
-<br/>
-
-### Change of basis and coordinate transformation
 
 <br>
 
@@ -51,3 +47,7 @@ the direction of the basis vector
 <br/>
 
 #### Definitions
+
+### Change of basis and coordinate transformation
+
+

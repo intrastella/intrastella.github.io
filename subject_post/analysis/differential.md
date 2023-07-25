@@ -1,7 +1,7 @@
 ---
 layout: cheat_sheet
 category: analysis
-field: analysis
+out: 1
 topic: differential
 title: Differential Calculus
 permalink: /analysis/differential

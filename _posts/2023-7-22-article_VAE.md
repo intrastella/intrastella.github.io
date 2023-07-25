@@ -222,7 +222,7 @@ relationships between each random variables.
 
 {% include highlights.html 
 content_txt="Since we do not know the pdf of the latent vector but might have some **prior knowledge** 
-or we made an initial assumption about its distribution we can use Bayesian inference to /c/update prior distribution by the true posterior/c/." 
+or we made an initial assumption about its distribution we can use Bayesian inference to /c/update prior distribution by the posterior/c/." 
 %}
 
 <br>

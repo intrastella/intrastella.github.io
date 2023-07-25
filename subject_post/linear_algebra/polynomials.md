@@ -1,7 +1,7 @@
 ---
 layout: cheat_sheet
 category: linear_algebra
-field: linear_algebra
+out: 3
 topic: polynomials
 title: Characteristic Polynomial
 permalink: /linear_algebra/polynomials

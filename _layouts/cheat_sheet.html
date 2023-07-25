@@ -60,10 +60,12 @@ layout: default
             {% assign subjects = site.pages | group_by: 'category' %}
 
             {% for subject in subjects %}
-                {% for item in subject.items %}
+            {% assign sorted_subject = subject.items | sort: 'out' %}
 
-                    {% if item.field == page.field %}
-                      <button onclick=window.location.href="/{{item.field}}/{{item.topic}}" id="{{ item.topic }}" class="marker" title="{{ item.title }}">{{ item.title }}</button>
+                {% for item in sorted_subject %}
+
+                    {% if item.category == page.category %}
+                      <button onclick=window.location.href="/{{item.category}}/{{item.topic}}" id="{{ item.topic }}" class="marker" title="{{ item.title }}">{{ item.title }}</button>
                     {% endif %}
 
                 {% endfor %}
