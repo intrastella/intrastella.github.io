@@ -1,5 +1,6 @@
 ---
 layout: cheat_sheet
+category: linear_algebra
 field: linear_algebra
 topic: tensors
 title: Tensor Algebra
@@ -8,18 +9,19 @@ permalink: /linear_algebra/tensors
 
 _____________________________________________________________________________________________________________________________________
 
-
-## Transformation Matrix
-
-### Change of basis and coordinate transformation
+<br/>
 
 <br/>
 
-#### Definitions
+#### Introduction
+
+<br/>
+
+### Change of basis and coordinate transformation
 
 <br>
 
-#### Relation to contravariant - and covariant vectors
+### Relation to contravariant - and covariant vectors
 
 <br/>
 
@@ -32,16 +34,20 @@ the direction of the basis vector
 
 (create a sketch)
 
-### Coordinate change
+<br/>
+
+<br/>
+
+#### Covariant Vectors
 
 <br/>
 
 <br/>
 
-### Covariant Vectors
+#### Contravariant Vectors
 
 <br/>
 
 <br/>
 
-### Contravariant Vectors
+#### Definitions

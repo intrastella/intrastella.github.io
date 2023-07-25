@@ -57,9 +57,16 @@ layout: default
 
         <div class="marker_buttons" id="marker_buttons">
 
-            {% assign subjects = site.pages | where_exp: 'page', 'page.field' %}
+            {% assign subjects = site.pages | group_by: 'category' %}
+
             {% for subject in subjects %}
-                      <button onclick=window.location.href="/{{subject.field}}/{{subject.topic}}" id="{{ subject.topic }}" class="marker" title="{{ subject.title }}">{{ subject.title }}</button>
+                {% for item in subject.items %}
+
+                    {% if item.field == page.field %}
+                      <button onclick=window.location.href="/{{item.field}}/{{item.topic}}" id="{{ item.topic }}" class="marker" title="{{ item.title }}">{{ item.title }}</button>
+                    {% endif %}
+
+                {% endfor %}
             {% endfor %}
 
 

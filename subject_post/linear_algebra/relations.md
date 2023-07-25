@@ -1,5 +1,6 @@
 ---
 layout: cheat_sheet
+category: linear_algebra
 field: linear_algebra
 topic: relations
 title: Matrix Relations
