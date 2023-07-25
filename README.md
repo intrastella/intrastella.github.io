@@ -1,5 +1,7 @@
 
-### My GitHub Page : (My study Journal)[https://intrastella.github.io/]
+# My GitHub Page : 
+
+(My study Journal)[https://intrastella.github.io/]
 
 ## Content of my Blog:
 
