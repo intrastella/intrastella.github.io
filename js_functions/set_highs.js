@@ -12,11 +12,13 @@ function set_high() {
 
         if (subjects.includes(parent)) {
 
+            // <button onclick=window.location.href="/{{include.field}}/{{include.topic}}" id="{{include.topic}}" class="marker" title="{{include.title}}">{{include.title}}</button>
+
             var filename = url.substring(url.lastIndexOf('/')+1);
 
-            // alert(filename);
-
             let button_id = document.getElementById(filename);
+            let marker_buttons = document.getElementById(marker_buttons);
+
             const pages = document.querySelectorAll(".page");
             const markers = document.querySelectorAll(".marker");
 
@@ -281,7 +283,7 @@ function insertComments(parent) {
     if (obj_type === "article") {
 
         var article = parent.substring(parent.indexOf('_')+1);
-        const appScriptURL = "https://script.googleusercontent.com/macros/echo?user_content_key=TCqwFRG-p-zXSD0S5i71z3Od8-QUDCv-WLN43UNOM0V0XiJ9nlGeFadYfMhIMvH4IzAxX4voszvNE5e8OvMOq6c2scgEtQJGm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHu-C0g3UfQE8nhdzWPAe3Cp0IaqVayj9ETWkCg-lzYCvFBaxJ8HVNfWgZTXlNNrAWLgOfW-wjelxIgc4KlV7y7vdykeJILubw&lib=MGPZxz-P7tcjz-41s6vfEi2fqToxuHLv9"
+        const appScriptURL = "https://script.googleusercontent.com/macros/echo?user_content_key=HtveZV10FG4bsp4WEL8OjJJEAjiiz-BXYyOmSCMPkifQ6nQhm3BSAErwrbdtQ7GEQLPZZ7AlpELWJfGP8mH61k7HXEXvhMalm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnKSSFysLyohqCDC0R9hOyjd51k083NLWrNsDQ_XumwyvICfdyEnb0bdknWTm22ngiO7R-FfL0hwxSL4rVaTK3T7wjxHoH5hJrNz9Jw9Md8uu&lib=MGPZxz-P7tcjz-41s6vfEi2fqToxuHLv9"
 
         fetch(appScriptURL)
           .then(res => res.json())

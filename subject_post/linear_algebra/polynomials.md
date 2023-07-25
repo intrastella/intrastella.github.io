@@ -1,6 +1,6 @@
 ---
 layout: cheat_sheet
-title: Matrix Relations
+title: Characteristic Polynomial
 permalink: /linear_algebra/polynomials
 ---
 
