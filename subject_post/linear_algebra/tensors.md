@@ -15,6 +15,12 @@ ________________________________________________________________________________
 
 #### Introduction
 
+<br/>
+
+Even though tensor algebra does not belong to linear algebra I decided to incorporate this topic in here since it can be 
+also viewed as an extension of the knowledge required in linear algebra. Concepts like inner product, vectors, matrices and
+metrics are further generalized in tensor algebra.
+
 <br>
 
 ### Change of basis and coordinate transformation
@@ -72,6 +78,8 @@ $$\{ v \in \mathbb{R}^{2} : \| v \|_2 \leq 1 \}$$ As we can see these transforma
 #### Covariant Vectors
 
 <br/>
+
+Due to the duality ...
 
 <br/>
 
