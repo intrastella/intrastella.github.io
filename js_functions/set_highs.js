@@ -44,7 +44,7 @@ function set_high() {
             markers.forEach((marker, idx) => {
                 marker.style.zIndex = "-10000";
 
-                var top_pos = 300 + 80 * (1 + idx)
+                var top_pos = 280 + 80 * (1 + idx)
 
                 marker_attr = "width: 200px;height: 70px;background-color: rgba(87, 32, 29, 0.7);border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;font-size: 18px;z-index: -100;margin: 15px;position: absolute;left: 1630px;top:" + `${top_pos}px;`;
 
