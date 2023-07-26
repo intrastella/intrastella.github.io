@@ -4,6 +4,22 @@ let txt_docs = document.getElementsByClassName("highlighted");
 
 function set_high() {
 
+        var elements = document.querySelectorAll('[data-toggle="collapse"]');
+        elements.forEach(element => element.addEventListener('click', collapse));
+
+        function collapse() {
+          var target = this.getAttribute('data-target');
+          var element = document.getElementById(target);
+          if (element.style.display === "none") {
+            element.style.display = "block";
+            $('button').attr('data-text', '–');
+          } else {
+            element.style.display = "none";
+            $('button').attr('data-text', '+');
+          }
+          // element.style.content = '\2212';
+        };
+
         // for subjects
         const url = window.location.pathname;
         var parent = url.substring(url.indexOf('/')+1, url.lastIndexOf('/'));

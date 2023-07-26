@@ -17,16 +17,36 @@ ________________________________________________________________________________
 
 <br>
 
-### Relation to contravariant - and covariant vectors
+### Change of basis and coordinate transformation
 
 <br/>
 
-1. contravariant : coordinate transformation (B^-1 )^T, where B is matrix w/ basis vector columns
-2. same behavior as coordinates of a gradient - look representation (higher dim. differential calculus in Ana2)
-3. reason : such a gradient is the difference of the function per unit distance in
-the direction of the basis vector
-4. covariant vector: a gradient 
-5. reason: it transforms in the same way as the basis vector columns
+To understand some properties of covariant and contravariant vectors let us start with the basis transformation matrix and its
+corresponding coordinate transformation matrix. These two operators exhibit a somehow reversed behaviour. When we though analyse 
+how they are constructed it becomes obvious:
+
+<br/>
+
+Let $$\mathcal V (\mathbb{K}) $$ be a vectorspace over a fied $$\mathbb{K} $$ and let $$\mathcal B_{1} = \{b_{1}, ..., b_{n} \} $$ 
+and $$\mathcal B_{2} = \{\hat{b_{1}}, ..., \hat{b_{n}} \} $$  be two basis. <br>
+$$ \forall \ v \in \mathcal V$$  with $$ v = \sum_{i=1}^{\\n} b_{i} \mu_{i} = \sum_{i=1}^{\\n} \hat{b}_{i} \lambda_{i}$$
+we have:
+
+$$\text{1.} \quad \mathcal T_{B} (b_{1}, ..., b_{n}) = (\hat{b_{1}}, ..., \hat{b_{n}})  $$ 
+
+<br/>
+
+$$\text{2.} \quad \mathcal T_{C} \begin{bmatrix} \mu_{1} \\ \mu_2 \\ \vdots \\ \mu_n \end{bmatrix} \ = \begin{bmatrix} \lambda_{1} \\ \lambda_{2} \\ \vdots \\ \lambda_{n} \end{bmatrix}$$ 
+
+<br>
+
+{% include collapse.html title="&nbsp; Proof"  collapsed_content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
+diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, Lorem ipsum dolor sit amet, consetetur 
+sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
+ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet..."%}
 
 <br/>
 
@@ -36,6 +56,12 @@ $$\{ v \in \mathbb{R}^{2} : \| v \|_2 \leq 1 \}$$ As we can see these transforma
 
 
 <br/>
+
+<br/>
+
+<br/>
+
+#### Vectorfields
 
 <br/>
 
@@ -53,8 +79,10 @@ $$\{ v \in \mathbb{R}^{2} : \| v \|_2 \leq 1 \}$$ As we can see these transforma
 
 <br/>
 
-#### Definitions
+### Transformation of a Gradient
 
-### Change of basis and coordinate transformation
 
+<br/>
+
+<br/>
 
