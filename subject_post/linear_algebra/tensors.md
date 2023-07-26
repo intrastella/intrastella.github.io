@@ -42,19 +42,41 @@ we have $$ \mathcal T_{B} = (\mathcal T_{C}^{-1})^\top $$ where:
 
 $$\text{1.} \quad \mathcal T_{B} (b_{1}, ..., b_{n}) = (\hat{b_{1}}, ..., \hat{b_{n}})  $$ 
 
-$$\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \mathcal T_{B}, \mathcal T_{C} \in \mathbb{K}^{n \times n}  $$ 
+$$\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad ;  \qquad  \mathcal T_{B}, \mathcal T_{C} \in \mathbb{K}^{n \times n}  $$ 
 
 $$\text{2.} \quad \mathcal T_{C} \begin{bmatrix} \mu_{1} \\ \mu_2 \\ \vdots \\ \mu_n \end{bmatrix} \ = \begin{bmatrix} \lambda_{1} \\ \lambda_{2} \\ \vdots \\ \lambda_{n} \end{bmatrix}$$ 
 
 <br>
 
-{% include collapse.html title="&nbsp; Proof"  collapsed_content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
+{% include collapse.html title="&nbsp; Proof"  collapsed_content="
+Because $ \forall \ b_{i} \in \mathcal V  \quad \exists \ \alpha_{1}, ..., \alpha_{n} \in \mathbb{K} $ , where $i = 1, ..., n$ such that: 
+
+<br/>
+
+<br/>
+
+$$ b_{i} = (\hat{b_{1}}, ..., \hat{b_{n}})  \begin{bmatrix} \alpha_{1, i} \\ \alpha_{2, i} \\ \vdots \\ \alpha_{n, i} \end{bmatrix} $$
+
+<br/>
+
+<br/>
+
+This is a system of equations that can be extended so that we obtain one expression for all basis elements in $ \mathcal B_{1}$. For this denote $\mathcal T_{C} = [ \alpha_{i, j} ] \in \mathbb{K}^{n \times n} $ 
+as the matrix of all coefficients from that system of equation:
+
+<br/>
+
+<br/>
+
+$$\begin{align} (b_{1}, ..., b_{n}) &= (\hat{b_{1}}, ..., \hat{b_{n}}) \begin{bmatrix} \alpha_{1, 1} &  \cdots & \alpha_{n, 1} \\ \vdots & & \vdots \\ \alpha_{n, i} & \cdots & \alpha_{n, n}  \end{bmatrix} \\
+            &= (\hat{b_{1}}, ..., \hat{b_{n}}) \ \mathcal T_{C} \end{align} $$
+
+<br/>
+
+<br/>
+
 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, Lorem ipsum dolor sit amet, consetetur 
-sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
-ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet..."%}
+sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua..."%}
 
 <br/>
 

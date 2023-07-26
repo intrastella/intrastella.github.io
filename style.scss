@@ -1193,7 +1193,7 @@ figcaption {
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
-  background-color: #ccc;
+  background-color: rgba(119, 138, 153, 0.5);
 }
 
 /* Style the collapsible content. Note: hidden by default */
