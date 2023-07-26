@@ -29,8 +29,8 @@ how they are constructed it becomes obvious:
 
 Let $$\mathcal V (\mathbb{K}) $$ be a vectorspace over a fied $$\mathbb{K} $$ and let $$\mathcal B_{1} = \{b_{1}, ..., b_{n} \} $$ 
 and $$\mathcal B_{2} = \{\hat{b_{1}}, ..., \hat{b_{n}} \} $$  be two basis. <br>
-$$ \forall \ v \in \mathcal V$$  with $$ v = \sum_{i=1}^{\\n} b_{i} \mu_{i} = \sum_{i=1}^{\\n} \hat{b}_{i} \lambda_{i}$$
-we have:
+$$ \forall \ v \in \mathcal V $$  with $$ v = \sum_{i=1}^{\\n} b_{i} \mu_{i} = \sum_{i=1}^{\\n} \hat{b}_{i} \lambda_{i}$$
+we have $$ \mathcal T_{B} = (\mathcal T_{C}^{-1})^\top $$ where:
 
 $$\text{1.} \quad \mathcal T_{B} (b_{1}, ..., b_{n}) = (\hat{b_{1}}, ..., \hat{b_{n}})  $$ 
 
