@@ -32,9 +32,11 @@ and $$\mathcal B_{2} = \{\hat{b_{1}}, ..., \hat{b_{n}} \} $$  be two basis. <br>
 $$ \forall \ v \in \mathcal V $$  with $$ v = \sum_{i=1}^{\\n} b_{i} \mu_{i} = \sum_{i=1}^{\\n} \hat{b}_{i} \lambda_{i}$$
 we have $$ \mathcal T_{B} = (\mathcal T_{C}^{-1})^\top $$ where:
 
+<br>
+
 $$\text{1.} \quad \mathcal T_{B} (b_{1}, ..., b_{n}) = (\hat{b_{1}}, ..., \hat{b_{n}})  $$ 
 
-<br/>
+$$\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \mathcal T_{B}, \mathcal T_{C} \in \mathbb{K}^{n \times n}  $$ 
 
 $$\text{2.} \quad \mathcal T_{C} \begin{bmatrix} \mu_{1} \\ \mu_2 \\ \vdots \\ \mu_n \end{bmatrix} \ = \begin{bmatrix} \lambda_{1} \\ \lambda_{2} \\ \vdots \\ \lambda_{n} \end{bmatrix}$$ 
 
