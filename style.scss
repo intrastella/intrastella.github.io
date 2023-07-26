@@ -1178,8 +1178,8 @@ figcaption {
 
  /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: rgba(191, 180, 180, 0.3);
-  color: #444;
+  background-color: rgba(87, 32, 29, 0.15);
+  color: #092b44;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -1188,7 +1188,6 @@ figcaption {
   outline: none;
   font-size: 20px;
   letter-spacing: 2px;
-
   text-transform: none;
 }
 
@@ -1202,14 +1201,15 @@ figcaption {
   padding: 22px;
   display: none;
   overflow: hidden;
-  background-color: rgba(191, 180, 180, 0.3);
+  background-color: rgba(87, 32, 29, 0.05);
 }
 
 button.collapsible::after {
   content: attr(data-text);
-  color: black;
+  color: #092b44;
   font-weight: 400;
   float: right;
+  font-size: 25px;
   margin-left: 25px;
 }
 
