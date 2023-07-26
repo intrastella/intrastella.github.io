@@ -12,16 +12,16 @@ ________________________________________________________________________________
 
 ## Similar Matrices
 
-### Change of Basis
+### Chapter 1
 
 
-### Coordinate change
+### Chapter 2
 
 
-### Covariant Vectors
+### Chapter 3
 
 
-### Contravariant Vectors
+### Chapter 14
 
 <br/>
 
@@ -31,14 +31,14 @@ ________________________________________________________________________________
 
 ## Equivalent Matrices
 
-### Change of Basis
+### Chapter 1
 
 
-### Coordinate change
+### Chapter 2
 
 
-### Covariant Vectors
+### Chapter 3
 
 
-### Contravariant Vectors
+### Chapter 14
 
