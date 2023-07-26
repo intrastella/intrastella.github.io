@@ -28,7 +28,14 @@ the direction of the basis vector
 4. covariant vector: a gradient 
 5. reason: it transforms in the same way as the basis vector columns
 
-(create a sketch)
+<br/>
+
+{% include res_gif.html url="/images/lina/transform.gif"  width="1000px" text="On the left plot is the coordinate 
+transformation and on the right the basis transformation. In the center of both plots you can see the unit disc:
+$$\{ v \in \mathbb{R}^{2} : \| v \|_2 \leq 1 \}$$ As we can see these transformations are acting inverse to each other."%}
+
+
+<br/>
 
 <br/>
 
