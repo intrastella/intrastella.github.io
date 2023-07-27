@@ -4,22 +4,6 @@ let txt_docs = document.getElementsByClassName("highlighted");
 
 function set_high() {
 
-        var elements = document.querySelectorAll('[data-toggle="collapse"]');
-        elements.forEach(element => element.addEventListener('click', collapse));
-
-        function collapse() {
-          var target = this.getAttribute('data-target');
-          var element = document.getElementById(target);
-          if (element.style.display === "none") {
-            element.style.display = "block";
-            $('button').attr('data-text', '–');
-          } else {
-            element.style.display = "none";
-            $('button').attr('data-text', '+');
-          }
-          // element.style.content = '\2212';
-        };
-
         // for subjects
         const url = window.location.pathname;
         var parent = url.substring(url.indexOf('/')+1, url.lastIndexOf('/'));
@@ -28,31 +12,12 @@ function set_high() {
 
         if (subjects.includes(parent)) {
 
-            // <button onclick=window.location.href="/{{include.field}}/{{include.topic}}" id="{{include.topic}}" class="marker" title="{{include.title}}">{{include.title}}</button>
+            responsible_page();
+            collapse_drops();
 
-            var filename = url.substring(url.lastIndexOf('/')+1);
-
-            let button_id = document.getElementById(filename);
-
-            const pages = document.querySelectorAll(".page");
-            const markers = document.querySelectorAll(".marker");
-
-            pages.forEach((page, idx) => {
-                page.style.zIndex = "-1";
+            window.addEventListener("resize", function () {
+                responsible_page();
             });
-
-            markers.forEach((marker, idx) => {
-                marker.style.zIndex = "-10000";
-
-                var top_pos = 280 + 80 * (1 + idx)
-
-                marker_attr = "width: 200px;height: 70px;background-color: rgba(87, 32, 29, 0.7);border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;font-size: 18px;z-index: -100;margin: 15px;position: absolute;left: 1630px;top:" + `${top_pos}px;`;
-
-                // marker_attr = "width: 200px;height: 70px;background-color: rgba(87, 32, 29, 0.7);border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;font-size: 18px;z-index: -100;margin: 15px;position: absolute;left: 1630px;top: 300px;";
-                marker.style.cssText = marker_attr;
-            });
-
-            button_id.style.zIndex = "10000";
 
         }
 
@@ -373,6 +338,131 @@ function makeVisible() {
         box[2*i].style.color = 'rgba(93, 182, 226, 0.6)';
         });
     }
+
+}
+
+function collapse_drops() {
+
+        var elements = document.querySelectorAll('[data-toggle="collapse"]');
+        elements.forEach(element => element.addEventListener('click', collapse));
+
+        function collapse() {
+          var target = this.getAttribute('data-target');
+          var element = document.getElementById(target);
+          if (element.style.display === "none") {
+            element.style.display = "block";
+            $('button').attr('data-text', '–');
+          } else {
+            element.style.display = "none";
+            $('button').attr('data-text', '+');
+          }
+        };
+};
+
+
+function responsible_page() {
+
+    let page = document.querySelector('#page_subject');
+
+    const win_size = window.innerWidth;
+    const markers_left = 1630;
+    const default_window_width = 1920;
+    const default_page_width = 1500;
+
+    const scale = win_size / default_window_width;
+
+    const marker_right_margin = 55;
+    const marker_width = 200;
+    const scaled_marker_right_margin = marker_right_margin * scale;
+    const marker_left = win_size - (marker_width + scaled_marker_right_margin);
+    marker_feat(Math.round(marker_left));
+
+    const new_page_width = Math.round(default_page_width * scale);
+    document.getElementById("main").style.width = win_size + "px";
+    document.getElementById("main").style.top = "0px";
+    document.getElementById("main").style.backgroundColor = "rgba(255, 255, 255,  0.1)";
+    page.style.width = new_page_width + "px";
+    page.style.top = "5%";
+
+    if (win_size < 1920) {
+
+        const gif_containers = document.querySelectorAll(".gif_container");
+        gif_containers.forEach((gif_container, idx) => {
+            // new_page_width
+            gif_container_css = "position: relative; padding: 10px; display: flex; justify-content: center; background-color: rgba(119, 138, 153, 0.2); width: " + `${new_page_width - 100}px;`
+            gif_container.style.cssText = gif_container_css;
+        });
+
+        const gif_lefts = document.querySelectorAll(".gif_left");
+        gif_lefts.forEach((gif_left, idx) => {
+
+            let fig = document.querySelector('.gif_left figcaption');
+            let fig_img = document.querySelector('.gif_left img');
+
+            const caption_css = "display: table-caption; caption-side: bottom;";
+            fig.style.cssText = caption_css;
+
+            const fig_css = "display: table;";
+            gif_left.style.cssText = fig_css;
+
+            fig_img.style.cssText = "";
+
+        });
+
+    } else {
+
+        const gif_containers = document.querySelectorAll(".gif_container");
+        gif_containers.forEach((gif_container, idx) => {
+            // new_page_width
+            gif_container_css = "position: relative; padding: 10px; display: flex; justify-content: center; background-color: rgba(119, 138, 153, 0.2); width: " + `${new_page_width - 100}px;`
+            gif_container.style.cssText = gif_container_css;
+        });
+
+        const gif_lefts = document.querySelectorAll(".gif_left");
+        gif_lefts.forEach((gif_left, idx) => {
+
+            let fig = document.querySelector('.gif_left figcaption');
+            let fig_img = document.querySelector('.gif_left img');
+
+            const caption_css = "position: relative; caption-side: right; word-wrap: break-word; padding: 10px;";
+            fig.style.cssText = caption_css;
+
+            const fig_css = "display: flex; align-items: center";
+            gif_left.style.cssText = fig_css;
+
+            const img_css = "width: 1000px; position: relative;";
+            fig_img.style.cssText = img_css;
+
+        });
+
+    }
+
+};
+
+
+function marker_feat(marker_left) {
+
+    const url = window.location.pathname;
+    var filename = url.substring(url.lastIndexOf('/')+1);
+    let button_id = document.getElementById(filename);
+    const pages = document.querySelectorAll(".page");
+    const markers = document.querySelectorAll(".marker");
+
+    pages.forEach((page, idx) => {
+         page.style.zIndex = "-1";
+    });
+
+    markers.forEach((marker, idx) => {
+          marker.style.zIndex = "-10000";
+
+          var top_pos = 280 + 80 * (1 + idx)
+
+          marker_attr = "width: 200px;height: 70px;background-color: rgba(87, 32, 29, 0.7);border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;font-size: 18px;z-index: -100;margin: 15px;position: absolute; left:" + `${marker_left}px;top:${top_pos}px;`;
+          marker.style.cssText = marker_attr;
+    });
+
+    button_id.style.zIndex = "10000";
+
 
 }
 

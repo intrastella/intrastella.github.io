@@ -80,7 +80,7 @@ sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore mag
 
 <br/>
 
-{% include res_gif.html url="/images/lina/transform.gif"  width="1000px" text="On the left plot is the coordinate 
+{% include res_gif.html url="/images/lina/transform.gif" text="On the left plot is the coordinate 
 transformation and on the right the basis transformation. In the center of both plots you can see the unit disc:
 $$\{ v \in \mathbb{R}^{2} : \| v \|_2 \leq 1 \}$$ As we can see these transformations are acting inverse to each other."%}
 
