@@ -66,6 +66,10 @@ $$
 
 $$
 
+<br/>
+
+<br/>
+
 Now we need to  ... (dual map)
 
 <br/>
