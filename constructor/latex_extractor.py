@@ -259,4 +259,4 @@ if __name__ == "__main__":
                 paste_layer('2023-7-6-VAE', f'eq{i}')'''
 
     main('lina', f'commutative')
-    paste_layer('lina', f'commutative')
+    # paste_layer('lina', f'commutative')

@@ -55,13 +55,29 @@ $$\begin{align} f(v) &= f \ (\sum_{i=1}^{\\n} \lambda_{i} b_{i}) \\
 
 <br/>
 
-The matrix representation of $$ f $$ is given by $$ A $$ and is denoted by $$ [f]_{B_{1}, B_{2}} $$.  The coordinates of $$ f(v) $$ is given by $$ \Biggl( [f]_{B_{1}, B_{2}} \begin{bmatrix} \lambda_{1} \\ \vdots \\ \lambda_{n} \end{bmatrix} \Biggl) $$ .
+The matrix representation of $$ f $$ is given by $$ A $$ and is denoted by $$ [f]_{B_{1}, B_{2}} $$.  The coordinates of $$ f(v) = w \in \mathcal{W} $$ is given by $$ \Biggl( [f]_{B_{1}, B_{2}} \begin{bmatrix} \lambda_{1} \\ \vdots \\ \lambda_{n} \end{bmatrix} \Biggl) $$ .
 
 ### Commutative Diagram
 
 <br/>
 
-{% include res_img.html url="/images/lina/commutative.png" width="900px" %}
+The following commutative diagram captures the mappings of the (1) homomorphism, (2) coordinates, (3) identity and their matrix representations:
+
+<br/>
+
+$$\begin{align} 
+&(1) \quad f \ : \mathcal V \longrightarrow \mathcal W , \quad v \longmapsto f(v) = w\\
+&(2) \quad \Phi_B \ : \mathcal V \longrightarrow \mathbb{K}^{n, 1} , \quad v = \sum_{i=1}^{\\n} \lambda_{i} b_{i} \longmapsto \Phi(v) := \begin{bmatrix} \lambda_{1} \\ \vdots \\ \lambda_{n} \end{bmatrix} \\
+&(3) \quad \mathcal{I}d_{\mathcal V} \ : \mathcal V  \longrightarrow \mathcal V  , \quad \mathcal v \longmapsto \mathcal{I}d_{\mathcal V}(v)  = v
+\end{align}$$
+
+<br/>
+
+{% include res_gif.html url="/images/lina/commutative.png" text="The dotted arrows are the mappings from the representation matrices to highlight the different type of mapping." %}
+
+
+<br/>
+
 
 <br/>
 
@@ -70,6 +86,10 @@ The matrix representation of $$ f $$ is given by $$ A $$ and is denoted by $$ [f
 <br/>
 
 ### Basis Transformation
+
+<br/>
+
+#### Properties
 
 <br/>
 
