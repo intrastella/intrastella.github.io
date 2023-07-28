@@ -16,7 +16,7 @@ ________________________________________________________________________________
 <br/>
 
 Every linear map $$ f \in \mathcal L(\mathcal V, \mathcal W ) $$ between two vector spaces $$ \mathcal V$$ and  $$\mathcal W $$ has a unique matrix representation. In most fields where one uses numerical approaches to solve problems
-a matrix representation is preferred to do any calculations due to practicality and opportunity of parallelization of computations. This section is a short summary of matrix representation.
+a matrix representation is preferred to do any calculations due to practicality and opportunity of parallelizing computations. This section is a short summary of matrix representation.
 
 <br/>
 
