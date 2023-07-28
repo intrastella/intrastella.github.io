@@ -95,8 +95,6 @@ $$\{ v \in \mathbb{R}^{2} : \| v \|_2 \leq 1 \}$$ As we can see these transforma
 
 {% include res_img.html url="/images/separator.png" width="800px" %}
 
-
-
 <br/>
 
 #### Vectorfields

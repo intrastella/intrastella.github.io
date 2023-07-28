@@ -57,7 +57,7 @@ def get_final_img(img_path):
         new_size = (1600, int(height / scale))
         pil_image = pil_image.resize(new_size)
 
-    pil_image = get_nice_boundary(pil_image)
+    pil_image = create_nice_boundary(pil_image)
 
     width, height = pil_image.size
 
@@ -66,7 +66,7 @@ def get_final_img(img_path):
 
     if width != 1600:
         scale = width / 1600
-        new_size = (1600, int(height / (scale * 1.05)))
+        new_size = (1600, int(height / (scale * 1.0))) # 1.05
         pil_image = pil_image.resize(new_size)
 
     pil_image.save(img_path, quality=300)
@@ -259,4 +259,4 @@ if __name__ == "__main__":
                 paste_layer('2023-7-6-VAE', f'eq{i}')'''
 
     main('lina', f'commutative')
-    # paste_layer('lina', f'commutative')
+    paste_layer('lina', f'commutative')
