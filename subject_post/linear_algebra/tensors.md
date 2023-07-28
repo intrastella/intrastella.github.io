@@ -65,6 +65,9 @@ $$
 ( \Phi_{\mathcal{B}_1}^{-1} \ \circ \   [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_2, \mathcal{B}_1})^\top
 
 $$
+
+Now we need to  ... (dual map)
+
 <br/>
 
 "%}
