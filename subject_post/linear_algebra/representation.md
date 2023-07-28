@@ -61,7 +61,7 @@ The matrix representation of $$ f $$ is given by $$ A $$ and is denoted by $$ [f
 
 <br/>
 
-{% include res_img.html url="/images/lina/commutative.png" width="500px" %}
+{% include res_img.html url="/images/lina/commutative.png" width="900px" %}
 
 <br/>
 
