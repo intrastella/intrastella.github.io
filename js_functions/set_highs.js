@@ -1,10 +1,7 @@
-// Get text to highlight
-
 let txt_docs = document.getElementsByClassName("highlighted");
+let latex_high = document.getElementsByClassName("latex_high");
 
 function set_high() {
-
-        // for subjects
         const url = window.location.pathname;
         var parent = url.substring(url.indexOf('/')+1, url.lastIndexOf('/'));
 
@@ -113,6 +110,19 @@ function set_high() {
                 let txt = txt_docs[i].textContent;
                 document.getElementById("pre_txt_high").outerHTML = "";
                 find_highs(txt_docs[i], txt);
+
+            };
+
+            for (let i = 0; i < latex_high.length; i++) {
+
+                let latex_span1 = document.getElementById('latex1');
+                let latex_span2 = document.getElementById('latex2');
+
+                let txt = latex_high[i].textContent;
+                document.getElementById("pre_txt_high").outerHTML = "";
+                find_highs(latex_span1, txt);
+
+                latex_span1.appendChild(latex_span2);
 
             };
         }

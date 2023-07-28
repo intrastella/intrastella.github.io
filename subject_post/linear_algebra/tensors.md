@@ -23,6 +23,10 @@ metrics are further generalized in tensor algebra.
 
 <br>
 
+{% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
+
 ### Change of basis and coordinate transformation
 
 <br/>
@@ -82,18 +86,26 @@ sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore mag
 
 {% include res_gif.html url="/images/lina/transform.gif" text="On the left plot is the coordinate 
 transformation and on the right the basis transformation. In the center of both plots you can see the unit disc:
-$$\{ v \in \mathbb{R}^{2} : \| v \|_2 \leq 1 \}$$ As we can see these transformations are acting inverse to each other."%}
+$$\{ v \in \mathbb{R}^{2} : \| v \|_2 \leq 1 \}$$ As we can see these transformations are acting inverse to each other." %}
 
 
 <br/>
 
 <br/>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
+
+
 
 <br/>
 
 #### Vectorfields
 
 <br/>
+
+<br/>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
 
 <br/>
 
@@ -105,9 +117,17 @@ Due to the duality ...
 
 <br/>
 
+{% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
+
 #### Contravariant Vectors
 
 <br/>
+
+<br/>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
 
 <br/>
 
@@ -115,6 +135,10 @@ Due to the duality ...
 
 
 <br/>
+
+<br/>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
 
 <br/>
 

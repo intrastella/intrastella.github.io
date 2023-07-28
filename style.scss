@@ -35,6 +35,9 @@ body {
 	background: $white;
   font: 18px/1.4 $lmodern;
   color: $darkGray;
+  font-smoothing:antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-rendering:optimizeLegibility;
 }
 
 figcaption {
@@ -1191,10 +1194,11 @@ svg {
 
 /* Style the collapsible content. Note: hidden by default */
 .c_content {
-  padding: 22px;
+  padding: 50px;
   display: none;
   overflow: hidden;
-  background-color: rgba(87, 32, 29, 0.05);
+  background-color: #fff;
+  border: 3px solid rgba(87, 32, 29, 0.7);
 }
 
 button.collapsible::after {

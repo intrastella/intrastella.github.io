@@ -19,6 +19,5 @@ In addition, I will publish every other week a topic from my studies (mathematic
 
 ## TODO
 
-- Make "markers", "plus button" responsive to screen size 
-- "html font weight changes from laptop to laptop" 
-- "topic" page for 3 max width sizes 
+- Make "markers", "plus button" responsive to screen size
+- "topic" page for smaller screen size flip last column to last row and make make them 2x bigger 

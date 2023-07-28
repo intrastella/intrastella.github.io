@@ -434,7 +434,7 @@ issue that /c/z cannot be deterministically expressed/c/ and thereby cannot calc
 Trick, to overcome this learning obstacle."%}
 
 
-{% include res_img.html url="/images/2023-7-6-VAE/backprop.png" %}
+{% include res_img.html url="/images/2023-7-6-VAE/backprop.png" width="600px" %}
 
 
 {% include highlights.html 
@@ -605,7 +605,7 @@ Coming back to the G-REP method it is represented by the following terms:
 
 <br/>
 
-The g^rep term is nothing else then the reparameterized expectation just writen out as an integral.
+The $g^{rep}$ term is nothing else then the reparameterized expectation just writen out as an integral.
 By some restructuring of our objective we can derive them as a sum: 
 
 <br/>

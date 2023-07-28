@@ -6,9 +6,9 @@ import fitz
 
 
 def main(article, file):
-    p = Path(__file__).parent
-    in_path = f'{p}/_latex_pdf/{article}/{file}.pdf'
-    out_path = f'{p.parent}/images/{article}/{file}' + '.png'
+    p = Path(__file__).parents[1]
+    in_path = f'{p}/images/{article}/{file}.pdf'
+    out_path = f'{p}/images/{article}/{file}' + '.png'
 
     # out_path = f'{p.parent}/images/{article}/test9' + '.png'
 
@@ -258,5 +258,5 @@ if __name__ == "__main__":
                 main('2023-7-6-VAE', f'eq{i}')
                 paste_layer('2023-7-6-VAE', f'eq{i}')'''
 
-    main('2023-7-6-VAE', f'eq0')
-    paste_layer('2023-7-6-VAE', f'eq0')
+    main('lina', f'commutative')
+    paste_layer('lina', f'commutative')
