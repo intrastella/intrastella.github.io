@@ -1,7 +1,7 @@
 ---
 layout: cheat_sheet
 category: linear_algebra
-out: 1
+out: 3
 topic: tensors
 title: Tensor Algebra
 permalink: /linear_algebra/tensors

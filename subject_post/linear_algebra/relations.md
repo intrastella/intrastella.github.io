@@ -1,7 +1,7 @@
 ---
 layout: cheat_sheet
 category: linear_algebra
-out: 2
+out: 6
 topic: relations
 title: Matrix Relations
 permalink: /linear_algebra/relations

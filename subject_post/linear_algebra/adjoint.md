@@ -1,7 +1,7 @@
 ---
 layout: cheat_sheet
 category: linear_algebra
-out: 3
+out: 5
 topic: adjoint
 title: Adjoint Representation
 permalink: /linear_algebra/adjoint
@@ -9,8 +9,15 @@ permalink: /linear_algebra/adjoint
 
 _____________________________________________________________________________________________________________________________________
 
+<br/>
+
+<br/>
 
 #### Introduction
+
+<br/>
+
+<br/>
 
 #### Scalar Product
 
@@ -39,7 +46,14 @@ ________________________________________________________________________________
 
 <br/>
 
-#### Lie Algebra
+
+#### Cyclic Vector Subspace
+
+<br/>
+
+<br/>
+
+#### Lie Algebras
 
 <br/>
 
