@@ -269,7 +269,8 @@ $$\begin{align}
 <br/>
 
 (1) &emsp; *The coordinate mapping $$ \Phi_{\mathcal{B}} $$ is an isomorphism.* <br>
-(2) &emsp; $$\Phi_{\mathcal{B}_2}(f(v)) = [f]_{\mathcal{B}_1, \mathcal{B}_2} \ \Phi_{\mathcal{B}_1}(v) ; \quad \forall \ v \in \mathcal{V}$$
+(2) &emsp; $$\Phi_{\mathcal{B}_2}(f(v)) = [f]_{\mathcal{B}_1, \mathcal{B}_2} \ \Phi_{\mathcal{B}_1}(v) ; \quad \forall \ v \in \mathcal{V}$$ <br>
+(3) &emsp; *A coordinate transformation is defined by $$\Phi_{\mathcal{B}_2} = [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2} \ \circ \ \Phi_{\mathcal{B}_1}$$*
 
 <br/>
 
