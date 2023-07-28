@@ -15,11 +15,16 @@ ________________________________________________________________________________
 
 <br/>
 
-This section is just a short summary of matrix representation due to its relevance in linear algebra and usefulness in the following chapters.
+Every linear map $$ f \in \mathcal L(\mathcal V, \mathcal W ) $$ between two vector spaces $$ \mathcal V$$ and  $$\mathcal W $$ has a unique matrix representation. In most fields where one uses numerical approaches to solve problems
+a matrix representation is preferred to do any calculations due to practicality and opportunity of parallelization of computations. This section is a short summary of matrix representation.
 
 <br/>
 
-### Approach to obtain the Matrix Representation
+{% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
+
+#### Approach to obtain the Matrix Representation
 
 <br/>
 
@@ -223,7 +228,7 @@ $$
 
 <br/>
 
-### Commutative Diagram
+#### Commutative Diagram
 
 <br/>
 
