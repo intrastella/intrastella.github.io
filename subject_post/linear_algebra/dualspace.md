@@ -102,8 +102,8 @@ $$ f(v) = [f]_{\mathcal{B}_1, \mathcal{B}_2} \Phi_{\mathcal{B}_1} (v) = [f(b_1),
 
 <br/>
 
-Let $$\mathcal V (\mathbb{F}) $$ be a vector space over a field $$ \mathbb{F} $$. Then every basis $$\mathcal{B} = \{ b_1, ..., b_n \} $$ of $$\mathcal V $$
-has a unique dual basis $$ \mathcal{B}^{*} = \{ \varphi_1, ..., \varphi_n \} $$ of $$ \mathcal{V}^{*} $$  that is defined to be:
+Let $$\mathcal V (\mathbb{F}) $$ be a vector space over a field $$ \mathbb{F} $$. Then for every basis $$\mathcal{B} = \{ b_1, ..., b_n \} $$ of $$\mathcal V $$
+there exists a unique dual basis $$ \mathcal{B}^{*} = \{ \varphi_1, ..., \varphi_n \} $$ of $$ \mathcal{V}^{*} $$  that is defined to by:
 
 $$ \varphi_i(v_j) = \delta_{i, j} \ ; \qquad i, j = 1, ..., n$$
 
@@ -129,7 +129,7 @@ $$ \varphi_i(p(t)) =  \int_{0}^{i} \sum_{k=0}^{2} \alpha_k t^{k} dt = \sum_{k=0}
 
 <br/>
 
-In that way we can rewrite that as a matrix product:
+In that way we can rewrite those integrals as a matrix product:
 
 $$ \begin{align}
 
