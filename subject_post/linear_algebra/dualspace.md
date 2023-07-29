@@ -109,6 +109,28 @@ $$ \varphi_i(v_j) = \delta_{i, j} \ ; \qquad i, j = 1, ..., n$$
 
 <br>
 
+<ins>Example 1</ins>: Let $$ \mathbb{R}[t]_{\leq 2} $$ be the vector space of polynomials with degree at most 2.
+Then the dual basis of $$\mathcal{B} = \{ b_1, b_2, b_3 \}  $$ given by: <br>
+
+$$ \begin{align}  
+&b_1 = 3 - 5t + 3t²/2 \ ;
+\qquad b_2 = -3/2 + 4t - 3t²/2  \ ;
+\qquad b_3 = -1/3 -t + t²/2 
+\end{align}$$
+
+$$ \begin{align} \mathcal{B}^{*} = \left\{ \ \varphi_i \quad \bigg\vert \quad  \varphi_i(p(t)) = \int_{0}^{i} p(t) dt \quad \land \quad p(t) \in  \mathbb{R}[t]_{\leq 2} \ \right\}_{i=1}^{3}
+\end{align} $$ 
+
+<br/>
+
+Let $$ p(t) = \sum_{k=1}^{3} \alpha_k t^{k} $$ then we get in total:
+
+$$ \varphi_i(p(t)) =  \int_{0}^{i} \sum_{k=1}^{3} \alpha_k t^{k} dt = \sum_{k=1}^{3} \alpha_k \int_{0}^{i} t^{k} dt$$
+
+
+
+<br>
+
 {% include res_img.html url="/images/separator.png" width="800px" %}
 
 <br/>
