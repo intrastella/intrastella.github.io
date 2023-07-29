@@ -34,7 +34,7 @@ some important concepts regarding dual spaces.
 
 <br/>
 
-A linear form, also known as linear functional, one form or covariant vector, is a linear map in $$\mathcal{L}(\mathcal{V}, \mathbb{K}) $$ where $$\mathcal V (\mathbb{K}) $$
+A linear form, also known as linear functional, one form or covariant vector, is a linear map in $$\mathcal{L}(\mathcal{V}, \mathbb{F}) $$ where $$\mathcal V (\mathbb{F}) $$
 is a vector space.
 
 <br>
@@ -102,7 +102,10 @@ $$ f(v) = [f]_{\mathcal{B}_1, \mathcal{B}_2} \Phi_{\mathcal{B}_1} (v) = [f(b_1),
 
 <br/>
 
-<br/>
+Let $$\mathcal V (\mathbb{F}) $$ be a vector space over a field $$ \mathbb{F} $$. Then every basis $$\mathcal{B} = \{ b_1, ..., b_n \} $$ of $$\mathcal V $$
+has a unique dual basis $$ \mathcal{B}^{*} = \{ \varphi_1, ..., \varphi_n \} $$ of $$ \mathcal{V}^{*} $$  that is defined to be:
+
+$$ \varphi_i(v_j) = \delta_{i, j} \ ; \qquad i, j = 1, ..., n$$
 
 <br>
 
