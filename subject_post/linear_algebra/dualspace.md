@@ -123,9 +123,9 @@ $$ \begin{align} \mathcal{B}^{*} = \left\{ \ \varphi_i \quad \bigg\vert \quad  \
 
 <br/>
 
-Let $$ p(t) = \sum_{k=0}^{2} \alpha_k t^{k} $$ then we get in total:
+For $$j=1, 2, 3$$ let $$ b_j = \sum_{k=0}^{2} \alpha_k^{j} t^{k} $$ where $$\{ \alpha_k^{j} \}_{k=0}^{2}$$ are the coordinates of $$ b_j $$ w.r.t. the standard basis of $$ \mathbb{R}[t]_{\leq 2} $$ then we get in total:
 
-$$ \varphi_i(p(t)) =  \int_{0}^{i} \sum_{k=0}^{2} \alpha_k t^{k} dt = \sum_{k=0}^{2} \alpha_k \int_{0}^{i} t^{k} dt  \ \ ; \qquad i = 1, 2, 3$$
+$$ \varphi_i(b_j) =  \int_{0}^{i} \sum_{k=0}^{2} \alpha_k^{j} t^{k} dt = \sum_{k=0}^{2} \alpha_k^{j} \int_{0}^{i} t^{k} dt  \ \ ; \qquad i = 1, 2, 3$$
 
 <br/>
 
@@ -141,9 +141,9 @@ $$ \begin{align}
 
 &=
 \begin{bmatrix}
-3 & -5 & 3/2 \\
--3/2 & 4 & -3/2 \\
--1/3 & -1 & 1/2 
+\alpha_1^{1} & \alpha_2^{1} & \alpha_3^{1} \\
+\alpha_1^{2} & \alpha_2^{2} & \alpha_3^{2}  \\
+\alpha_1^{3} & \alpha_2^{3} & \alpha_3^{3} 
 \end{bmatrix}
 
 \begin{bmatrix}
