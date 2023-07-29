@@ -123,11 +123,67 @@ $$ \begin{align} \mathcal{B}^{*} = \left\{ \ \varphi_i \quad \bigg\vert \quad  \
 
 <br/>
 
-Let $$ p(t) = \sum_{k=1}^{3} \alpha_k t^{k} $$ then we get in total:
+Let $$ p(t) = \sum_{k=0}^{2} \alpha_k t^{k} $$ then we get in total:
 
-$$ \varphi_i(p(t)) =  \int_{0}^{i} \sum_{k=1}^{3} \alpha_k t^{k} dt = \sum_{k=1}^{3} \alpha_k \int_{0}^{i} t^{k} dt$$
+$$ \varphi_i(p(t)) =  \int_{0}^{i} \sum_{k=0}^{2} \alpha_k t^{k} dt = \sum_{k=0}^{2} \alpha_k \int_{0}^{i} t^{k} dt  \ \ ; \qquad i = 1, 2, 3$$
+
+<br/>
+
+In that way we can rewrite that as a matrix product:
+
+$$ \begin{align}
+
+\begin{bmatrix}
+\varphi_1(b_1) & \varphi_2(b_1) & \varphi_3(b_1) \\
+\varphi_1(b_2) & \varphi_2(b_2) & \varphi_3(b_2) \\
+\varphi_1(b_3) & \varphi_2(b_3) & \varphi_3(b_3) 
+\end{bmatrix}
+
+&=
+\begin{bmatrix}
+3 & -5 & 3/2 \\
+-3/2 & 4 & -3/2 \\
+-1/3 & -1 & 1/2 
+\end{bmatrix}
+
+\begin{bmatrix}
+t \vert_{0}^{1} & t \vert_{0}^{2} & t \vert_{0}^{3} \\
+\frac{t²}{2} \vert_{0}^{1} & \frac{t²}{2} \vert_{0}^{2} & \frac{t²}{2} \vert_{0}^{3} \\
+\frac{t³}{3} \vert_{0}^{1} & \frac{t³}{3} \vert_{0}^{2} & \frac{t³}{3} \vert_{0}^{2}
+\end{bmatrix} \\
+
+\\
+
+&=
+
+\begin{bmatrix}
+3 & -5 & 3/2 \\
+-3/2 & 4 & -3/2 \\
+-1/3 & -1 & 1/2 
+\end{bmatrix}
+
+\begin{bmatrix}
+1 & 2 & 3 \\
+1/2 & 2 & 9/2 \\
+1/3 & 8/3 & 9
+\end{bmatrix} \\
+
+\\
+
+&=
+
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 
+\end{bmatrix}
 
 
+\end{align} $$
+
+<br>
+
+Therefore, $$\mathcal{B}^{*}$$ is dual to $$\mathcal{B}$$.
 
 <br>
 
