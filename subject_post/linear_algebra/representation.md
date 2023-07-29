@@ -28,11 +28,11 @@ a matrix representation is preferred to do any calculations due to practicality 
 
 <br/>
 
-Let $$\mathcal V (\mathbb{K}) $$ and $$\mathcal W (\mathbb{K}) $$ be two vector spaces over a field $$\mathbb{K} $$ and let $$\mathcal B_{1} = \{b_{1}, ..., b_{n} \} $$ 
+Let $$\mathcal V (\mathbb{F}) $$ and $$\mathcal W (\mathbb{F}) $$ be two vector spaces over a field $$\mathbb{F} $$ and let $$\mathcal B_{1} = \{b_{1}, ..., b_{n} \} $$ 
 and $$\mathcal B_{2} = \{\hat{b_{1}}, ..., \hat{b_{m}} \} $$  be two basis for $$\mathcal V $$ and $$\mathcal W $$ respectively. Further let $$ f \in \mathcal L
 (\mathcal V, \mathcal W ) $$ be a homomorphism.
 
-{% include latex_high.html latex1="Then for $$ f(b_{j}) \in \mathcal W $$" content_txt="/c/there exists uniquely defined coordinates/c/" latex2="$$ \alpha_{1, j}, ..., \alpha_{n, j} \in \mathbb{K} $$ such that:" %}
+{% include latex_high.html latex1="Then for $$ f(b_{j}) \in \mathcal W $$" content_txt="/c/there exists uniquely defined coordinates/c/" latex2="$$ \alpha_{1, j}, ..., \alpha_{n, j} \in \mathbb{F} $$ such that:" %}
 
 
 <br>
@@ -41,7 +41,7 @@ $$ f(b_{j}) = (\hat{b_{1}}, ..., \hat{b_{m}})  \begin{bmatrix} \alpha_{1, j} \\ 
 
 <br/>
 
-This is a system of equations that can be extended so that we obtain one expression for all basis elements in $ \mathcal B_{1}$. For this denote $ A = [ \alpha_{i, j} ] \in \mathbb{K}^{m \times n} $ 
+This is a system of equations that can be extended so that we obtain one expression for all basis elements in $ \mathcal B_{1}$. For this denote $ A = [ \alpha_{i, j} ] \in \mathbb{F}^{m \times n} $ 
 as the matrix of all coordinates from that system of equation:
 
 <br/>
@@ -232,7 +232,7 @@ $$
 
 <br/>
 
-Let $$ \mathcal{V}(\mathbb{K})$$ be an n-dimensional vector space and $$ \mathcal{B}_1, \ \mathcal{B}_2 $$ are some basis of $$ \mathcal{V} $$. $$ \mathcal{W}(\mathbb{K}) $$ 
+Let $$ \mathcal{V}(\mathbb{F})$$ be an n-dimensional vector space and $$ \mathcal{B}_1, \ \mathcal{B}_2 $$ are some basis of $$ \mathcal{V} $$. $$ \mathcal{W}(\mathbb{F}) $$ 
 is an m-dimensional vector space with basis $$ \mathcal{\hat{B}}_1, \ \mathcal{\hat{B}}_2 $$.
 
 The following commutative diagram captures the mappings of the (1) homomorphism, (2) coordinates, (3) identity and their matrix representations:
@@ -287,7 +287,21 @@ $$\begin{align}
 
 (1) &emsp; *The matrix representation of the identity mapping $$ \mathcal{I}d_{\mathcal{V}} $$ is the basis transformation from $$\mathcal{B}_1$$ to $$\mathcal{B}_2$$.* <br>
 (2) &emsp; *The basis transformation $$ [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2} $$ is an isomorphism.* <br>
-(3) &emsp; $$ ([\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2})^{-1} = [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_2, \mathcal{B}_1} $$ 
+(3) &emsp; $$ ([\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2})^{-1} = [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_2, \mathcal{B}_1} $$
+
+<br/>
+
+<br/>
+
+### Matrix Representation
+
+<br/>
+
+(1) &emsp; $$f = \Phi_{\mathcal{B}_2}^{-1} \ [f]_{\mathcal{B}_1, \mathcal{B}_2} \ \Phi_{\mathcal{B}_1} $$
+
+(2) &emsp; *For $$f \in \mathcal{L}(\mathcal{V}, \mathcal{W})$$ and $$g \in \mathcal{L}(\mathcal{W}, \mathcal{U})$$ and $$\mathcal{V}, \mathcal{W}, \mathcal{U}$$ being finite dimensional with basis $$\mathcal{B}_1, \mathcal{B}_2, \mathcal{B}_3$$, respectively, $$[g \circ f]_{\mathcal{B}_1, \mathcal{B}_3} = [g]_{\mathcal{B}_2, \mathcal{B}_3}  \  [f]_{\mathcal{B}_1, \mathcal{B}_2}$$.*
+
+(3) &emsp; *Let $$ v_1, ..., v_n \in \mathcal{V} $$ be linearly independent and $$dim(\mathcal{W}) = m \in \mathbb{N}$$. Further, let $$ f \in \mathcal{L}(\mathcal{V}, \mathcal{W}) $$. Iff $$\textbf{rank}([f]_{\mathcal{B}_1, \mathcal{B}_2}) = m$$ then $$ (v_1, ..., v_n) [f]_{\mathcal{B}_1, \mathcal{B}_2} = (w_1, ..., w_m) \in \mathcal{W} $$ are linearly independent.*
 
 <br/>
 

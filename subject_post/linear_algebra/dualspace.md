@@ -76,17 +76,29 @@ $$ \begin{align} &(1) \qquad \textbf{div} \ f (\lambda v + \mu w) = \sum_{i=1}^{
 
 <br/>
 
-A dual space of a vector space $$ \mathcal{V}(\mathbb{K}) $$ is defined as $$ \mathcal{V}^{*} := \mathcal{L}(\mathcal{V}, \mathbb{K}) $$. The dual space $$ \mathcal{V}^{*} $$ is by itself 
+A dual space of a vector space $$ \mathcal{V}(\mathbb{F}) $$ is defined as $$ \mathcal{V}^{*} := \mathcal{L}(\mathcal{V}, \mathbb{F}) $$. The dual space $$ \mathcal{V}^{*} $$ is by itself 
 a vector space. That means its vectors are linear forms. 
 
 <br/>
 
+(1) &emsp;  Representation Matrix:
 
-{% include res_img.html url="/images/separator.png" width="800px" %}
+&emsp;  Let $$\mathcal{B}_1 = \{ b_1, ..., b_n \} $$ be a basis of $$ \mathcal{V}(\mathbb{F}) $$ and $$ \mathcal{B}_2 = \{ 1 \} $$ a basis of $$\mathcal{V}^{*}$$.
+For $$ f \in \mathcal{V}^{*}$$ its representation matrix is : <br>
+
+$$ [f]_{\mathcal{B}_1, \mathcal{B}_2} = [f(b_1), ..., f(b_n)] \in \mathbb{F}^{1, n}. $$
 
 <br/>
 
-#### Dual Basis
+(2) &emsp; Coordinate Mapping:
+
+&emsp;  Let $$v = \sum_{i=1}^{n} \lambda_i b_i \in \mathcal{V}$$ then we have due to (1) and because $$ \mathbb{F}^{1, 1} \cong \mathbb{F} $$: <br>
+
+$$ f(v) = [f]_{\mathcal{B}_1, \mathcal{B}_2} \Phi_{\mathcal{B}_1} (v) = [f(b_1), ..., f(b_n)] \begin{bmatrix} \lambda_{1} \\ \vdots \\ \lambda_{n} \end{bmatrix} \in \mathbb{F}^{1, 1}$$
+
+<br/>
+
+### Dual Basis
 
 <br/>
 
