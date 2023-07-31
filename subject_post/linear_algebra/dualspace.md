@@ -26,11 +26,7 @@ some important concepts regarding dual spaces.
 
 <br/>
 
-#### Dual Space
-
-<br/>
-
-### Linear Form
+#### Linear Form
 
 <br/>
 
@@ -68,11 +64,15 @@ $$ \begin{align} &(1) \qquad \textbf{div} \ f (\lambda v + \mu w) = \sum_{i=1}^{
 &(2) \qquad \textbf{div} \ f \in \mathcal{L}(G, \mathbb{R})
 \end{align} $$ 
 
-<br/>
+<br>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
 
 <br/>
 
-### Dual Space
+<br/>
+
+#### Dual Space
 
 <br/>
 
@@ -98,14 +98,24 @@ $$ f(v) = [f]_{\mathcal{B}_1, \mathcal{B}_2} \Phi_{\mathcal{B}_1} (v) = [f(b_1),
 
 <br/>
 
-### Dual Basis
+<br>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
+
+#### Dual Basis
 
 <br/>
 
 Let $$\mathcal V (\mathbb{F}) $$ be a vector space over a field $$ \mathbb{F} $$. Then for every basis $$\mathcal{B} = \{ b_1, ..., b_n \} $$ of $$\mathcal V $$
-there exists a unique dual basis $$ \mathcal{B}^{*} = \{ \varphi_1, ..., \varphi_n \} $$ of $$ \mathcal{V}^{*} $$  that is defined to by:
+there exists a unique dual basis $$ \mathcal{B}^{*} = \{ \varphi^1, ..., \varphi^n \} $$ of $$ \mathcal{V}^{*} $$  that is defined by:
 
-$$ \varphi_i(v_j) = \delta_{i, j} \ ; \qquad i, j = 1, ..., n$$
+$$ \varphi^{i}(v_j) = \delta_{i, j} \ ; \qquad i, j = 1, ..., n$$
+
+Furthermore, if $$ f \in \mathcal{V}^{*} $$ we can write this linear form in terms of its basis:
+
+$$ f = \sum_{i=1}^{n} f(b_i) \  \varphi^i $$
 
 <br>
 
@@ -118,14 +128,14 @@ $$ \begin{align}
 \qquad b_3 = -1/3 -t + t²/2 
 \end{align}$$
 
-$$ \begin{align} \mathcal{B}^{*} = \left\{ \ \varphi_i \quad \bigg\vert \quad  \varphi_i(p(t)) = \int_{0}^{i} p(t) dt \quad \land \quad p(t) \in  \mathbb{R}[t]_{\leq 2} \ \right\}_{i=1}^{3}
+$$ \begin{align} \mathcal{B}^{*} = \left\{ \ \varphi^i \quad \bigg\vert \quad  \varphi^i(p(t)) = \int_{0}^{i} p(t) dt \quad \land \quad p(t) \in  \mathbb{R}[t]_{\leq 2} \ \right\}_{i=1}^{3}
 \end{align} $$ 
 
 <br/>
 
-For $$j=1, 2, 3$$ let $$ b_j = \sum_{k=0}^{2} \alpha_k^{j} t^{k} $$ where $$\{ \alpha_k^{j} \}_{k=0}^{2}$$ are the coordinates of $$ b_j $$ w.r.t. the standard basis of $$ \mathbb{R}[t]_{\leq 2} $$ then we get in total:
+For $$j=1, 2, 3$$ let $$ b_j = \sum_{k=0}^{2} \alpha_{j, k} t^{k} $$ where $$\{ \alpha_{j, k} \}_{k=0}^{2}$$ are the coordinates of $$ b_j $$ w.r.t. the standard basis of $$ \mathbb{R}[t]_{\leq 2} $$ then we get in total:
 
-$$ \varphi_i(b_j) =  \int_{0}^{i} \sum_{k=0}^{2} \alpha_k^{j} t^{k} dt = \sum_{k=0}^{2} \alpha_k^{j} \int_{0}^{i} t^{k} dt  \ \ ; \qquad i = 1, 2, 3$$
+$$ \varphi^{i}(b_j) =  \int_{0}^{i} \sum_{k=0}^{2} \alpha_{j, k} t^{k} dt = \sum_{k=0}^{2} \alpha_{j, k} \int_{0}^{i} t^{k} dt  \ \ ; \qquad i = 1, 2, 3$$
 
 <br/>
 
@@ -134,16 +144,16 @@ In that way we can rewrite those integrals as a matrix product:
 $$ \begin{align}
 
 \begin{bmatrix}
-\varphi_1(b_1) & \varphi_2(b_1) & \varphi_3(b_1) \\
-\varphi_1(b_2) & \varphi_2(b_2) & \varphi_3(b_2) \\
-\varphi_1(b_3) & \varphi_2(b_3) & \varphi_3(b_3) 
+\varphi^1(b_1) & \varphi^2(b_1) & \varphi^3(b_1) \\
+\varphi^1(b_2) & \varphi^2(b_2) & \varphi^3(b_2) \\
+\varphi^1(b_3) & \varphi^2(b_3) & \varphi^3(b_3) 
 \end{bmatrix}
 
 &=
 \begin{bmatrix}
-\alpha_1^{1} & \alpha_2^{1} & \alpha_3^{1} \\
-\alpha_1^{2} & \alpha_2^{2} & \alpha_3^{2}  \\
-\alpha_1^{3} & \alpha_2^{3} & \alpha_3^{3} 
+\alpha_{1, 1} & \alpha_{1, 2} & \alpha_{1, 3} \\
+\alpha_{2, 1} & \alpha_{2, 2} & \alpha_{2, 3}  \\
+\alpha_{3, 1} & \alpha_{3, 2} & \alpha_{3, 3} 
 \end{bmatrix}
 
 \begin{bmatrix}
@@ -186,6 +196,43 @@ t \vert_{0}^{1} & t \vert_{0}^{2} & t \vert_{0}^{3} \\
 Therefore, $$\mathcal{B}^{*}$$ is dual to $$\mathcal{B}$$.
 
 <br>
+
+<br>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
+
+#### Alternative Perspective
+
+<br/>
+
+Let $$ \mathcal{V}(\mathbb{F}) $$ be a (n+1)-dimensional vector space. Then $$ \mathcal{V}^{*} $$ is the space of polynomials. Let $$ p_{t} \in \mathcal{V}^{*} $$ be a polynomial with the unknown $$ t \in \mathbb{F} $$ then $$\exists \ \mathcal{B} $$ such that:
+
+$$ [p_{t}]_{\mathcal{B}, 1} = [1, ..., t^{n}] $$
+
+$$ p_t(v) = [p_{t}]_{\mathcal{B}, 1} v = [1, ..., t^{n}]  \begin{bmatrix} v_{0} \\ \vdots \\ v_{n} \end{bmatrix} = v_0 + v_1t + ... + v_nt^n  \quad ; \quad v =  \begin{bmatrix} v_{0} \\ \vdots \\ v_{n} \end{bmatrix} \in \mathcal{V} $$
+
+<br/>
+
+
+<br>
+
+<br>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
+
+#### Dual Map
+
+<br>
+
+Let $$ \mathcal{V}(\mathbb{F}) $$ and $$ \mathcal{W}(\mathbb{F}) $$ be two vector spaces and $$ f \in \mathcal{L}(\mathcal{V}, \mathcal{W}) $$ then the dual map of $$ f $$ is defined by:
+
+$$ f^{*} \ : \mathcal{W}^{*} \longrightarrow \mathcal{V}^{*} \ ; \quad h \longmapsto f^{*}(h) = h \circ f $$
+
+<br/>
 
 {% include res_img.html url="/images/separator.png" width="800px" %}
 
