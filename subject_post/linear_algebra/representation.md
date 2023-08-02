@@ -309,5 +309,35 @@ $$\begin{align}
 
 <br/>
 
+<br/>
+
+#### Applications 
+
+<br/>
+
+(1) &emsp; Diagonal representation
+
+ &emsp; Let $$ \mathcal{V}(\mathbb{F}) $$ be a finite dimensional vector space and $$ f $$ an endomorphism. If $$ \{\hat{v}_1, ..., \hat{v}_n \} $$ are the eigenvectors of $$ f $$ choose $$ \mathcal{B} =  \{\hat{v}_1, ..., \hat{v}_n \} $$ as the basis.
+Then we get as the matrix representation of $$ f $$:
+
+$$ [f]_{\mathcal{B}} = 
+
+\begin{bmatrix}
+\lambda_1 & \cdots & 0 \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & \lambda_n
+\end{bmatrix}
+
+$$
+
+where $$ f(\hat{v}_i) = \lambda_i \hat{v}_i $$.
+
+<br/>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
+
+<br/>
 
 
