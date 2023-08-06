@@ -152,7 +152,14 @@ ul {
 }
 
 ol {
-  list-style-type: decimal;
+    list-style-type: decimal;
+}
+
+li {
+  list-style-type: disc;
+  list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
 }
 
 ol ul, ul ol, ul ul, ol ol {
@@ -1197,7 +1204,9 @@ svg {
 
 /* Style the collapsible content. Note: hidden by default */
 .c_content {
-  padding: 50px;
+  position: relative;
+  margin: 0px 50px;
+  padding: 25px;
   display: none;
   overflow: hidden;
   background-color: #fff;
@@ -1215,5 +1224,6 @@ button.collapsible::after {
 
 .sheet_cont p{
     word-spacing: 5px;
+    padding: 0px 50px;
 }
 

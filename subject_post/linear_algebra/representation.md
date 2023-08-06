@@ -31,7 +31,6 @@ a matrix representation is preferred to do any calculations due to practicality 
 Let $$\mathcal V (\mathbb{F}) $$ and $$\mathcal W (\mathbb{F}) $$ be two vector spaces over a field $$\mathbb{F} $$ and let $$\mathcal B_{1} = \{b_{1}, ..., b_{n} \} $$ 
 and $$\mathcal B_{2} = \{\hat{b_{1}}, ..., \hat{b_{m}} \} $$  be two basis for $$\mathcal V $$ and $$\mathcal W $$ respectively. Further let $$ f \in \mathcal L
 (\mathcal V, \mathcal W ) $$ be a homomorphism.
-
 {% include latex_high.html latex1="Then for $$ f(b_{j}) \in \mathcal W $$" content_txt="/c/there exists uniquely defined coordinates/c/" latex2="$$ \alpha_{1, j}, ..., \alpha_{n, j} \in \mathbb{F} $$ such that:" %}
 
 
@@ -65,7 +64,7 @@ where $$ {\lambda_{1}, ..., \lambda_{n}} $$ are the coordinates of $$ v $$.
 
 <br/>
 
-{% include collapse.html title="&nbsp; Example"  collapsed_content="
+{% include collapse.html  id="ex1" title="&nbsp; Example"  collapsed_content="
 Let $f \in \mathcal{L}(\mathbb{R}^{3}, \mathbb{R}^{2})$ and $\mathcal{B}_1 = \left\{ \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 2 \\ 1 \end{pmatrix}, \begin{pmatrix} 0 \\ 0 \\ 2 \end{pmatrix} \right\} $ be a basis of $\mathbb{R}^{3}$
 and $\mathcal{B}_2 = \left\{ \begin{pmatrix} 3 \\ 1 \end{pmatrix}, \begin{pmatrix} 0 \\ 2  \end{pmatrix} \right\} $ be a basis of $\mathbb{R}^{2}$. Then $f$ is defined by:
 $$ f \ : \mathbb{R}^{3} \longrightarrow \mathbb{R}^{2} , \quad \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix} \longmapsto \begin{pmatrix} v_1 + 3v_2 \\ v_1 + 2v_3 \end{pmatrix} \ $$
@@ -233,9 +232,7 @@ $$
 <br/>
 
 Let $$ \mathcal{V}(\mathbb{F})$$ be an n-dimensional vector space and $$ \mathcal{B}_1, \ \mathcal{B}_2 $$ are some basis of $$ \mathcal{V} $$. $$ \mathcal{W}(\mathbb{F}) $$ 
-is an m-dimensional vector space with basis $$ \mathcal{\hat{B}}_1, \ \mathcal{\hat{B}}_2 $$.
-
-The following commutative diagram captures the mappings of the (1) homomorphism, (2) coordinates, (3) identity and their matrix representations:
+is an m-dimensional vector space with basis $$ \mathcal{\hat{B}}_1, \ \mathcal{\hat{B}}_2 $$. The following commutative diagram captures the mappings of the (1) homomorphism, (2) coordinates, (3) identity and their matrix representations:
 
 <br/>
 
@@ -273,9 +270,9 @@ $$\begin{align}
 
 <br/>
 
-(1) &emsp; *The coordinate mapping $$ \Phi_{\mathcal{B}} $$ is an isomorphism.* <br>
-(2) &emsp; $$\Phi_{\mathcal{B}_2}(f(v)) = [f]_{\mathcal{B}_1, \mathcal{B}_2} \ \Phi_{\mathcal{B}_1}(v) ; \quad \forall \ v \in \mathcal{V}$$ <br>
-(3) &emsp; *A coordinate transformation is defined by $$\Phi_{\mathcal{B}_2} = [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2} \ \circ \ \Phi_{\mathcal{B}_1}$$. This is useful if you consider $$\mathcal{B}_1$$ to be the canonical basis.*
+1. &emsp; *The coordinate mapping $$ \Phi_{\mathcal{B}} $$ is an isomorphism.* <br>
+2. &emsp; $$\Phi_{\mathcal{B}_2}(f(v)) = [f]_{\mathcal{B}_1, \mathcal{B}_2} \ \Phi_{\mathcal{B}_1}(v) ; \quad \forall \ v \in \mathcal{V}$$ <br>
+3. &emsp; *A coordinate transformation is defined by $$\Phi_{\mathcal{B}_2} = [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2} \ \circ \ \Phi_{\mathcal{B}_1}$$. This is useful if you consider $$\mathcal{B}_1$$ to be the canonical basis.*
 
 <br/>
 
@@ -285,9 +282,9 @@ $$\begin{align}
 
 <br/>
 
-(1) &emsp; *The matrix representation of the identity mapping $$ \mathcal{I}d_{\mathcal{V}} $$ is the basis transformation from $$\mathcal{B}_1$$ to $$\mathcal{B}_2$$.* <br>
-(2) &emsp; *The basis transformation $$ [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2} $$ is an isomorphism.* <br>
-(3) &emsp; $$ ([\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2})^{-1} = [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_2, \mathcal{B}_1} $$
+1. &emsp; *The matrix representation of the identity mapping $$ \mathcal{I}d_{\mathcal{V}} $$ is the basis transformation from $$\mathcal{B}_1$$ to $$\mathcal{B}_2$$.* <br>
+2. &emsp; *The basis transformation $$ [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2} $$ is an isomorphism.* <br>
+3. &emsp; $$ ([\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2})^{-1} = [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_2, \mathcal{B}_1} $$
 
 <br/>
 
@@ -297,11 +294,9 @@ $$\begin{align}
 
 <br/>
 
-(1) &emsp; $$f = \Phi_{\mathcal{B}_2}^{-1} \ [f]_{\mathcal{B}_1, \mathcal{B}_2} \ \Phi_{\mathcal{B}_1} $$
-
-(2) &emsp; *For $$f \in \mathcal{L}(\mathcal{V}, \mathcal{W})$$ and $$g \in \mathcal{L}(\mathcal{W}, \mathcal{U})$$ and $$\mathcal{V}, \mathcal{W}, \mathcal{U}$$ being finite dimensional with basis $$\mathcal{B}_1, \mathcal{B}_2, \mathcal{B}_3$$, respectively, $$[g \circ f]_{\mathcal{B}_1, \mathcal{B}_3} = [g]_{\mathcal{B}_2, \mathcal{B}_3}  \  [f]_{\mathcal{B}_1, \mathcal{B}_2}$$.*
-
-(3) &emsp; *Let $$ v_1, ..., v_n \in \mathcal{V} $$ be linearly independent and $$dim(\mathcal{W}) = m \in \mathbb{N}$$. Further, let $$ f \in \mathcal{L}(\mathcal{V}, \mathcal{W}) $$. Iff $$\textbf{rank}([f]_{\mathcal{B}_1, \mathcal{B}_2}) = m$$ then $$ (v_1, ..., v_n) [f]_{\mathcal{B}_1, \mathcal{B}_2} = (w_1, ..., w_m) \in \mathcal{W} $$ are linearly independent.*
+1. &emsp; $$f = \Phi_{\mathcal{B}_2}^{-1} \ [f]_{\mathcal{B}_1, \mathcal{B}_2} \ \Phi_{\mathcal{B}_1} $$
+2. &emsp; *For $$f \in \mathcal{L}(\mathcal{V}, \mathcal{W})$$ and $$g \in \mathcal{L}(\mathcal{W}, \mathcal{U})$$ and $$\mathcal{V}, \mathcal{W}, \mathcal{U}$$ being finite dimensional with basis $$\mathcal{B}_1, \mathcal{B}_2, \mathcal{B}_3$$, respectively, $$[g \circ f]_{\mathcal{B}_1, \mathcal{B}_3} = [g]_{\mathcal{B}_2, \mathcal{B}_3}  \  [f]_{\mathcal{B}_1, \mathcal{B}_2}$$.*
+3. &emsp; *Let $$ v_1, ..., v_n \in \mathcal{V} $$ be linearly independent and $$dim(\mathcal{W}) = m \in \mathbb{N}$$. Further, let $$ f \in \mathcal{L}(\mathcal{V}, \mathcal{W}) $$. Iff $$\textbf{rank}([f]_{\mathcal{B}_1, \mathcal{B}_2}) = m$$ then $$ (v_1, ..., v_n) [f]_{\mathcal{B}_1, \mathcal{B}_2} = (w_1, ..., w_m) \in \mathcal{W} $$ are linearly independent.*
 
 <br/>
 
@@ -315,9 +310,9 @@ $$\begin{align}
 
 <br/>
 
-(1) &emsp; Diagonal representation
+### &emsp; **Diagonal representation**
 
- &emsp; Let $$ \mathcal{V}(\mathbb{F}) $$ be a finite dimensional vector space and $$ f $$ an endomorphism. If $$ \{\hat{v}_1, ..., \hat{v}_n \} $$ are the eigenvectors of $$ f $$ choose $$ \mathcal{B} =  \{\hat{v}_1, ..., \hat{v}_n \} $$ as the basis.
+Let $$ \mathcal{V}(\mathbb{F}) $$ be a finite dimensional vector space and $$ f $$ an endomorphism. If $$ \{\hat{v}_1, ..., \hat{v}_n \} $$ are the eigenvectors of $$ f $$ choose $$ \mathcal{B} =  \{\hat{v}_1, ..., \hat{v}_n \} $$ as the basis.
 Then we get as the matrix representation of $$ f $$:
 
 $$ [f]_{\mathcal{B}} = 
@@ -331,6 +326,52 @@ $$ [f]_{\mathcal{B}} =
 $$
 
 where $$ f(\hat{v}_i) = \lambda_i \hat{v}_i $$.
+
+<br>
+
+{% include collapse.html  id="ex2" title="&nbsp; Proof"  collapsed_content="
+
+Some text.
+
+"%}
+
+<br/>
+
+<br/>
+
+### &emsp; **Differential operator representation**
+
+<br/>
+
+Let $$ p = \sum_{k=0}^{n} \alpha_k t^k \in \mathbb{R}[t]_{\leq n} \ \land \ \mathcal{B} = \{ t^k \}_{k=0}^{n} $$ be the canonical basis then the derivative of p(t) is given by:
+
+$$ D(p(t)) = D \Biggl( \sum_{k=0}^{n} \alpha_k t^k \Biggl) = \sum_{k=1}^{n} k \alpha_k t^{k - 1} = \begin{bmatrix} 1 & t & \ldots & t^n \end{bmatrix} \begin{bmatrix} \alpha_{1} \\ 2 \alpha_2 \\ \vdots \\ n \alpha_{n} \\ 0 \end{bmatrix} $$
+
+<br> 
+
+Therefore, the representation matrix of the operator, $$ D $$, has to fulfill the following equation:
+
+$$ [D]_{\mathcal{B}} \begin{bmatrix} \alpha_0 \\ \alpha_1 \\ \vdots \\ \alpha_{n-1} \\ \alpha_n \end{bmatrix} =
+
+\begin{bmatrix} \alpha_{1} \\ 2 \alpha_2 \\ \vdots \\ n \alpha_{n} \\ 0 \end{bmatrix} $$
+
+<br>
+
+Solving that equation we obtain the following form:
+
+$$  [D]_{\mathcal{B}} = 
+
+\begin{bmatrix}
+    \begin{array}{c|c}
+  0_{n, 1} & M \\
+  \hline
+  0 & 0_{1, n}
+    \end{array}
+\end{bmatrix} \\
+
+$$
+
+where $$ M = \textbf{diag}(1, ..., n) \in \mathcal{M}_{n \times n}(\mathbb{R})$$.
 
 <br/>
 

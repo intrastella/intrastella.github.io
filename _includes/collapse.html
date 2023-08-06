@@ -1,5 +1,7 @@
 
-<button class="collapsible" data-toggle="collapse" data-target="collapse" data-text="+">{{ include.title }}</button>
-<div class="c_content" id="collapse">
+<button class="collapsible" data-toggle="{{ include.id }}" data-target="{{ include.id }}" data-text="+">{{ include.title }}</button>
+<div class="c_content" id="{{ include.id }}">
+
     <p>{{ include.collapsed_content }}</p>
+
 </div>

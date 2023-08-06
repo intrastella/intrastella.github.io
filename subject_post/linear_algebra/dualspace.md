@@ -30,39 +30,47 @@ some important concepts regarding dual spaces.
 
 <br/>
 
-A linear form, also known as linear functional, one form or covariant vector, is a linear map in $$\mathcal{L}(\mathcal{V}, \mathbb{F}) $$ where $$\mathcal V (\mathbb{F}) $$
+A linear form, also linear functional, one form or covariant vector, is a linear map in $$\mathcal{L}(\mathcal{V}, \mathbb{F}) $$ where $$\mathcal V (\mathbb{F}) $$
 is a vector space.
 
 <br>
 
-<ins>Example 1</ins>: Let $$ \mathcal{M}_n(\mathbb{R}) $$ be the vector space of all n x n matrices over $$\mathbb{R}$$.
+**Example 1**: Let $$ \mathcal{M}_n(\mathbb{R}) $$ be the vector space of all n x n matrices over $$\mathbb{R}$$.
 Then the trace of a matrix is a linear form: <br>
 
 $$ \textbf{Tr}: \mathcal{M}_n(\mathbb{R}) \longrightarrow \mathbb{R} \ ; \quad A = [a_{i, j}] \longmapsto \textbf{Tr}(A) = \sum_{i=1}^{n} a_{i, i} $$
 
 Then we have $$ \forall \ A, B \in \mathcal{M}_n(\mathbb{R}) \land \forall \ \lambda \in \mathbb{R}$$:
 
-$$ \begin{align} &(1) \qquad \textbf{Tr}(A + B) = \textbf{Tr}(A) + \textbf{Tr}(B) \\
-&(2) \qquad  \lambda \textbf{Tr}(A) = \textbf{Tr}(\lambda A)\\
-&(3) \qquad \textbf{Tr} \in \mathcal{L}(\mathcal{M}_n(\mathbb{R}), \mathbb{R})
-\end{align} $$ 
+<div style="text-align: center;">
+    <p style="display: inline-block; text-align: left;">
+        (1) $\quad \textbf{Tr}(A + B) = \textbf{Tr}(A) + \textbf{Tr}(B) $ <br/>
+        (2) $\quad \lambda \textbf{Tr}(A) = \textbf{Tr}(\lambda A)$ <br/>
+        (3) $\quad \textbf{Tr} \in \mathcal{L}(\mathcal{M}_n(\mathbb{R}), \mathbb{R})$ <br/>
+    </p>
+</div>
 
 <br/>
 
 <br>
 
-<ins>Example 2</ins>: Let $$ G \subseteq \mathbb{R}^n $$ be open and $$ f: G \rightarrow \mathbb{R}^n $$ be a differentiable vector field.
+**Example 2**: Let $$ G \subseteq \mathbb{R}^n $$ be open and $$ f = (f_1, ..., f_n): G \rightarrow \mathbb{R}^n $$ be a differentiable vector field.
 Then the divergence of $$ f $$ is a linear form: <br>
 
 $$ \textbf{div} \ f: G \longrightarrow \mathbb{R} \ ; \quad v \longmapsto \textbf{div} \ f (v) =  \sum_{i=1}^{n} \frac{\partial f_i}{\partial x_i} (v) $$
 
+The divergence as an operator is then defined on the space of vector fields over a manifold $M$ denoted by 
+
+
+
 Then we have $$ \forall \ v, w \in G \land \forall \ \lambda, \mu \in \mathbb{R}$$:
 
-$$ \begin{align} &(1) \qquad \textbf{div} \ f (\lambda v + \mu w) = \sum_{i=1}^{n} \frac{\partial f_i}{\partial x_i} (\lambda v + \mu w) = \sum_{i=1}^{n} \frac{\partial f_i}{\partial x_i} (\lambda v) + \sum_{i=1}^{n} \frac{\partial f_i}{\partial x_i} (\mu w) 
-= \lambda \ \textbf{div} \ f (v) + \mu \ \textbf{div} \ f (w) \\
-
-&(2) \qquad \textbf{div} \ f \in \mathcal{L}(G, \mathbb{R})
-\end{align} $$ 
+<div style="text-align: center;">
+    <p style="display: inline-block; text-align: left;">
+        (1) $\quad \textbf{div} \ (\lambda f + \mu g) = \textbf{div} \ (\lambda f) + \textbf{div} \ (\mu g) = \lambda \ \textbf{div} \ f + \mu \ \textbf{div} \ g$ <br>
+        (2) $\quad \textbf{div} \in \mathcal{L}(\mathcal{L}(G, \mathbb{R}), \mathbb{R})$ <br/>
+    </p>
+</div>
 
 <br>
 
@@ -81,7 +89,9 @@ a vector space. That means its vectors are linear forms.
 
 <br/>
 
-(1) &emsp;  Representation Matrix:
+<br/>
+
+### &emsp;  Representation Matrix:
 
 &emsp;  Let $$\mathcal{B}_1 = \{ b_1, ..., b_n \} $$ be a basis of $$ \mathcal{V}(\mathbb{F}) $$ and $$ \mathcal{B}_2 = \{ 1 \} $$ a basis of $$\mathcal{V}^{*}$$.
 For $$ f \in \mathcal{V}^{*}$$ its representation matrix is : <br>
@@ -90,17 +100,26 @@ $$ [f]_{\mathcal{B}_1, \mathcal{B}_2} = [f(b_1), ..., f(b_n)] \in \mathbb{F}^{1,
 
 <br/>
 
-(2) &emsp; Coordinate Mapping:
+### &emsp; Coordinate Mapping:
 
 &emsp;  Let $$v = \sum_{i=1}^{n} \lambda_i b_i \in \mathcal{V}$$ then we have due to (1) and because $$ \mathbb{F}^{1, 1} \cong \mathbb{F} $$: <br>
 
 $$ f(v) = [f]_{\mathcal{B}_1, \mathcal{B}_2} \Phi_{\mathcal{B}_1} (v) = [f(b_1), ..., f(b_n)] \begin{bmatrix} \lambda_{1} \\ \vdots \\ \lambda_{n} \end{bmatrix} \in \mathbb{F}^{1, 1}$$
 
+
+{% include collapse.html  id="ex00" title="Example"
+
+collapsed_content="
+
+...
+
+"%}
+
 <br/>
 
-<br>
-
 {% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
 
 <br/>
 
@@ -119,8 +138,10 @@ $$ f = \sum_{i=1}^{n} f(b_i) \  \varphi^i $$
 
 <br>
 
-<ins>Example 1</ins>: Let $$ \mathbb{R}[t]_{\leq 2} $$ be the vector space of polynomials with degree at most 2.
-Then the dual basis of $$\mathcal{B} = \{ b_1, b_2, b_3 \}  $$ given by: <br>
+{% include collapse.html id="ex1" title="&nbsp; Example"  collapsed_content="
+
+Let $ \mathbb{R}[t]_{\leq 2} $ be the vector space of polynomials with degree at most 2.
+Then the dual basis of $\mathcal{B} = \{ b_1, b_2, b_3 \}  $ given by: <br>
 
 $$ \begin{align}  
 &b_1 = 3 - 5t + 3t²/2 \ ;
@@ -133,7 +154,7 @@ $$ \begin{align} \mathcal{B}^{*} = \left\{ \ \varphi^i \quad \bigg\vert \quad  \
 
 <br/>
 
-For $$j=1, 2, 3$$ let $$ b_j = \sum_{k=0}^{2} \alpha_{j, k} t^{k} $$ where $$\{ \alpha_{j, k} \}_{k=0}^{2}$$ are the coordinates of $$ b_j $$ w.r.t. the standard basis of $$ \mathbb{R}[t]_{\leq 2} $$ then we get in total:
+For $j=1, 2, 3$ let $ b_j = \sum_{k=0}^{2} \alpha_{j, k} t^{k} $ where $\{ \alpha_{j, k} \}_{k=0}^{2}$ are the coordinates of $ b_j $ w.r.t. the standard basis of $ \mathbb{R}[t]_{\leq 2} $ then we get in total:
 
 $$ \varphi^{i}(b_j) =  \int_{0}^{i} \sum_{k=0}^{2} \alpha_{j, k} t^{k} dt = \sum_{k=0}^{2} \alpha_{j, k} \int_{0}^{i} t^{k} dt  \ \ ; \qquad i = 1, 2, 3$$
 
@@ -193,13 +214,15 @@ t \vert_{0}^{1} & t \vert_{0}^{2} & t \vert_{0}^{3} \\
 
 <br>
 
-Therefore, $$\mathcal{B}^{*}$$ is dual to $$\mathcal{B}$$.
+Therefore, $\mathcal{B}^{*}$ is dual to $\mathcal{B}$.
 
-<br>
+"%}
 
-<br>
+<br/>
 
 {% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
 
 <br/>
 
@@ -217,15 +240,183 @@ $$ f^{*} \ : \mathcal{W}^{*} \longrightarrow \mathcal{V}^{*} \ ; \quad h \longma
 
 <br/>
 
+<br/>
+
+#### Bilinear form
+
+<br/>
+
+### Definition
+
+<br>
+
+Let $$ \mathcal{V}(\mathbb{F}) $$ and $$ \mathcal{W}(\mathbb{F}) $$ be two vector spaces then a bilinear form $$ \beta : \mathcal{V} \times \mathcal{W} \longrightarrow \mathbb{F}$$ is defined by:
+
+<br>
+
+&emsp; $$ \forall \ \ v, v_1, v_2 \in \mathcal{V} \ \land \ w, w_1, w_2 \in \mathcal{W}  \ \land \  \mu \in \mathbb{F}$$ : <br/>
+
+<div style="text-align: center;">
+    <p style="display: inline-block; text-align: left;">
+        (1) $\quad \beta(v_1 + v_2, w) = \beta(v_1, w) + \beta(v_2, w)$ <br/>
+        (2) $\quad \beta(v, w_1 + w_2) = \beta(v, w_1) + \beta(v, w_2)$ <br/>
+        (3) $\quad \beta(\mu v, w) = \mu \beta(v, w) = \beta(v, \mu w) $
+    </p>
+</div>
+
+<br/>
+
+This definition gives rise to the following natural mappings: <br/>
+
+<div style="text-align: center;">
+    <p style="display: inline-block; text-align: left;">
+        (1) $\quad \beta_L : \mathcal{V} \rightarrow \mathcal{W}^{*} \ ; \quad v \mapsto \beta_v = \beta(v, \cdot)$ <br/>
+        (2) $\quad \beta_R : \mathcal{W} \rightarrow \mathcal{V}^{*} \ ; \quad w \mapsto \beta_w = \beta(\cdot, w)$ <br/>
+    </p>
+</div>
+
+<br/>
+
+{% include collapse.html id="ex2" title="&nbsp; Example"  collapsed_content="
+
+...
+
+"%}
+
+<br>
+
+<br/>
+
+<br>
+
+### Special bilinear forms
+
+<br>
+
+1. &emsp; **Symmetric bilinear form**:
+
+&emsp;  Let $$\beta : \mathcal{V} \times \mathcal{V} \rightarrow \mathbb{F}$$ then a symmetric bilinear form on $$\mathcal{V}$$ is defined by: <br>
+
+$$ \forall \ \ v, w \in \mathcal{V} \ : \ \beta(v, w) = \beta(w, v) $$
+
+<br>
+
+{% include collapse.html id="ex3" title="&nbsp; Example"  collapsed_content="
+
+...
+
+"%}
+
+<br/>
+
+<br/>
+
+2. &emsp; **Non-degenerate bilinear form**:
+
+&emsp;  Let $$  \beta : \mathcal{V} \times \mathcal{W} \longrightarrow \mathbb{F} $$ be a bilinear form.
+
+&emsp;  **I)** $$\beta$$ is considered to be non-degenerate in its _left_ variable iff: <br>
+
+$$ \textbf{kern}(\beta_L) = \{ 0_{\mathcal{V}} \} \quad \iff \quad  \forall \ w \in \mathcal{W} \ : \beta_v(w) = 0 \  \implies v = 0_{\mathcal{V}} $$
+
+<br>
+
+&emsp;  **II)** $$\beta$$ is considered to be non-degenerate in its _right_ variable iff: <br>
+
+$$ \textbf{kern}(\beta_R) = \{ 0_{\mathcal{W}} \} \quad \iff \quad  \forall \ v \in \mathcal{V} \ : \beta_w(v) = 0 \  \implies w = 0_{\mathcal{W}} $$
+
+<br>
+
+&emsp;  **III)** Iff I) and II) holds true for $$\beta$$ then: &emsp;  a) $$ \ \beta $$ is non-degenerate.
+
+&nbsp; &nbsp; &nbsp; and if $$ \mathcal{V} , \ \mathcal{W} $$ are finite dimensional: &emsp; b) $$ \ \textbf{dim}(\mathcal{V}) = \textbf{dim}(\mathcal{W}) $$
+
+<br>
+
+{% include collapse.html  id="ex4" title="&nbsp; Proof of **III** b)"
+
+collapsed_content="
+To proof this statement I will show that: 
+
+$$ \begin{align}
+\text{I.} \quad \textbf{dim}(\mathcal{V}) \leq \textbf{dim}(\mathcal{W}) \\
+\text{II.} \quad \textbf{dim}(\mathcal{W}) \leq \textbf{dim}(\mathcal{V}) \end{align} $$
+
+
+From this follows that $\textbf{dim}(\mathcal{V}) = \textbf{dim}(\mathcal{W})$.
+
+<br/>
+
+<br/>
+
+<br/>
+
+<ins>Proof of $\text{I}$</ins>
+
+<br>
+Since $\beta$ is non-degenerate $ \textbf{kern}(\beta_L) = \{ 0_{\mathcal{V}} \} $ and therefore $\textbf{dim}(\textbf{kern}(\beta_L)) = 0$.
+More over, note that the $\textbf{img}(\beta_L)$ is a vector subspace of $\mathcal{W}^{*}$. This implies that $ \textbf{dim}(\textbf{img}(\beta_L)) \leq  \textbf{dim}(\mathcal{W}^{*})$. From this property and the dimensionality theorem for linear transformations the following applies:
+
+$$ \begin{align} 
+\textbf{dim}(\mathcal{V}) = \textbf{dim}(\textbf{img}(\beta_L)) + \textbf{dim}(\textbf{kern}(\beta_L)) = \textbf{dim}(\textbf{img}(\beta_L)) + 0 \leq \textbf{dim}(\mathcal{W}^{*})
+\end{align}$$
+
+From the condition that the vector spaces are finite dimensional it holds true that $\mathcal{W}^{*} \cong \mathcal{W}$ and we obtain the desired result:
+
+$$ \textbf{dim}(\mathcal{V}) \leq \textbf{dim}(\mathcal{W}^{*}) = \textbf{dim}(\mathcal{W}) $$
+
+<br/>
+
+<ins>Proof of $\text{II}$</ins>
+
+<br>
+
+This proof is analogous to the previous proof just exchange $\mathcal{V}$ and $\mathcal{W}$ and replace $\beta_L$ with $\beta_R$.  $\qquad \qquad \qquad \square$
+
+"%}
+
+<br/>
+
+<br/>
+
+3. &emsp; **Dual system**:
+
+{% include center_no_latex.html
+
+intro="&emsp; Let $\mathcal{V}$ and $\mathcal{W}$ be two vector spaces and $ \beta: \mathcal{V} \times \mathcal{W} \rightarrow \mathbb{F} $ a bilinear form. A dual system or dual pair over a field $\mathbb{F}$ is defined by:"
+
+states="$\quad$A triple $(\mathcal{V}, \mathcal{W}, \beta)$| $\quad \beta$ is non-degenerate|"
+
+%}
+
+<br>
+
+<br/>
+
+<br>
+
+### Properties
+
+<br>
+
+
+<br/>
+
+{% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
+
+<br/>
+
 #### Push forward
 
 <br/>
 
 <br/>
 
-<br>
-
 {% include res_img.html url="/images/separator.png" width="800px" %}
+
+<br/>
 
 <br/>
 

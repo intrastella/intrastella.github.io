@@ -11,6 +11,7 @@ function set_high() {
 
             responsible_page();
             collapse_drops();
+            center_states();
 
             window.addEventListener("resize", function () {
                 responsible_page();
@@ -353,20 +354,60 @@ function makeVisible() {
 
 function collapse_drops() {
 
-        var elements = document.querySelectorAll('[data-toggle="collapse"]');
-        elements.forEach(element => element.addEventListener('click', collapse));
+        const drop_elements = document.querySelectorAll('.collapsible');
+        drop_elements.forEach((drop_element, idx) => {
+
+            var drop_toggle = drop_element.getAttribute('data-toggle');
+
+            var x = "[data-toggle='" + `${drop_toggle}` + "']";
+            var element = document.querySelector(x);
+            element.addEventListener('click', collapse);
+
+        });
 
         function collapse() {
           var target = this.getAttribute('data-target');
           var element = document.getElementById(target);
+          var toggle_btn = "button.[data-toggle='" + `${target}` + "']";
+
+
           if (element.style.display === "none") {
             element.style.display = "block";
-            $('button').attr('data-text', '–');
+            $(toggle_btn).attr('data-text', '–');
+
           } else {
             element.style.display = "none";
-            $('button').attr('data-text', '+');
+            $(toggle_btn).attr('data-text', '+');
           }
         };
+};
+
+
+function center_states() {
+
+    let statements = document.querySelectorAll('.math_state');
+    statements.forEach((statement, idx) => {
+                let txt = statement.children[0].innerHTML;
+                format_states(statement, "", txt, 1);
+            });
+};
+
+function format_states(state, parent_str, txt, idx) {
+
+    const sym = "|";
+    var pos = txt.indexOf(sym);
+
+    if (pos >= 1) {
+        var new_text = txt.substring(0, pos);
+
+        const edit_text = "(" + idx + ") " + new_text + "<br/>";
+        const new_parent_str = parent_str + edit_text;
+
+        format_states(state, new_parent_str, txt.substring(pos + 1, txt.length), idx+1);
+
+    } else {
+        state.children[0].innerHTML = parent_str;
+    }
 };
 
 

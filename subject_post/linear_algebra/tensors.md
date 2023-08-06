@@ -3,7 +3,7 @@ layout: cheat_sheet
 category: linear_algebra
 out: 3
 topic: tensors
-title: Tensor Algebra
+title: Introduction of Tensor Algebra
 permalink: /linear_algebra/tensors
 ---
 
@@ -52,7 +52,7 @@ $$\text{2.} \quad \mathcal T_{C} \begin{bmatrix} \mu_{1} \\ \mu_2 \\ \vdots \\ \
 
 <br>
 
-{% include collapse.html title="&nbsp; Proof"  collapsed_content="
+{% include collapse.html  id="ex1"  title="&nbsp; Proof"  collapsed_content="
 From the chapter, Matrix Representation, we know that the coordinate transformation from basis $\mathcal{B}_1$ to basis $\mathcal{B}_2$ has the following form:
 
 $$ \Phi_{\mathcal{B}_2} = [\mathcal{I}d_{\mathcal{V}}]_{\mathcal{B}_1, \mathcal{B}_2} \ \circ \ \Phi_{\mathcal{B}_1} $$
