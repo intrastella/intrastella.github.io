@@ -54,21 +54,21 @@ Then we have $$ \forall \ A, B \in \mathcal{M}_n(\mathbb{R}) \land \forall \ \la
 
 <br>
 
-**Example 2**: Let $$ G \subseteq \mathbb{R}^n $$ be open and $$ f = (f_1, ..., f_n): G \rightarrow \mathbb{R}^n $$ be a differentiable vector field.
-Then the divergence of $$ f $$ is a linear form: <br>
+**Example 2**: Let $$ M $$ be an n-dimensional smooth manifold and $$ \phi : U \subset M \rightarrow \mathbb{R}^{n} $$ be a coordinate chart where $$ U $$ is open and contains $$ p $$. More over, denote $$ T_pM $$ as the tangent space 
+of $$ M $$ at $$ p $$. Let $$ x^{1}, ..., x^{n} $$ be the components of $$ \phi $$. These components are real valued functions:
 
-$$ \textbf{div} \ f: G \longrightarrow \mathbb{R} \ ; \quad v \longmapsto \textbf{div} \ f (v) =  \sum_{i=1}^{n} \frac{\partial f_i}{\partial x_i} (v) $$
+$$ x^{i} : U \longrightarrow \mathbb{R} \ , \quad i = 1, ..., n $$
 
-The divergence as an operator is then defined on the space of vector fields over a manifold $M$ denoted by 
+Then their derivative at a point $$ p \in U $$ are linear functionals:
+
+$$ dx^{i}(p) : T_p M \longrightarrow \mathbb{R} \ , \quad i = 1, ..., n  $$
 
 
-
-Then we have $$ \forall \ v, w \in G \land \forall \ \lambda, \mu \in \mathbb{R}$$:
 
 <div style="text-align: center;">
     <p style="display: inline-block; text-align: left;">
-        (1) $\quad \textbf{div} \ (\lambda f + \mu g) = \textbf{div} \ (\lambda f) + \textbf{div} \ (\mu g) = \lambda \ \textbf{div} \ f + \mu \ \textbf{div} \ g$ <br>
-        (2) $\quad \textbf{div} \in \mathcal{L}(\mathcal{L}(G, \mathbb{R}), \mathbb{R})$ <br/>
+        (1) $\quad dx^{i}(p)(\mu v_1 + \lambda v_2) = \mu \ dx^{i}(p) \ v_1 + \lambda \ dx^{i}(p) \ v_2 $ <br>
+        (2) $\quad dx^{i}(p) \in \mathcal{L}(T_pM, \mathbb{R})$ <br/>
     </p>
 </div>
 
