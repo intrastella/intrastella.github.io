@@ -44,7 +44,7 @@ $$ \begin{align} \sum_{j \in J}  \mathcal{U}_{j} := \left\{ \sum_{j \in J} u_j \
 
 <br>
 
-Since the axiom of choice allows us to construct bases we can think of the sum by taking a basis, $$ \mathcal{B}_1 $$, of $$ \mathcal{U}_1 $$ and then extend it by basis elements of the basis of all the other
+Since the axiom of choice assures us the existence of a basis for a vector space we can think of the sum by taking a basis, $$ \mathcal{B}_1 $$, of $$ \mathcal{U}_1 $$ and then extend it by basis elements of the basis of all the other
 linear subspaces which are linearly independent of all the basis elements in $ \mathcal{B}_1 $ with the help of the basis extension theorem:
 
 <br>
