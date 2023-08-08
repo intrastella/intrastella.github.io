@@ -293,7 +293,7 @@ This definition gives rise to the following natural mappings: <br/>
 
 <br>
 
-1. &emsp; **Symmetric bilinear form**:
+1) &emsp; **Symmetric bilinear form**:
 
 &emsp;  Let $$\beta : \mathcal{V} \times \mathcal{V} \rightarrow \mathbb{F}$$ then a symmetric bilinear form on $$\mathcal{V}$$ is defined by: <br>
 
@@ -311,7 +311,7 @@ $$ \forall \ \ v, w \in \mathcal{V} \ : \ \beta(v, w) = \beta(w, v) $$
 
 <br/>
 
-2. &emsp; **Non-degenerate bilinear form**:
+2)  &emsp; **Non-degenerate bilinear form**:
 
 &emsp;  Let $$  \beta : \mathcal{V} \times \mathcal{W} \longrightarrow \mathbb{F} $$ be a bilinear form.
 
@@ -379,7 +379,7 @@ This proof is analogous to the previous proof just exchange $\mathcal{V}$ and $\
 
 <br/>
 
-3. &emsp; **Dual system**:
+3)  &emsp; **Dual system**:
 
 {% include center_no_latex.html
 
